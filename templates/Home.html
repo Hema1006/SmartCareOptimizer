@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Network Optimizer | Build Smarter Healthcare Networks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #088395;
+            --secondary-color: #0A4D68;
+            --accent-color: #ff6f61;
+            --text-color: #34495e;
+            --light-bg: #f8f9fa;
+            --white-color: #ffffff;
+            --border-color: #e0e0e0;
+            --success-color: #27ae60;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--white-color);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+            color: #7f8c8d;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--white-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #e65a50;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: var(--white-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white-color);
+            color: var(--secondary-color);
+            border-color: var(--white-color);
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background: var(--white-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .nav-logo i {
+            color: var(--primary-color);
+        }
+
+        /* --- Profile Dropdown --- */
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: calc(100% + 10px);
+            background-color: var(--white-color);
+            min-width: 220px;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            z-index: 1;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-user-info {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        #dropdown-username {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #dropdown-user-email {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-content a i {
+            margin-right: 10px;
+            color: #95a5a6;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light-bg);
+        }
+
+        /* --- Hero Section & Features --- */
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            color: var(--white-color);
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 77, 104, 0.75);
+            z-index: -1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .features-section {
+            background-color: var(--white-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--white-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+        }
+
+        .feature-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            background-color: #e0f2f1;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+        }
+
+        /* --- Data, CTA, Footer --- */
+        .data-section {
+            background-color: var(--light-bg);
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .logo-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+        }
+
+        .logo-item p {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            padding: 80px 0;
+            text-align: center;
+            color: var(--white-color);
+        }
+
+        .cta-section h2 {
+            color: var(--white-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background-color: var(--secondary-color);
+            color: #a7c4cc;
+            padding: 50px 0 20px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #3a6b80;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Login Modal --- */
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-modal.is-visible {
+            display: flex;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+        }
+
+        .modal-content {
+            position: relative;
+            background: var(--white-color);
+            padding: 2.5rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
+            z-index: 2001;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            animation: slide-down 0.4s ease-out;
+        }
+
+        @keyframes slide-down {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .modal-view h3 {
+            text-align: center;
+        }
+
+        .modal-view p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #7f8c8d;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .modal-links {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--success-color);
+            text-align: center;
+            margin-bottom: 1rem;
+            animation: pop-in 0.5s ease-out;
+        }
+
+        @keyframes pop-in {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* OTP Input */
+        .otp-input-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .otp-input {
+            width: 45px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .shake {
+            animation: shake 0.6s cubic-bezier(.36, .07, .19, .97) both;
+        }
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translateX(-1px);
+            }
+
+            20%,
+            80% {
+                transform: translateX(2px);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translateX(-4px);
+            }
+
+            40%,
+            60% {
+                transform: translateX(4px);
+            }
+        }
+
+
+        /* --- NEW: Toast Notification --- */
+        #toast-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 3000;
+            transform: translateX(calc(100% + 20px));
+            transition: transform 0.5s ease-in-out;
+            font-weight: 500;
+        }
+
+        #toast-notification.show {
+            transform: translateX(0);
+        }
+
+        #toast-notification i {
+            margin-right: 10px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+
+            h1,
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="{{ url_for('home') }}" class="nav-logo"><i class="fas fa-network-wired"></i>  Smart Care
+                    Optimizer</a>
+                <div class="nav-actions">
+                    <a href="#" class="btn btn-primary" id="register-btn">Register</a>
+                    <div class="profile-dropdown" id="profile-menu" style="display: none;">
+                        <i class="fas fa-user-circle profile-icon"></i>
+                        <div class="dropdown-content">
+                            <div class="dropdown-user-info">
+                                <div id="dropdown-username"></div>
+                                <div id="dropdown-user-email"></div>
+                            </div>
+                            <a href="{{ url_for('dashboard') }}"><i class="fas fa-search-location"></i> Find
+                                Providers</a>
+                            <a href="{{ url_for('map_view') }}"><i class="fas fa-map-marked-alt"></i> Provider Map</a>
+                            <a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="carousel-container">
+                <div class="carousel-slide active"> <img
+                        src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1770"
+                        alt="Healthcare network background 1"> </div>
+                <div class="carousel-slide"> <img
+                        src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932"
+                        alt="Healthcare technology background 2"> </div>
+                <div class="carousel-slide"> <img
+                        src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=1770"
+                        alt="Medical data background 3"> </div>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="hero-content">
+                <h1>Build Smarter Healthcare Networks, Instantly.</h1>
+                <p>Our optimization tool provides superior quality of care and robust patient access, while simultaneously driving down network costs.</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary auth-check-button">Go to Find Providers</a>
+                    <a href="#features" class="btn btn-secondary">Discover Features</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>A Data-Driven Approach to Network Design</h2>
+                <p class="section-subtitle">Leverage powerful algorithms to balance cost, quality, and member access,
+                    meeting all your strategic goals and compliance requirements.</p>
+                <div class="features-grid">
+                    <div class="feature-card fade-in-element">
+                        <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h3>Geographic Access Analysis</h3>
+                        <p>Validate network adequacy with precision, ensuring members are within a specified drive time
+                            to essential care.</p>
+                    </div>
+                    <div class="feature-card fade-in-element">
+                        <div class="feature-icon"><i class="fas fa-star-half-alt"></i></div>
+                        <h3>Provider Quality Scoring</h3>
+                        <p>Integrate CMS Star Ratings and other quality metrics to build a high-performing network that
+                            improves member outcomes.</p>
+                    </div>
+                    <div class="feature-card fade-in-element">
+                        <div class="feature-icon"><i class="fas fa-check-double"></i></div>
+                        <h3>Compliance Validation</h3>
+                        <p>Automatically check for provider-to-member ratios and geographic standards to ensure your
+                            network meets regulatory requirements.</p>
+                    </div>
+                    <div class="feature-card fade-in-element">
+                        <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <h3>Cost Impact Modeling</h3>
+                        <p>Analyze and forecast the financial impact of network changes, identifying opportunities for
+                            significant cost savings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="container">
+                <h2>Powered by Trusted Datasets</h2>
+                <div class="logos-grid">
+                    <div class="logo-item"><i class="fas fa-database"></i>
+                        <p>CMS Provider Data</p>
+                    </div>
+                    <div class="logo-item"><i class="fas fa-file-medical-alt"></i>
+                        <p>Medicare Utilization</p>
+                    </div>
+                    <div class="logo-item"><i class="fas fa-hospital"></i>
+                        <p>Hospital Quality Ratings</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Optimize Your Network?</h2>
+                <p>See how our tool can help you reduce costs, improve quality, and ensure compliance. Get started with
+                    our live optimizer now.</p>
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary auth-check-button">Get Started Now</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="login-modal" id="loginModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-view" id="login-view">
+                <h3>Login to Your Account</h3>
+                <form id="loginForm">
+                    <div class="form-group"> <label for="login-email">Email</label> <input type="email"
+                            name="login-email" id="login-email" placeholder="you@example.com" required> </div>
+                    <div class="form-group"> <label for="login-password">Password</label> <input type="password"
+                            name="login-password" id="login-password" placeholder="••••••••" required> </div>
+                    <button type="submit" class="btn btn-primary">Login &rarr;</button>
+                </form>
+                <div class="modal-links">
+                    <a href="#" class="form-link" data-view="forgot-password-view">Forgot password?</a>
+                    &nbsp;&nbsp;·&nbsp;&nbsp;
+                    <a href="#" class="form-link" data-view="signup-view">Sign Up</a>
+                </div>
+            </div>
+            <div class="modal-view" id="signup-view" style="display: none;">
+                <h3>Create an Account</h3>
+                <form id="signupForm">
+                    <div class="form-group"> <label for="signup-name">Full Name</label> <input type="text"
+                            id="signup-name" placeholder="John Doe" required> </div>
+                    <div class="form-group"> <label for="signup-email">Email</label> <input type="email"
+                            id="signup-email" placeholder="you@example.com" required> </div>
+                    <div class="form-group"> <label for="signup-password">Password</label> <input type="password"
+                            id="signup-password" placeholder="••••••••" required> </div>
+                    <button type="submit" class="btn btn-primary">Create Account &rarr;</button>
+                </form>
+                <div class="modal-links"> <a href="#" class="form-link" data-view="login-view">Already have an
+                        account?</a> </div>
+            </div>
+
+            <div class="modal-view" id="forgot-password-view" style="display: none;">
+                <h3>Reset Password</h3>
+                <p>Enter your email to receive a verification code.</p>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="forgot-email">Email</label>
+                        <input type="email" id="forgot-email" placeholder="you@example.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send OTP</button>
+                </form>
+                <div class="modal-links">
+                    <a href="#" class="form-link" data-view="login-view">&larr; Back to Login</a>
+                </div>
+            </div>
+
+            <div class="modal-view" id="otp-view" style="display: none;">
+                <h3>Verify Your Email</h3>
+                <p>An OTP has been sent to <b id="otp-email-display"></b>.</p>
+                <form id="otpForm">
+                    <div class="form-group">
+                        <div class="otp-input-container" id="otp-container">
+                            <input type="number" class="otp-input" maxlength="1"><input type="number"
+                                class="otp-input" maxlength="1"><input type="number" class="otp-input"
+                                maxlength="1"><input type="number" class="otp-input" maxlength="1"><input
+                                type="number" class="otp-input" maxlength="1"><input type="number"
+                                class="otp-input" maxlength="1">
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 1.5rem; font-size: 0.9rem; color: #7f8c8d;">
+                        <span id="resend-timer-text">Resend OTP in <b id="countdown-timer">30</b>s</span>
+                        <a href="#" id="resend-otp-link" class="form-link" style="display: none;">Resend OTP</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verify &rarr;</button>
+                </form>
+            </div>
+
+            <div class="modal-view" id="reset-password-view" style="display: none;">
+                <h3>Set New Password</h3>
+                <p>Please enter your new password below.</p>
+                <form id="resetPasswordForm">
+                    <div class="form-group"> <label for="reset-password">New Password</label> <input type="password"
+                            id="reset-password" placeholder="••••••••" required> </div>
+                    <div class="form-group"> <label for="reset-password-confirm">Confirm New Password</label> <input
+                            type="password" id="reset-password-confirm" placeholder="••••••••" required> </div>
+                    <button type="submit" class="btn btn-primary">Update Password</button>
+                </form>
+            </div>
+
+            <div class="modal-view" id="signup-success-view" style="display: none;">
+                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                <h3>Account Created!</h3>
+                <p>Welcome! You are now logged in.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-notification"></div>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2025 Network Optimizer. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in-element');
+            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+            animatedElements.forEach(element => { observer.observe(element); });
+            let slideIndex = 0;
+            function showSlides() {
+                const slides = document.querySelectorAll(".carousel-slide");
+                slides.forEach(slide => slide.classList.remove('active'));
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                if (slides.length > 0) { slides[slideIndex - 1].classList.add('active'); }
+                setTimeout(showSlides, 5000);
+            }
+            showSlides();
+
+            // --- Get Elements ---
+            const authCheckButtons = document.querySelectorAll('.auth-check-button');
+            const loginModal = document.getElementById('loginModal');
+            const modalCloseBtn = loginModal.querySelector('.modal-close');
+            const modalOverlay = loginModal.querySelector('.modal-overlay');
+            const registerBtn = document.getElementById('register-btn');
+            const profileMenu = document.getElementById('profile-menu');
+            const profileIcon = profileMenu.querySelector('.profile-icon');
+            const dropdownContent = profileMenu.querySelector('.dropdown-content');
+            const logoutButton = document.getElementById('logout-button');
+            const modalViews = document.querySelectorAll('.modal-view');
+            const viewSwitchLinks = document.querySelectorAll('.form-link');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const otpForm = document.getElementById('otpForm');
+            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+            const resetPasswordForm = document.getElementById('resetPasswordForm');
+            const dropdownUsername = document.getElementById('dropdown-username');
+            const dropdownUserEmail = document.getElementById('dropdown-user-email');
+            const toast = document.getElementById('toast-notification');
+            const otpContainer = document.getElementById('otp-container');
+            const otpInputs = otpContainer.querySelectorAll('.otp-input');
+            const otpEmailDisplay = document.getElementById('otp-email-display');
+            const resendTimerText = document.getElementById('resend-timer-text');
+            const countdownTimer = document.getElementById('countdown-timer');
+            const resendOtpLink = document.getElementById('resend-otp-link');
+
+            // --- State for multi-step forms ---
+            let flowData = {};
+            let resendInterval;
+
+            // --- Core Functions ---
+            const showToast = (message, isError = false) => {
+                toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}" style="color: ${isError ? '#e74c3c' : 'var(--success-color)'};"></i> ${message}`;
+                toast.classList.add('show');
+                setTimeout(() => { toast.classList.remove('show'); }, 3000);
+            };
+
+            const updateUI = (user = null) => {
+                const loggedIn = !!user;
+                registerBtn.style.display = loggedIn ? 'none' : 'inline-block';
+                profileMenu.style.display = loggedIn ? 'inline-block' : 'none';
+                if (loggedIn) {
+                    dropdownUsername.textContent = user.username;
+                    dropdownUserEmail.textContent = user.email;
+                }
+            };
+
+            const startResendTimer = () => {
+                clearInterval(resendInterval);
+                resendTimerText.style.display = 'inline';
+                resendOtpLink.style.display = 'none';
+
+                let count = 30;
+                countdownTimer.textContent = count;
+
+                resendInterval = setInterval(() => {
+                    count--;
+                    countdownTimer.textContent = count;
+                    if (count <= 0) {
+                        clearInterval(resendInterval);
+                        resendTimerText.style.display = 'none';
+                        resendOtpLink.style.display = 'inline';
+                    }
+                }, 1000);
+            };
+
+            const showLoginModal = (viewId = 'login-view') => { switchModalView(viewId); loginModal.classList.add('is-visible'); };
+            const hideLoginModal = () => { loginModal.classList.remove('is-visible'); };
+            const switchModalView = (targetViewId) => {
+                modalViews.forEach(view => { view.style.display = view.id === targetViewId ? 'block' : 'none'; });
+                if (targetViewId === 'otp-view') {
+                    startResendTimer();
+                } else {
+                    clearInterval(resendInterval);
+                }
+            };
+
+
+            // --- Event Listeners ---
+            registerBtn.addEventListener('click', (e) => { e.preventDefault(); showLoginModal('signup-view'); });
+
+            authCheckButtons.forEach(button => {
+                button.addEventListener('click', async (event) => {
+                    event.preventDefault();
+                    const response = await fetch('/api/auth/check-auth');
+                    const data = await response.json();
+                    if (data.isLoggedIn) { window.location.href = button.getAttribute('href'); }
+                    else { showLoginModal('login-view'); }
+                });
+            });
+
+            viewSwitchLinks.forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); switchModalView(e.target.dataset.view); }); });
+
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: loginForm['login-email'].value, password: loginForm['login-password'].value })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    // --- JWT CHANGE ---
+                    // Store the access token from the response in localStorage.
+                    if (result.access_token) {
+                        localStorage.setItem('accessToken', result.access_token);
+                    }
+                    hideLoginModal();
+                    updateUI(result.user);
+                    showToast(`Welcome back, ${result.user.username}!`);
+                } else { showToast(result.message, true); }
+            });
+
+            signupForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                flowData = {
+                    name: signupForm['signup-name'].value,
+                    email: signupForm['signup-email'].value,
+                    password: signupForm['signup-password'].value,
+                    context: 'register'
+                };
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: flowData.name, email: flowData.email })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    showToast('Verification OTP sent to your email.');
+                    otpEmailDisplay.textContent = flowData.email;
+                    switchModalView('otp-view');
+                } else { showToast(result.message, true); }
+            });
+
+            forgotPasswordForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                flowData = {
+                    email: forgotPasswordForm['forgot-email'].value,
+                    context: 'reset'
+                };
+                const response = await fetch('/api/auth/forgot-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: flowData.email })
+                });
+                const result = await response.json();
+                showToast(result.message, !result.success);
+                if (result.success) {
+                    otpEmailDisplay.textContent = flowData.email;
+                    switchModalView('otp-view');
+                }
+            });
+
+            resendOtpLink.addEventListener('click', async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (!flowData || !flowData.context) {
+                    showToast('Session data lost. Please start over.', true);
+                    switchModalView('login-view');
+                    return;
+                }
+
+                let url, body;
+                if (flowData.context === 'register') {
+                    url = '/api/auth/register';
+                    body = { name: flowData.name, email: flowData.email };
+                } else if (flowData.context === 'reset') {
+                    url = '/api/auth/forgot-password';
+                    body = { email: flowData.email };
+                } else {
+                    return;
+                }
+
+                try {
+                    await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(body)
+                    });
+                    switchModalView('otp-view');
+                    showToast('A new OTP has been sent.', false);
+                    startResendTimer();
+
+                } catch (err) {
+                    showToast('Failed to resend OTP. Please try again later.', true);
+                }
+            });
+
+            otpForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const otp = Array.from(otpInputs).map(input => input.value).join('');
+                flowData.otp = otp;
+
+                let url, body;
+                if (flowData.context === 'register') {
+                    url = '/api/auth/verify-and-register';
+                    body = { name: flowData.name, email: flowData.email, password: flowData.password, otp: flowData.otp };
+                } else if (flowData.context === 'reset') {
+                    url = '/api/auth/verify-reset-otp';
+                    body = { email: flowData.email, otp: flowData.otp };
+                }
+
+                const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+                const result = await response.json();
+
+                if (result.success) {
+                    if (flowData.context === 'register') {
+                        switchModalView('signup-success-view');
+                        setTimeout(() => {
+                            hideLoginModal();
+                            updateUI(result.user);
+                            showToast(`Welcome, ${result.user.username}!`);
+                        }, 2000);
+                    } else if (flowData.context === 'reset') {
+                        showToast(result.message);
+                        switchModalView('reset-password-view');
+                    }
+                } else {
+                    showToast(result.message, true);
+                    otpContainer.classList.add('shake');
+                    setTimeout(() => otpContainer.classList.remove('shake'), 600);
+                }
+            });
+
+            resetPasswordForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const newPassword = resetPasswordForm['reset-password'].value;
+                const confirmPassword = resetPasswordForm['reset-password-confirm'].value;
+
+                if (newPassword !== confirmPassword) {
+                    showToast("Passwords do not match.", true);
+                    return;
+                }
+                if (newPassword.length < 6) {
+                    showToast("Password must be at least 6 characters.", true);
+                    return;
+                }
+
+                const response = await fetch('/api/auth/reset-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: flowData.email, otp: flowData.otp, password: newPassword })
+                });
+
+                const result = await response.json();
+                showToast(result.message, !result.success);
+                if (result.success) {
+                    switchModalView('login-view');
+                }
+            });
+
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', () => { if (input.value && index < otpInputs.length - 1) { otpInputs[index + 1].focus(); } });
+                input.addEventListener('keydown', (e) => { if (e.key === 'Backspace' && !input.value && index > 0) { otpInputs[index - 1].focus(); } });
+            });
+
+            modalCloseBtn.addEventListener('click', hideLoginModal);
+            modalOverlay.addEventListener('click', hideLoginModal);
+
+            logoutButton.addEventListener('click', async (e) => {
+                e.preventDefault();
+
+                // --- JWT CHANGE ---
+                // Remove the token from localStorage on logout.
+                localStorage.removeItem('accessToken');
+
+                await fetch('/api/auth/logout', { method: 'POST' });
+                // We don't need to call updateUI here because the page will reload
+                window.location.href = '{{ url_for("home") }}';
+            });
+
+            profileIcon.addEventListener('click', () => dropdownContent.classList.toggle('show'));
+            window.addEventListener('click', (e) => { if (!profileMenu.contains(e.target)) { dropdownContent.classList.remove('show'); } });
+
+            // --- Initial Load Check ---
+            const checkInitialAuth = async () => {
+                // This function still works perfectly for checking the initial page state
+                // based on the server-side session.
+                const response = await fetch('/api/auth/check-auth');
+                const data = await response.json();
+                updateUI(data.isLoggedIn ? data.user : null);
+            };
+            checkInitialAuth();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Suggestions | Network Optimizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #088395;
+            --secondary-color: #0A4D68;
+            --accent-color: #ff6f61;
+            --text-color: #34495e;
+            --light-bg: #f8f9fa;
+            --white-color: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --font-family: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-family); line-height: 1.7; color: var(--text-color); background-color: var(--light-bg); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--secondary-color); }
+        .header { background: var(--white-color); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; padding: 1rem 0; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.8rem; font-weight: 700; color: var(--secondary-color); text-decoration: none; }
+        .nav-logo i { color: var(--primary-color); }
+        .nav-right { display: flex; gap: 1.5rem; }
+        .nav-link { text-decoration: none; color: white; font-weight: 500;background-color: #ff6f61;padding: 12px 28px;border-radius: 8px }
+        .nav-link:hover { background-color: #e65a50; }
+        .member-input-section { padding: 80px 0; text-align: center; background: var(--white-color); }
+        .member-input-section h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .member-input-section p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem auto; color: #7f8c8d; }
+        .input-box { display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 0 auto; background-color: var(--white-color); padding: 10px; border-radius: 12px; box-shadow: var(--shadow); }
+        .input-box input { width: 100%; border: none; padding: 15px; font-size: 1rem; font-family: var(--font-family); border-radius: 8px; background: var(--light-bg); }
+        .input-box input:focus { outline: none; box-shadow: 0 0 0 2px var(--primary-color); }
+        .btn { display: inline-block; padding: 14px 32px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; white-space: nowrap; }
+        .btn-primary { background-color: var(--accent-color); color: var(--white-color); }
+        .btn-primary:hover { background-color: #e65a50; transform: translateY(-3px); box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4); }
+        .results-section { padding: 60px 0 80px 0; background-color: var(--light-bg); }
+        .results-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .map-view-container { margin-bottom: 3rem; }
+        #map { width: 100%; height: 500px; border-radius: 12px; box-shadow: var(--shadow); z-index: 1; }
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+        .provider-card { background-color: var(--white-color); border-radius: 12px; box-shadow: var(--shadow); padding: 1.5rem; border: 1px solid var(--border-color); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .provider-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .provider-card h3 { font-size: 1.3rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .provider-card .specialty { font-weight: 500; color: var(--secondary-color); margin-bottom: 1rem; display: block; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.95rem; }
+        .info-item { display: flex; align-items: center; gap: 8px; color: #555; }
+        .info-item i { color: var(--primary-color); width: 18px; text-align: center; }
+        .info-item b { font-weight: 600; }
+        .how-it-works-section { padding: 80px 0; background-color: var(--white-color); }
+        .how-it-works-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; }
+        .steps-container { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; }
+        .step-card { flex: 1; text-align: center; position: relative; }
+        .step-icon { width: 90px; height: 90px; margin: 0 auto 1.5rem auto; background-color: var(--white-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid var(--primary-color); transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .step-icon i { font-size: 2.5rem; color: var(--primary-color); transition: all 0.3s ease; }
+        .step-card:hover .step-icon { background-color: var(--primary-color); }
+        .step-card:hover .step-icon i { color: var(--white-color); }
+        .step-card h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .step-card p { font-size: 0.95rem; color: #7f8c8d; padding: 0 10px; }
+        .step-arrow { display: flex; align-items: center; flex-grow: 1; margin: 0 1rem; margin-top: 45px; height: 3px; background: linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%, transparent 100%); background-size: 10px 3px; }
+        .footer { background-color: var(--secondary-color); color: #a7c4cc; padding: 50px 0 20px 0; }
+        .footer-bottom { text-align: center; border-top: 1px solid #3a6b80; padding-top: 1.5rem; font-size: 0.9rem; }
+        .modal-overlay { position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-overlay .modal-content { background-color: var(--white-color); padding: 2rem 3rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); transform: scale(0.9); transition: transform 0.3s ease; position: relative; width: 90%; max-width: 550px; text-align: left;}
+        .modal-overlay.show .modal-content { transform: scale(1); }
+        .modal-overlay #loadingContent .spinner { border: 6px solid #f3f3f3; border-top: 6px solid var(--primary-color); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 1.5rem auto; }
+        .modal-overlay #loadingContent { text-align: center; }
+        .modal-overlay h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .modal-overlay p { color: #7f8c8d; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .modal-close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: #aaa; cursor: pointer; line-height: 1; }
+        .modal-close-btn:hover { color: #333; }
+        #providerDetailsModal h2, #confirmationModal h2 { margin-bottom: 1.5rem; }
+        .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .details-item { font-size: 1rem; }
+        .details-item strong { display: block; color: var(--secondary-color); font-weight: 600; margin-bottom: 0.25rem; }
+        .details-item span { color: #555; }
+        #appointmentForm { display: none; }
+        #appointmentForm .input-group { margin-bottom: 1rem; }
+        #appointmentForm label { font-weight: 500; display: block; margin-bottom: 0.5rem; }
+        #appointmentForm input, #appointmentForm select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: var(--font-family); font-size: 0.95rem; }
+        #confirmationModal .modal-content { text-align: center; max-width: 450px; }
+        .success-icon { font-size: 4rem; color: #27ae60; margin-bottom: 1.5rem; }
+        
+        /* --- Notification Styling --- */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%, -150%);
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 9999;
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
+        }
+        .notification.show {
+            transform: translate(-50%, 0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) { .steps-container { flex-direction: column; align-items: center; gap: 2rem; } .step-arrow { transform: rotate(90deg); margin: 0; width: 3px; height: 40px; } }
+        @media (max-width: 768px) { .provider-grid { grid-template-columns: 1fr; } .details-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="nav-logo"><i class="fas fa-network-wired"></i> Smart Care Optimizer</a>
+                <div class="nav-right">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/map" class="nav-link">Provider Map</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="member-input-section">
+            <div class="container">
+                <h1>Find Your Top Providers</h1>
+                <p>Enter your Member ID to receive a ranked list of the highest-quality, most cost-effective providers, personalized for you.</p>
+                <div class="input-box">
+                    <input type="text" id="memberIdInput" placeholder="Enter Member ID (e.g., M001, M100 etc.)">
+                    <button id="findProvidersBtn" class="btn btn-primary">Find Providers</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section" style="display: none;">
+            <div class="container">
+                <h2>Your Top Recommended Providers</h2>
+                <div class="map-view-container">
+                    <div id="map"></div>
+                </div>
+                <div class="provider-grid" id="provider-results-grid"></div>
+            </div>
+        </section>
+
+        <section class="how-it-works-section">
+            <div class="container">
+                <h2>How It Works: A Simple 4-Step Process</h2>
+                <div class="steps-container">
+                    <div class="step-card"><div class="step-icon"><i class="fas fa-keyboard"></i></div><h3>1. Enter Your Input</h3><p>Start by entering a Member ID to begin the provider search.</p></div>
+                    <div class="step-arrow"></div>
+                    <div class="step-card"><div class="step-icon"><i class="fas fa-cogs"></i></div><h3>2. Run Analysis</h3><p>Our models rank nearby providers on quality, cost, and specialty match.</p></div>
+                    <div class="step-arrow"></div>
+                    <div class="step-card"><div class="step-icon"><i class="fas fa-list-check"></i></div><h3>3. Review Results</h3><p>See your top matches with clear scores and cost estimates.</p></div>
+                    <div class="step-arrow"></div>
+                    <div class="step-card"><div class="step-icon"><i class="fas fa-hand-pointer"></i></div><h3>4. Make Your Choice</h3><p>Use the data to choose the best provider for your needs.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><div class="footer-bottom"><p>© 2025 Network Optimizer. All Rights Reserved.</p></div></div>
+    </footer>
+
+    <div id="loadingModal" class="modal-overlay">
+        <div class="modal-content" id="loadingContent">
+            <div class="spinner"></div>
+            <h2 id="loading-title">Analyzing Providers</h2>
+            <p id="loading-text">Running our models to find your best match...</p>
+        </div>
+    </div>
+    <div id="providerDetailsModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close-btn">×</span>
+            <div id="providerInfo">
+                <h2 id="modal-provider-name">Provider Name</h2>
+                <div class="details-grid">
+                    <div class="details-item"><strong>Primary Specialty</strong><span id="modal-primary-spec"></span></div>
+                    <div class="details-item"><strong>Secondary Specialty</strong><span id="modal-secondary-spec"></span></div>
+                    <div class="details-item"><strong>Hospital</strong><span id="modal-hospital"></span></div>
+                    <div class="details-item"><strong>State</strong><span id="modal-state"></span></div>
+                    <div class="details-item"><strong>Address</strong><span id="modal-address"></span></div>
+                    <div class="details-item"><strong>Phone</strong><span id="modal-phone"></span></div>
+                    <div class="details-item"><strong>Quality Score</strong><span id="modal-rating"></span></div>
+                    <div class="details-item"><strong>Distance</strong><span id="modal-distance"></span></div>
+                    <div class="details-item"><strong>Your Share</strong><span id="modal-member-share"></span></div>
+                    <div class="details-item"><strong>Insurance Pays</strong><span id="modal-insurance-payment"></span></div>
+                </div>
+                <button class="btn btn-primary" id="showAppointmentFormBtn">Make an Appointment</button>
+            </div>
+            <div id="appointmentForm">
+                <h2>Book an Appointment</h2>
+                <form>
+                    <div class="input-group"><label for="appt-name">Your Name</label><input type="text" id="appt-name" required></div>
+                    <div class="input-group"><label for="appt-contact">Contact No.</label><input type="tel" id="appt-contact" required></div>
+                    <div class="input-group"><label for="appt-date">Preferred Date</label><input type="date" id="appt-date" required></div>
+                    <div class="input-group"><label for="appt-time">Preferred Time</label><input type="time" id="appt-time" required></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; margin-top: 1rem;">Confirm Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="confirmationModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Appointment Confirmed!</h2>
+            <p>Your request has been sent. A confirmation email is on its way.</p>
+            <button class="btn btn-primary" id="viewReportBtn" style="margin-top: 1.5rem; width: auto;">View Report</button>
+        </div>
+    </div>
+    <div id="reportModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 800px; height: 90vh; display: flex; flex-direction: column;">
+            <span class="modal-close-btn">×</span>
+            <h2>Provider Report</h2>
+            <iframe id="report-viewer" style="width: 100%; height: 100%; border: 1px solid var(--border-color); flex-grow: 1;"></iframe>
+            <button class="btn btn-primary" id="downloadReportBtn" style="margin-top: 1.5rem; width: auto; align-self: center;">Download Report</button>
+        </div>
+    </div>
+    
+    <div id="notification" class="notification"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcN4HTut5WWjRN0oWH7cL-Nxeyko9WJzg"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- DOM Elements ---
+        const enterButton = document.getElementById('findProvidersBtn');
+        const memberIdInput = document.getElementById('memberIdInput');
+        const loadingModal = document.getElementById('loadingModal');
+        const resultsSection = document.getElementById('results-section');
+        const resultsGrid = document.getElementById('provider-results-grid');
+        const detailsModal = document.getElementById('providerDetailsModal');
+        const detailsModalCloseBtn = detailsModal.querySelector('.modal-close-btn');
+        const showAppointmentFormBtn = document.getElementById('showAppointmentFormBtn');
+        const appointmentForm = document.getElementById('appointmentForm');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const viewReportBtn = document.getElementById('viewReportBtn');
+        const reportModal = document.getElementById('reportModal');
+        const reportModalCloseBtn = reportModal.querySelector('.modal-close-btn');
+        const downloadReportBtn = document.getElementById('downloadReportBtn');
+        const reportViewer = document.getElementById('report-viewer');
+        const notificationElement = document.getElementById('notification');
+
+        // --- State Variables ---
+        let map = null;
+        let markers = [];
+        let currentProviders = [];
+        let selectedProvider = null;
+        let infoWindow = null;
+        let notificationTimeout;
+        const currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
+        // --- JWT Authentication ---
+        const getAuthHeaders = () => {
+            const token = localStorage.getItem('accessToken');
+            if (!token) {
+                console.error("Authentication token not found. You must log in first.");
+                if (window.location.pathname !== '/') {
+                    window.location.href = "/";
+                }
+                return null;
+            }
+            return {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            };
+        };
+
+        // --- Notification Function ---
+        const showNotification = (message) => {
+            clearTimeout(notificationTimeout);
+            notificationElement.textContent = message;
+            notificationElement.classList.add('show');
+            notificationTimeout = setTimeout(() => {
+                notificationElement.classList.remove('show');
+            }, 4000); // Notification stays for 4 seconds
+        };
+
+        // --- API & Core Logic ---
+        const handleFindProviders = async () => {
+            const memberId = memberIdInput.value.trim();
+            if (!memberId) {
+                alert("Please enter a Member ID!");
+                memberIdInput.focus();
+                return;
+            }
+
+            const headers = getAuthHeaders();
+            if (!headers) return;
+
+            loadingModal.classList.add('show');
+            resultsGrid.innerHTML = '';
+
+            try {
+                const response = await fetch('/api/find-providers', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify({ member_id: memberId })
+                });
+
+                if (response.status === 401) throw new Error("Authentication failed. Your session may have expired. Please log in again.");
+
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.message || "Failed to fetch providers.");
+
+                currentProviders = data.providers;
+                resultsSection.style.display = 'block';
+                displayMap(currentProviders, data.member_location);
+                displayProviders(currentProviders);
+
+                if (currentProviders.length === 0) {
+                    resultsGrid.innerHTML = `<p style="text-align: center; grid-column: 1 / -1;">No providers found for Member ID "${memberId}".</p>`;
+                }
+                setTimeout(() => resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+            } catch (error) {
+                console.error('Find Providers Error:', error);
+                alert(`Error: ${error.message}`);
+                resultsSection.style.display = 'block';
+                resultsGrid.innerHTML = `<p style="text-align: center; grid-column: 1 / -1;">Could not load provider data. Please try again.</p>`;
+                if (error.message.includes("expired")) {
+                    setTimeout(() => window.location.href = "/", 3000);
+                }
+            } finally {
+                loadingModal.classList.remove('show');
+            }
+        };
+
+        const handleBookingSubmit = async (e) => {
+            e.preventDefault();
+            const headers = getAuthHeaders();
+            if (!headers || !selectedProvider) return;
+
+            const appointmentData = {
+                provider_id: selectedProvider.provider_id,
+                provider_name: selectedProvider.name,
+                patient_name: document.getElementById('appt-name').value,
+                contact_no: document.getElementById('appt-contact').value,
+                appointment_date: document.getElementById('appt-date').value,
+                appointment_time: document.getElementById('appt-time').value
+            };
+            if (Object.values(appointmentData).some(val => !val)) {
+                alert("Please fill out all appointment fields.");
+                return;
+            }
+            try {
+                const response = await fetch('/api/book-appointment', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(appointmentData)
+                });
+                const result = await response.json();
+                if (!response.ok) throw new Error(result.message);
+
+                detailsModal.classList.remove('show');
+                confirmationModal.classList.add('show');
+                // Show the notification on successful booking
+                showNotification("An email with your appointment details has been sent.");
+
+            } catch (err) {
+                console.error("Booking failed:", err);
+                alert(`Booking Failed: ${err.message}`);
+            }
+        };
+
+        const handleViewReport = async () => {
+            confirmationModal.classList.remove("show");
+            if (!selectedProvider || !memberIdInput.value.trim()) {
+                alert("Cannot generate report: Missing member or provider info.");
+                return;
+            }
+
+            loadingModal.querySelector('#loading-title').textContent = 'Generating Your Report';
+            loadingModal.querySelector('#loading-text').textContent = 'Please wait a moment...';
+            loadingModal.classList.add('show');
+
+            const headers = getAuthHeaders();
+            if (!headers) return;
+
+            try {
+                const reportResponse = await fetch("/api/generate-report", {
+                    method: "POST",
+                    headers: headers,
+                    body: JSON.stringify({
+                        member_id: memberIdInput.value.trim(),
+                        provider_id: selectedProvider.provider_id
+                    })
+                });
+
+                if (!reportResponse.ok) throw new Error("Report generation failed on the server.");
+
+                const blob = await reportResponse.blob();
+                const url = window.URL.createObjectURL(blob);
+                const fileName = `${selectedProvider.name}_Report.pdf`;
+
+                reportViewer.src = url;
+                downloadReportBtn.dataset.blobUrl = url;
+                downloadReportBtn.dataset.fileName = fileName;
+
+                reportModal.classList.add('show');
+
+            } catch (err) {
+                console.error(err);
+                alert("Sorry, we couldn't generate the report. Please try again.");
+            } finally {
+                loadingModal.classList.remove('show');
+            }
+        };
+
+        // --- Display & UI Functions ---
+        function displayProviders(providers) {
+             resultsGrid.innerHTML = "";
+            providers.forEach(provider => {
+                const cardHTML = `
+                    <div class="provider-card" data-provider-id="${provider.provider_id}">
+                        <h3>${provider.name}</h3>
+                        <span class="specialty">${provider.specialty}</span>
+                        <div class="info-grid">
+                            <div class="info-item"><i class="fas fa-star"></i><span>Quality: <b>${provider.quality_score} / 10.0</b></span></div>
+                            <div class="info-item"><i class="fas fa-route"></i><span>${provider.distance_miles.toFixed(1)} miles away</span></div>
+                            <div class="info-item"><i class="fas fa-hospital"></i><span><b>${provider.hospital_affiliation}</b></span></div>
+                        </div>
+                    </div>`;
+                resultsGrid.innerHTML += cardHTML;
+            });
+        }
+        function displayMap(providers, memberLocation) {
+             const memberLatLng = { lat: memberLocation.lat, lng: memberLocation.lon };
+            if (!map) {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: memberLatLng, zoom: 10, mapTypeControl: false, streetViewControl: false,
+                });
+                infoWindow = new google.maps.InfoWindow();
+            }
+            markers.forEach(marker => marker.setMap(null));
+            markers = [];
+            const bounds = new google.maps.LatLngBounds();
+            const memberMarker = new google.maps.Marker({
+                position: memberLatLng, map: map, title: "Your Location",
+                icon: {
+                    path: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z', fillColor: '#088395',
+                    fillOpacity: 1, strokeWeight: 0, scale: 1.5, anchor: new google.maps.Point(12, 24)
+                }
+            });
+            markers.push(memberMarker);
+            bounds.extend(memberLatLng);
+            memberMarker.addListener('click', () => {
+                infoWindow.setContent("<b>Your Location</b>");
+                infoWindow.open(map, memberMarker);
+            });
+            providers.forEach(p => {
+                const providerLatLng = { lat: p.latitude, lng: p.longitude };
+                const marker = new google.maps.Marker({ position: providerLatLng, map: map, title: p.name });
+                marker.addListener('click', () => {
+                    infoWindow.setContent(`<b>${p.name}</b><br>${p.specialty}`);
+                    infoWindow.open(map, marker);
+                });
+                markers.push(marker);
+                bounds.extend(providerLatLng);
+            });
+            setTimeout(() => {
+                google.maps.event.trigger(map, "resize");
+                if (providers.length > 0) map.fitBounds(bounds);
+                else { map.setCenter(memberLatLng); map.setZoom(12); }
+                google.maps.event.addListenerOnce(map, "idle", () => { if (map.getZoom() > 15) map.setZoom(15); });
+            }, 200);
+        }
+        function openDetailsModal(provider) {
+            selectedProvider = provider;
+            document.getElementById('providerInfo').style.display = 'block';
+            appointmentForm.style.display = 'none';
+            appointmentForm.querySelector('form').reset();
+            document.getElementById('modal-provider-name').textContent = provider.name;
+            document.getElementById('modal-primary-spec').textContent = provider.specialty;
+            document.getElementById('modal-secondary-spec').textContent = provider.secondary_specialty || 'N/A';
+            document.getElementById('modal-hospital').textContent = provider.hospital_affiliation;
+            document.getElementById('modal-state').textContent = provider.state;
+            document.getElementById('modal-address').textContent = provider.address;
+            document.getElementById('modal-phone').textContent = provider.phone_no;
+            document.getElementById('modal-rating').textContent = `${provider.quality_score} / 10.0`;
+            document.getElementById('modal-distance').textContent = `${provider.distance_miles.toFixed(1)} miles away`;
+            document.getElementById('modal-member-share').textContent = currencyFormatter.format(provider.member_share);
+            document.getElementById('modal-insurance-payment').textContent = currencyFormatter.format(provider.insurance_payment);
+            detailsModal.classList.add('show');
+        }
+
+        // --- Event Listeners ---
+        enterButton.addEventListener('click', handleFindProviders);
+        memberIdInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') { event.preventDefault(); handleFindProviders(); }
+        });
+        resultsGrid.addEventListener('click', (event) => {
+            const card = event.target.closest('.provider-card');
+            if (card) {
+                const provider = currentProviders.find(p => p.provider_id == card.dataset.providerId);
+                if (provider) openDetailsModal(provider);
+            }
+        });
+        detailsModalCloseBtn.addEventListener('click', () => detailsModal.classList.remove('show'));
+        detailsModal.addEventListener('click', (event) => { if (event.target === detailsModal) detailsModal.classList.remove('show'); });
+        showAppointmentFormBtn.addEventListener('click', () => {
+            document.getElementById('providerInfo').style.display = 'none';
+            appointmentForm.style.display = 'block';
+        });
+        appointmentForm.querySelector('form').addEventListener('submit', handleBookingSubmit);
+        viewReportBtn.addEventListener("click", handleViewReport);
+        confirmationModal.addEventListener("click", (event) => { if (event.target === confirmationModal) confirmationModal.classList.remove("show"); });
+        reportModalCloseBtn.addEventListener('click', () => reportModal.classList.remove('show'));
+        reportModal.addEventListener('click', (event) => { if (event.target === reportModal) { reportModal.classList.remove('show'); } });
+        downloadReportBtn.addEventListener('click', () => {
+            const url = downloadReportBtn.dataset.blobUrl;
+            const fileName = downloadReportBtn.dataset.fileName;
+            if (!url || !fileName) return;
+            const a = document.createElement("a");
+            a.style.display = 'none'; a.href = url; a.download = fileName;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        });
+
+        if (window.location.pathname !== '/') {
+            getAuthHeaders();
+        }
+    });
+    </script>
+</body>
+</html>

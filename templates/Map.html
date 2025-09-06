@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Map View | Network Optimizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #088395;
+            --secondary-color: #0A4D68;
+            --accent-color: #ff6f61;
+            --success-color: #2ecc71;
+            --text-color: #34495e;
+            --light-bg: #f8f9fa;
+            --white-color: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --font-family: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); line-height: 1.6; color: var(--text-color); background-color: var(--light-bg); display: flex; flex-direction: column; min-height: 100vh; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+        .header { background: var(--white-color); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; padding: 1rem 0; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.8rem; font-weight: 700; color: var(--secondary-color); text-decoration: none; }
+        .nav-logo i { color: var(--primary-color); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .main-content { display: flex; flex: 1; }
+        .filter-sidebar { width: 320px; background: var(--white-color); padding: 2rem; box-shadow: 2px 0 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; flex-shrink: 0; overflow-y: auto; }
+        .filter-sidebar h2 { font-size: 1.5rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; }
+        .filter-group { margin-bottom: 1.5rem; }
+        .filter-group label { display: block; font-weight: 600; margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .filter-group select, .filter-group input[type="text"] { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #ccc; font-family: var(--font-family); font-size: 1rem; background-color: #f9f9f9; }
+        .btn { display: inline-block; width: 100%; text-align: center; padding: 14px 32px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; }
+        .btn-primary { background-color: var(--accent-color); color: var(--white-color); }
+        .btn-primary:hover { background-color: #e65a50; }
+        .map-container { flex: 1; position: relative; }
+        #map { width: 100%; height: 100%; }
+
+        .static-map-label {
+            transform: translateY(-2.5em);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 3px solid var(--primary-color);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            font-weight: 500;
+            font-size: 13px !important;
+            color: var(--text-color) !important;
+            padding: 4px 8px;
+            white-space: nowrap;
+        }
+
+        .gm-style .gm-style-iw-c { padding: 0 !important; border-radius: 8px !important; box-shadow: var(--shadow) !important; }
+        .gm-style .gm-style-iw-d { overflow: auto !important; }
+        .gm-popup-content { font-family: var(--font-family); padding: 15px 20px; width: 400px; box-sizing: border-box; }
+        .gm-popup-content h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: var(--secondary-color); }
+        .gm-popup-content p { margin: 6px 0; color: var(--text-color); font-size: 0.95rem; line-height: 1.5; }
+        .gm-popup-content .popup-btn { background-color: var(--accent-color); color: var(--white-color); border: none; border-radius: 6px; padding: 10px 12px; margin-top: 15px; width: 100%; cursor: pointer; font-size: 1rem; font-family: var(--font-family); font-weight: 500; transition: background-color 0.3s ease; }
+        .gm-popup-content .popup-btn:hover { background-color: #e65a50; }
+
+        .modal-overlay { position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-content { background-color: var(--white-color); padding: 2.5rem; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.2); transform: scale(0.9); transition: transform 0.3s ease; width: 90%; position: relative; }
+        .modal-overlay.show .modal-content { transform: scale(1); }
+        .modal-close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: #aaa; cursor: pointer; line-height: 1; }
+        #confirmationModal .modal-content { max-width: 400px; text-align: center; }
+        #confirmationModal .icon { font-size: 4rem; color: var(--success-color); margin-bottom: 1rem; }
+        #bookingModal .modal-content { max-width: 700px; text-align: left; }
+        .form-row { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+        .form-group { flex: 1; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-group input { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #ccc; font-family: var(--font-family); font-size: 1rem; }
+        .notification-toast { position: fixed; top: 20px; right: -100%; background-color: var(--secondary-color); color: var(--white-color); padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 15px; z-index: 9999; font-weight: 500; transition: right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .notification-toast.show { right: 20px; }
+        .notification-toast::before { content: '✓'; font-weight: bold; color: #27ae60; font-size: 1.2rem; }
+        @media (max-width: 768px) { .form-row { flex-direction: column; gap: 0; } .form-row .form-group { margin-bottom: 1rem; } }
+        @media (max-width: 1024px) { .main-content { flex-direction: column; } .filter-sidebar { width: 100%; height: auto; box-shadow: none; border-bottom: 1px solid var(--border-color); } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="nav-logo"><i class="fas fa-network-wired"></i> Smart Care Optimizer</a>
+                <div class="nav-links">
+                    <a href="/" class="btn btn-primary">Home</a>
+                    <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notificationToast" class="notification-toast">
+        <span id="notificationMessage"></span>
+    </div>
+
+    <main class="main-content">
+        <aside class="filter-sidebar">
+            <h2>Filter Providers</h2>
+            <div id="filters">
+                <div class="filter-group">
+                    <label for="filter-state">State</label>
+                    <select id="filter-state">
+                        <option value="all" selected>All States</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="IL">Illinois</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NY">New York</option>
+                        <option value="OH">Ohio</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="TX">Texas</option>
+                        <option value="WA">Washington</option>
+                    </select>
+                </div>
+                 <div class="filter-group">
+                    <label for="filter-name">Provider Name</label>
+                    <input type="text" id="filter-name" placeholder="Enter provider name...">
+                </div>
+                <div class="filter-group">
+                    <label for="filter-specialty">Specialty</label>
+                    <select id="filter-specialty">
+                        <option value="all">All Specialties</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-rating">Rating</label>
+                    <select id="filter-rating">
+                        <option value="0">Any Rating</option>
+                        <option value="4.5">4.5 Stars & Up</option>
+                        <option value="4">4 Stars & Up</option>
+                        <option value="3">3 Stars & Up</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+        <section class="map-container"><div id="map"></div></section>
+    </main>
+
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close-btn" id="closeBookingBtn">&times;</span>
+            <h2 id="bookingModalTitle">Book an Appointment</h2>
+            <form id="bookingForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group"><label for="appt-name">Your Name</label><input type="text" id="appt-name" required></div>
+                    <div class="form-group"><label for="appt-contact">Contact No.</label><input type="tel" id="appt-contact" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label for="appt-date">Preferred Date</label><input type="date" id="appt-date" required></div>
+                    <div class="form-group"><label for="appt-time">Preferred Time</label><input type="time" id="appt-time" required></div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top: 1rem;">Confirm Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmationModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close-btn" id="closeConfirmationBtn">&times;</span>
+            <div class="icon"><i class="fas fa-check-circle"></i></div>
+            <h2>Success!</h2>
+            <p id="confirmationMessage">Thank you for booking!</p>
+            <button id="okConfirmationBtn" class="btn btn-primary" style="margin-top: 1rem;">OK</button>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcN4HTut5WWjRN0oWH7cL-Nxeyko9WJzg&callback=initMap" async defer></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <script>
+    let map;
+    let infoWindow;
+    let clustererInstance = null;
+    let allProviders = [];
+
+    function initMap() {
+        const stateCenters = { "all": { lat: 39.82, lng: -98.57 }, "NY": { lat: 40.75, lng: -73.98 }, "WA": { lat: 47.60, lng: -122.33 }, "FL": { lat: 27.99, lng: -81.76 }, "AZ": { lat: 34.04, lng: -111.09 }, "CA": { lat: 36.77, lng: -119.41 }, "CO": { lat: 39.55, lng: -105.78 }, "GA": { lat: 32.16, lng: -82.90 }, "IL": { lat: 40.63, lng: -89.39 }, "MA": { lat: 42.40, lng: -71.38 }, "MI": { lat: 44.31, lng: -85.60 }, "NC": { lat: 35.75, lng: -79.01 }, "NV": { lat: 38.80, lng: -116.41 }, "OH": { lat: 40.41, lng: -82.90 }, "PA": { lat: 41.20, lng: -77.19 }, "TX": { lat: 31.96, lng: -99.90 }};
+        let selectedProviderForBooking = null;
+
+        map = new google.maps.Map(document.getElementById('map'), { center: stateCenters.all, zoom: 4, mapTypeControl: false, streetViewControl: false });
+        infoWindow = new google.maps.InfoWindow();
+
+        // --- ADDED: Force map to resize after initial load ---
+        // This fixes the issue where the map doesn't render on the first visit.
+        setTimeout(() => {
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(stateCenters.all);
+        }, 200); // A small delay allows the browser layout to finish.
+
+        const stateFilter = document.getElementById('filter-state');
+        const specialtyFilter = document.getElementById('filter-specialty');
+        const ratingFilter = document.getElementById('filter-rating');
+        const nameFilter = document.getElementById('filter-name');
+        const bookingModal = document.getElementById('bookingModal');
+        const closeBookingBtn = document.getElementById('closeBookingBtn');
+        const bookingModalTitle = document.getElementById('bookingModalTitle');
+        const bookingForm = document.getElementById('bookingForm');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const closeConfirmationBtn = document.getElementById('closeConfirmationBtn');
+        const okConfirmationBtn = document.getElementById('okConfirmationBtn');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        const notificationToast = document.getElementById('notificationToast');
+        const notificationMessage = document.getElementById('notificationMessage');
+        let notificationTimeout;
+
+        const getAuthHeaders = () => {
+            const token = localStorage.getItem('accessToken');
+            if (!token) {
+                alert("Authentication error. Please log in.");
+                window.location.href = "/";
+                return null;
+            }
+            return { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` };
+        };
+
+        function showNotification(message, duration = 5000) {
+            clearTimeout(notificationTimeout);
+            notificationMessage.textContent = message;
+            notificationToast.classList.add('show');
+            notificationTimeout = setTimeout(() => { notificationToast.classList.remove('show'); }, duration);
+        }
+
+        async function loadProviders() {
+            const headers = getAuthHeaders();
+            if (!headers) return;
+            try {
+                const res = await fetch('/api/get-all-providers', { headers });
+                if (res.status === 401) throw new Error('Session expired. Please log in again.');
+                if (!res.ok) throw new Error('Failed to fetch provider data from the server.');
+
+                const data = await res.json();
+                allProviders = data.map(normalizeProvider).filter(p => p.lat && p.lng);
+                populateDynamicFilters(allProviders);
+                applyFilters();
+            } catch (err) {
+                console.error(err);
+                alert(err.message);
+                if (err.message.includes("expired")) window.location.href = "/";
+            }
+        }
+
+        function normalizeProvider(p) {
+            return {
+                id: p.provider_id, name: p.name || "Unknown Provider", city: p.city || "", state: p.state || "NA", lat: Number(p.latitude), lng: Number(p.longitude),
+                primary_specialty: p.specialty || "General", secondary_specialty: p.secondary_specialty || "—",
+                rating: Number(p.patient_rating || 0), hospital: p.hospital_affiliation || "—", contact: p.phone_no || "N/A", address: p.address || "Address not available"
+            };
+        }
+
+        function populateDynamicFilters(list) {
+            const specs = [...new Set(list.map(p => p.primary_specialty).filter(Boolean))].sort();
+
+            specialtyFilter.innerHTML = '<option value="all">All Specialties</option>';
+            specs.forEach(sp => {
+                specialtyFilter.innerHTML += `<option value="${sp}">${sp}</option>`;
+            });
+        }
+
+        function applyFilters() {
+            const selectedState = stateFilter.value;
+            const selectedSpecialty = specialtyFilter.value;
+            const selectedRating = parseFloat(ratingFilter.value);
+            const nameQuery = nameFilter.value.trim().toLowerCase();
+            const center = stateCenters[selectedState] || stateCenters.all;
+
+            map.setCenter(center);
+            map.setZoom(selectedState === 'all' ? 4 : 7);
+
+            let filtered = allProviders.filter(p =>
+                (selectedState === 'all' || p.state === selectedState) &&
+                (selectedSpecialty === 'all' || p.primary_specialty === selectedSpecialty) &&
+                (p.rating >= selectedRating) &&
+                (!nameQuery || p.name.toLowerCase().includes(nameQuery))
+            );
+            renderMarkers(filtered);
+        }
+
+        const renderer = {
+            render: ({ count, position }, stats) => {
+                const color = count > 100 ? "#0A4D68" : (count > 25 ? "#088395" : "#ff6f61");
+                const size = count > 100 ? 50 : (count > 25 ? 40 : 30);
+
+                const svg = window.btoa(`
+                <svg fill="${color}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+                    <circle cx="120" cy="120" r="90" stroke-width="15" stroke="rgba(255,255,255,0.5)" />
+                    <circle cx="120" cy="120" r="70" />
+                </svg>`);
+
+                return new google.maps.Marker({
+                    position,
+                    icon: {
+                        url: `data:image/svg+xml;base64,${svg}`,
+                        scaledSize: new google.maps.Size(size, size),
+                    },
+                    label: { text: String(count), color: "white", fontSize: "12px", fontWeight: "bold" },
+                    zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
+                });
+            },
+        };
+
+        function renderMarkers(providersToRender) {
+            if (clustererInstance) {
+                clustererInstance.clearMarkers();
+            }
+
+            const occupiedLocations = new Set();
+
+            const markers = providersToRender.map(provider => {
+                let lat = provider.lat;
+                let lng = provider.lng;
+                const locationKey = `${lat.toFixed(4)},${lng.toFixed(4)}`;
+
+                if (occupiedLocations.has(locationKey)) {
+                    lat += (Math.random() - 0.5) * 0.0002;
+                    lng += (Math.random() - 0.5) * 0.0002;
+                }
+                occupiedLocations.add(locationKey);
+
+                const position = { lat, lng };
+
+                const marker = new google.maps.Marker({
+                    position,
+                    label: {
+                        text: `${provider.name} - ${provider.hospital}`,
+                        className: 'static-map-label'
+                    }
+                });
+
+                const infoWindowContent = `<div class="gm-popup-content"><h3>${provider.name}</h3><p><strong>Primary Specialty:</strong> ${provider.primary_specialty}</p><p><strong>Hospital Affiliation:</strong> ${provider.hospital}</p><p><strong>Address:</strong> ${provider.address}</p><p><strong>Rating:</strong> ${provider.rating.toFixed(1)} / 5.0</p><button class="popup-btn" onclick="openBookingModal('${provider.id}')">Make an Appointment</button></div>`;
+
+                marker.addListener('click', () => {
+                    infoWindow.setContent(infoWindowContent);
+                    infoWindow.open({ anchor: marker, map });
+                });
+                return marker;
+            });
+
+            clustererInstance = new markerClusterer.MarkerClusterer({ map, markers, renderer });
+        }
+
+
+        window.openBookingModal = function(providerId) {
+            const provider = allProviders.find(p => String(p.id) === String(providerId));
+            if (provider) {
+                selectedProviderForBooking = provider;
+                infoWindow.close();
+                bookingModalTitle.textContent = `Book Appointment with ${provider.name}`;
+                bookingForm.dataset.providerId = provider.id;
+                bookingModal.classList.add('show');
+            }
+        };
+
+        async function handleBookingSubmit(e) {
+            e.preventDefault();
+            const headers = getAuthHeaders();
+            if (!headers || !selectedProviderForBooking) return;
+
+            const appointmentData = {
+                provider_id: selectedProviderForBooking.id, provider_name: selectedProviderForBooking.name,
+                patient_name: document.getElementById('appt-name').value, contact_no: document.getElementById('appt-contact').value,
+                appointment_date: document.getElementById('appt-date').value, appointment_time: document.getElementById('appt-time').value,
+                source: 'map_page'
+            };
+            if (!appointmentData.patient_name || !appointmentData.contact_no || !appointmentData.appointment_date || !appointmentData.appointment_time) {
+                alert("Please fill out all appointment fields."); return;
+            }
+            try {
+                const response = await fetch('/api/book-appointment', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(appointmentData)
+                });
+                const result = await response.json();
+                if (!response.ok) throw new Error(result.message);
+
+                bookingModal.classList.remove('show');
+                bookingForm.reset();
+                showNotification("An email with your appointment details has been sent.");
+                confirmationMessage.textContent = `Thank you for booking with ${selectedProviderForBooking.name}!`;
+                confirmationModal.classList.add('show');
+            } catch(err) {
+                alert(`Booking Failed: ${err.message}`);
+            }
+        }
+
+        stateFilter.addEventListener('change', applyFilters);
+        specialtyFilter.addEventListener('change', applyFilters);
+        ratingFilter.addEventListener('change', applyFilters);
+        nameFilter.addEventListener('input', applyFilters);
+        closeBookingBtn.addEventListener('click', () => bookingModal.classList.remove('show'));
+        bookingForm.addEventListener('submit', handleBookingSubmit);
+        closeConfirmationBtn.addEventListener('click', () => confirmationModal.classList.remove('show'));
+        okConfirmationBtn.addEventListener('click', () => confirmationModal.classList.remove('show'));
+
+        loadProviders();
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f7f6;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; margin-top: 20px; margin-bottom: 20px; border: 1px solid #dddddd;">
+        <tr>
+            <td align="center" style="background-color: #0A4D68; padding: 30px 0;">
+                <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-family: 'Poppins', sans-serif;">
+                    <span style="margin-right: 10px; font-size: 32px; vertical-align: middle;"></span>Smart Care Optimizer
+                </h1>
+                <p style="color: #a7c4cc; font-size: 14px; margin: 5px 0 0 0;">Your Partner in Optimized Healthcare</p>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#ffffff" style="padding: 40px 30px;">
+                <h2 style="color: #0A4D68; font-size: 22px; margin-top: 0; font-family: 'Poppins', sans-serif;">Appointment Confirmed!</h2>
+                <p style="margin: 0 0 20px 0; color: #34495e; font-size: 16px; line-height: 1.6;">
+                    Dear {{ username }},
+                </p>
+                <p style="margin: 0 0 25px 0; color: #34495e; font-size: 16px; line-height: 1.6;">
+                    This email confirms that your appointment has been successfully scheduled. Please review the details below.
+                </p>
+
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="150" style="color: #0A4D68; font-weight: bold; font-size: 15px; padding-bottom: 10px;">Provider:</td>
+                                    <td style="color: #34495e; font-size: 15px; padding-bottom: 10px;">{{ appointment.provider_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td width="150" valign="top" style="color: #0A4D68; font-weight: bold; font-size: 15px; padding-bottom: 10px;">Location:</td>
+                                    <td style="color: #34495e; font-size: 15px; padding-bottom: 10px;">{{ provider_address }}</td>
+                                </tr>
+                                <tr>
+                                    <td width="150" style="color: #0A4D68; font-weight: bold; font-size: 15px; padding-bottom: 10px;">Patient Name:</td>
+                                    <td style="color: #34495e; font-size: 15px; padding-bottom: 10px;">{{ appointment.patient_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td width="150" style="color: #0A4D68; font-weight: bold; font-size: 15px; padding-bottom: 10px;">Date:</td>
+                                    <td style="color: #34495e; font-size: 15px; padding-bottom: 10px;">{{ appointment.appointment_date.strftime('%A, %B %d, %Y') }}</td>
+                                </tr>
+                                <tr>
+                                    <td width="150" style="color: #0A4D68; font-weight: bold; font-size: 15px;">Time:</td>
+                                    <td style="color: #34495e; font-size: 15px;">{{ appointment.appointment_time.strftime('%I:%M %p') }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                {% if with_report %}
+                <p style="margin: 25px 0 20px 0; color: #34495e; font-size: 16px; line-height: 1.6;">
+                    For your convenience and records, we have attached a detailed Provider Report in PDF format.
+                </p>
+                {% endif %}
+
+                <p style="margin: 25px 0 0 0; color: #34495e; font-size: 16px; line-height: 1.6;">
+                    Thank you for choosing Smart Care Optimizer.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #f4f7f6; padding: 20px 30px; text-align: center;">
+                <p style="margin: 0; color: #7f8c8d; font-size: 12px;">
+                    © {{ year }} Smart Care Optimizer. All Rights Reserved.<br>
+                    This is an automated message. Please do not reply to this email.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

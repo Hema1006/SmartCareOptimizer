@@ -1,0 +1,1001 @@
+member_id,name,city,state,latitude,longitude,primary_specialty_needed,secondary_specialty_needed,age,gender,zip_code,risk_level,coverage_plan,invested_amount,max_travel_distance_km,expected_wait_time_days,telehealth_preference
+M0001,Member_1,City_1,NC,35.7596,-79.0193,General Practice,Orthopedics,88,Male,10000,Medium,PPO,5483,46,40,TRUE
+M0002,Member_2,City_2,MI,44.3448,-85.5724,ENT,Dermatology,36,Female,10001,High,PPO,8579,33,56,TRUE
+M0003,Member_3,City_3,WA,47.8111,-120.6801,ENT,Ophthalmology,24,Female,10002,High,HMO,9421,50,12,TRUE
+M0004,Member_4,City_4,AZ,34.1389,-111.0037,Neurology,ENT,76,Other,10003,Low,EPO,6856,26,44,FALSE
+M0005,Member_5,City_5,IL,40.7531,-89.2785,Ophthalmology,Gastroenterology,34,Male,10004,High,EPO,7489,41,28,TRUE
+M0006,Member_6,City_6,IL,40.6331,-89.3985,Psychiatry,Urology,49,Female,10005,Medium,PPO,5127,33,53,FALSE
+M0007,Member_7,City_7,NC,35.7896,-78.9893,Orthopedics,Endocrinology,88,Female,10006,Low,EPO,4418,25,16,FALSE
+M0008,Member_8,City_8,WA,47.8111,-120.6801,Orthopedics,ENT,9,Other,10007,Low,PPO,3152,18,49,TRUE
+M0009,Member_9,City_9,NC,35.8496,-78.9293,ENT,Cardiology,8,Other,10008,Medium,EPO,2405,13,23,TRUE
+M0010,Member_10,City_10,WA,47.8711,-120.6201,General Practice,ENT,0,Male,10009,High,HMO,6887,20,8,FALSE
+M0011,Member_11,City_11,TX,31.9686,-99.9018,Endocrinology,ENT,29,Female,10010,Medium,PPO,5934,50,22,FALSE
+M0012,Member_12,City_12,MI,44.3448,-85.5724,Dermatology,Ophthalmology,33,Other,10011,Low,PPO,3600,36,13,FALSE
+M0013,Member_13,City_13,NC,35.8196,-78.9593,ENT,Cardiology,53,Female,10012,Low,HMO,8488,39,59,FALSE
+M0014,Member_14,City_14,NY,43.3894,-74.1279,Psychiatry,General Practice,48,Other,10013,Medium,PPO,7012,9,35,FALSE
+M0015,Member_15,City_15,IL,40.7531,-89.2785,ENT,Endocrinology,59,Male,10014,Medium,HMO,4344,14,14,FALSE
+M0016,Member_16,City_16,CO,39.5501,-105.7821,Gastroenterology,General Practice,18,Female,10015,Medium,PPO,8486,30,7,FALSE
+M0017,Member_17,City_17,WA,47.7811,-120.7101,Orthopedics,Urology,51,Male,10016,Medium,PPO,4532,38,37,FALSE
+M0018,Member_18,City_18,FL,28.0544,-81.7003,Orthopedics,Urology,89,Other,10017,Low,PPO,8392,26,41,FALSE
+M0019,Member_19,City_19,FL,28.0844,-81.6703,Neurology,Pediatrics,58,Other,10018,Medium,HMO,5023,9,33,TRUE
+M0020,Member_20,City_20,NC,35.8796,-78.8993,Endocrinology,ENT,55,Male,10019,Medium,HMO,5122,35,36,TRUE
+M0021,Member_21,City_21,PA,41.2033,-77.1945,Cardiology,Urology,75,Other,10020,Low,HMO,7268,43,11,TRUE
+M0022,Member_22,City_22,NV,38.8326,-116.3894,Psychiatry,Dermatology,40,Other,10021,Low,HMO,8369,41,42,TRUE
+M0023,Member_23,City_23,CA,36.8383,-119.3579,ENT,Ophthalmology,85,Other,10022,High,EPO,5032,42,33,FALSE
+M0024,Member_24,City_24,OH,40.5073,-82.8171,General Practice,ENT,55,Female,10023,High,HMO,9941,25,8,TRUE
+M0025,Member_25,City_25,IL,40.7531,-89.2785,Gastroenterology,Ophthalmology,53,Female,10024,Low,EPO,1133,17,44,FALSE
+M0026,Member_26,City_26,IL,40.6331,-89.3985,Pediatrics,Urology,18,Male,10025,Medium,HMO,2956,44,28,TRUE
+M0027,Member_27,City_27,WA,47.7811,-120.7101,Gastroenterology,Dermatology,21,Female,10026,High,PPO,4783,9,33,FALSE
+M0028,Member_28,City_28,OH,40.4773,-82.8471,General Practice,General Practice,46,Other,10027,Medium,HMO,3906,41,10,FALSE
+M0029,Member_29,City_29,NC,35.8496,-78.9293,Pediatrics,Psychiatry,80,Female,10028,Medium,EPO,3687,41,35,TRUE
+M0030,Member_30,City_30,PA,41.3233,-77.0745,Endocrinology,Orthopedics,45,Other,10029,Medium,HMO,1216,49,20,TRUE
+M0031,Member_31,City_31,WA,47.7511,-120.7401,Ophthalmology,Gastroenterology,83,Other,10030,High,PPO,8215,38,6,TRUE
+M0032,Member_32,City_32,FL,28.0244,-81.7303,Orthopedics,Endocrinology,30,Male,10031,Low,PPO,4419,41,27,FALSE
+M0033,Member_33,City_33,CO,39.6101,-105.7221,Pediatrics,Cardiology,20,Male,10032,Medium,HMO,7268,38,18,FALSE
+M0034,Member_34,City_34,FL,28.0844,-81.6703,Urology,Endocrinology,52,Female,10033,Low,EPO,1126,47,54,TRUE
+M0035,Member_35,City_35,WA,47.8711,-120.6201,Neurology,Orthopedics,61,Female,10034,High,HMO,4989,39,51,TRUE
+M0036,Member_36,City_36,TX,31.9686,-99.9018,General Practice,Ophthalmology,55,Male,10035,High,HMO,6174,8,25,TRUE
+M0037,Member_37,City_37,MI,44.3448,-85.5724,Neurology,Gastroenterology,12,Female,10036,High,HMO,4813,10,53,FALSE
+M0038,Member_38,City_38,CO,39.6101,-105.7221,Gastroenterology,ENT,38,Female,10037,Low,EPO,8543,46,47,FALSE
+M0039,Member_39,City_39,CO,39.6401,-105.6921,Psychiatry,Cardiology,66,Other,10038,Low,EPO,8303,37,26,FALSE
+M0040,Member_40,City_40,PA,41.3233,-77.0745,Gastroenterology,Neurology,46,Other,10039,Medium,HMO,9990,17,57,TRUE
+M0041,Member_41,City_41,PA,41.2033,-77.1945,Urology,Pediatrics,26,Female,10040,High,HMO,6984,30,52,TRUE
+M0042,Member_42,City_42,MI,44.3448,-85.5724,Gastroenterology,Dermatology,27,Other,10041,Medium,HMO,2687,32,22,TRUE
+M0043,Member_43,City_43,MA,42.4672,-71.3224,Ophthalmology,Urology,58,Female,10042,Low,EPO,6302,12,56,TRUE
+M0044,Member_44,City_44,CO,39.6401,-105.6921,Orthopedics,Ophthalmology,28,Other,10043,Medium,HMO,5214,6,49,FALSE
+M0045,Member_45,City_45,TX,32.0886,-99.7818,ENT,Dermatology,15,Male,10044,Medium,PPO,2530,33,9,FALSE
+M0046,Member_46,City_46,GA,32.1656,-82.9001,Endocrinology,Gastroenterology,67,Male,10045,High,EPO,7549,43,16,TRUE
+M0047,Member_47,City_47,CA,36.8083,-119.3879,Gastroenterology,Gastroenterology,18,Male,10046,Low,PPO,2869,44,32,TRUE
+M0048,Member_48,City_48,PA,41.2633,-77.1345,Orthopedics,Dermatology,2,Female,10047,Low,EPO,4493,38,35,FALSE
+M0049,Member_49,City_49,GA,32.2556,-82.8101,ENT,Psychiatry,67,Female,10048,High,HMO,7689,49,41,TRUE
+M0050,Member_50,City_50,IL,40.7531,-89.2785,Endocrinology,Gastroenterology,63,Male,10049,Medium,HMO,8710,22,26,FALSE
+M0051,Member_51,City_51,OH,40.4173,-82.9071,Cardiology,General Practice,79,Other,10050,High,EPO,8919,47,14,FALSE
+M0052,Member_52,City_52,NV,38.8326,-116.3894,Orthopedics,Neurology,59,Male,10051,Medium,HMO,8504,18,60,FALSE
+M0053,Member_53,City_53,CO,39.6101,-105.7221,Endocrinology,Urology,54,Other,10052,Medium,EPO,1615,30,53,FALSE
+M0054,Member_54,City_54,IL,40.7231,-89.3085,Dermatology,Gastroenterology,16,Other,10053,Medium,HMO,9796,10,41,TRUE
+M0055,Member_55,City_55,MA,42.5272,-71.2624,General Practice,ENT,9,Male,10054,Medium,PPO,8028,11,18,TRUE
+M0056,Member_56,City_56,WA,47.7511,-120.7401,Ophthalmology,Orthopedics,81,Male,10055,Medium,HMO,5417,47,37,FALSE
+M0057,Member_57,City_57,AZ,34.0789,-111.0637,Ophthalmology,Endocrinology,76,Female,10056,Low,PPO,3959,50,54,FALSE
+M0058,Member_58,City_58,MA,42.4672,-71.3224,Urology,Orthopedics,83,Male,10057,Low,PPO,1070,12,17,TRUE
+M0059,Member_59,City_59,OH,40.5073,-82.8171,Endocrinology,Pediatrics,14,Female,10058,Medium,HMO,9985,8,38,FALSE
+M0060,Member_60,City_60,CO,39.6701,-105.6621,General Practice,ENT,56,Female,10059,High,EPO,2359,42,50,TRUE
+M0061,Member_61,City_61,NY,43.2994,-74.2179,Pediatrics,Orthopedics,73,Female,10060,Low,HMO,4646,5,11,FALSE
+M0062,Member_62,City_62,GA,32.1956,-82.8701,Endocrinology,General Practice,29,Female,10061,Low,HMO,8922,8,30,TRUE
+M0063,Member_63,City_63,TX,32.0286,-99.8418,Endocrinology,Pediatrics,44,Female,10062,High,EPO,6902,23,55,FALSE
+M0064,Member_64,City_64,GA,32.2556,-82.8101,General Practice,Pediatrics,41,Other,10063,Low,PPO,1153,7,8,FALSE
+M0065,Member_65,City_65,GA,32.2856,-82.7801,Endocrinology,Orthopedics,18,Female,10064,High,EPO,8969,24,57,FALSE
+M0066,Member_66,City_66,NY,43.2994,-74.2179,Gastroenterology,ENT,34,Other,10065,Low,PPO,3869,31,33,FALSE
+M0067,Member_67,City_67,MI,44.3448,-85.5724,General Practice,Pediatrics,65,Female,10066,Low,HMO,2083,41,25,TRUE
+M0068,Member_68,City_68,MI,44.3748,-85.5424,ENT,Gastroenterology,60,Other,10067,High,EPO,1354,17,33,TRUE
+M0069,Member_69,City_69,IL,40.7231,-89.3085,Neurology,Gastroenterology,16,Other,10068,Low,EPO,7981,9,58,TRUE
+M0070,Member_70,City_70,NY,43.4194,-74.0979,General Practice,Orthopedics,32,Female,10069,High,EPO,3985,8,56,TRUE
+M0071,Member_71,City_71,MA,42.4072,-71.3824,Orthopedics,Pediatrics,53,Male,10070,Medium,HMO,6700,23,51,TRUE
+M0072,Member_72,City_72,WA,47.7811,-120.7101,Cardiology,Gastroenterology,45,Female,10071,High,HMO,7784,46,10,FALSE
+M0073,Member_73,City_73,MI,44.3748,-85.5424,Neurology,Gastroenterology,13,Male,10072,Low,PPO,4284,34,32,FALSE
+M0074,Member_74,City_74,CA,36.8683,-119.3279,Orthopedics,Pediatrics,55,Other,10073,Low,EPO,8152,32,17,FALSE
+M0075,Member_75,City_75,CA,36.8983,-119.2979,Orthopedics,Cardiology,40,Female,10074,High,EPO,3640,25,12,TRUE
+M0076,Member_76,City_76,CA,36.7783,-119.4179,Dermatology,Ophthalmology,37,Female,10075,Medium,HMO,5942,24,29,FALSE
+M0077,Member_77,City_77,GA,32.1956,-82.8701,Neurology,Dermatology,82,Male,10076,Medium,HMO,3665,36,10,TRUE
+M0078,Member_78,City_78,WA,47.8111,-120.6801,Urology,General Practice,20,Female,10077,High,HMO,7148,13,45,TRUE
+M0079,Member_79,City_79,CO,39.6401,-105.6921,Psychiatry,General Practice,77,Female,10078,High,EPO,7523,9,48,FALSE
+M0080,Member_80,City_80,GA,32.2856,-82.7801,Endocrinology,Urology,89,Female,10079,High,HMO,1337,40,32,FALSE
+M0081,Member_81,City_81,OH,40.4173,-82.9071,Endocrinology,Neurology,20,Male,10080,Medium,PPO,7561,24,21,FALSE
+M0082,Member_82,City_82,WA,47.7811,-120.7101,Urology,Cardiology,16,Other,10081,Low,PPO,4052,41,51,FALSE
+M0083,Member_83,City_83,MI,44.3748,-85.5424,Gastroenterology,Neurology,78,Male,10082,Low,EPO,8545,35,27,TRUE
+M0084,Member_84,City_84,WA,47.8411,-120.6501,Urology,Psychiatry,53,Female,10083,Low,EPO,3542,25,37,FALSE
+M0085,Member_85,City_85,AZ,34.1689,-110.9737,Ophthalmology,Pediatrics,29,Other,10084,Low,HMO,2579,38,37,FALSE
+M0086,Member_86,City_86,NC,35.7596,-79.0193,Orthopedics,Neurology,69,Female,10085,Medium,PPO,7106,44,12,TRUE
+M0087,Member_87,City_87,OH,40.4473,-82.8771,Endocrinology,Neurology,33,Male,10086,Low,HMO,3743,42,47,FALSE
+M0088,Member_88,City_88,AZ,34.1089,-111.0337,Psychiatry,Cardiology,37,Female,10087,High,EPO,2996,39,14,TRUE
+M0089,Member_89,City_89,PA,41.2933,-77.1045,Cardiology,Dermatology,62,Other,10088,Low,PPO,2398,46,59,TRUE
+M0090,Member_90,City_90,MI,44.4348,-85.4824,Psychiatry,Pediatrics,29,Female,10089,High,HMO,7864,8,48,TRUE
+M0091,Member_91,City_91,NC,35.7596,-79.0193,Orthopedics,Urology,37,Female,10090,High,HMO,8022,14,45,TRUE
+M0092,Member_92,City_92,CO,39.5801,-105.7521,Dermatology,Endocrinology,57,Male,10091,High,PPO,6349,30,14,TRUE
+M0093,Member_93,City_93,AZ,34.1089,-111.0337,Neurology,Psychiatry,75,Female,10092,High,PPO,9082,9,23,FALSE
+M0094,Member_94,City_94,NV,38.8926,-116.3294,General Practice,Dermatology,8,Male,10093,Medium,HMO,3750,31,53,FALSE
+M0095,Member_95,City_95,IL,40.7531,-89.2785,General Practice,Dermatology,68,Other,10094,High,PPO,1412,8,5,TRUE
+M0096,Member_96,City_96,FL,27.9944,-81.7603,Neurology,Cardiology,62,Male,10095,Low,HMO,3545,26,31,FALSE
+M0097,Member_97,City_97,MA,42.4372,-71.3524,Pediatrics,Dermatology,42,Female,10096,Medium,HMO,2612,14,12,TRUE
+M0098,Member_98,City_98,NV,38.8626,-116.3594,Psychiatry,Gastroenterology,57,Male,10097,Low,EPO,9948,33,52,TRUE
+M0099,Member_99,City_99,MI,44.4048,-85.5124,Dermatology,ENT,54,Male,10098,Medium,HMO,8678,48,50,FALSE
+M0100,Member_100,City_100,AZ,34.1689,-110.9737,Gastroenterology,Ophthalmology,78,Other,10099,Medium,PPO,9816,50,51,TRUE
+M0101,Member_101,City_101,WA,47.7511,-120.7401,Neurology,Gastroenterology,61,Other,10100,Low,EPO,3945,34,45,TRUE
+M0102,Member_102,City_102,GA,32.1956,-82.8701,ENT,Cardiology,87,Female,10101,High,EPO,6544,40,35,TRUE
+M0103,Member_103,City_103,NY,43.3594,-74.1579,Urology,Neurology,54,Other,10102,Medium,HMO,5514,40,51,FALSE
+M0104,Member_104,City_104,PA,41.2933,-77.1045,Dermatology,Neurology,69,Other,10103,Medium,EPO,7248,17,21,TRUE
+M0105,Member_105,City_105,AZ,34.1689,-110.9737,Orthopedics,Dermatology,60,Other,10104,Medium,HMO,8269,9,40,FALSE
+M0106,Member_106,City_106,PA,41.2033,-77.1945,Pediatrics,Endocrinology,6,Female,10105,Medium,HMO,5831,16,5,TRUE
+M0107,Member_107,City_107,OH,40.4473,-82.8771,Urology,Gastroenterology,13,Male,10106,Low,PPO,5472,25,52,FALSE
+M0108,Member_108,City_108,AZ,34.1089,-111.0337,Neurology,Urology,86,Female,10107,High,PPO,9078,47,30,FALSE
+M0109,Member_109,City_109,NV,38.8926,-116.3294,ENT,General Practice,27,Male,10108,Medium,HMO,9440,38,19,TRUE
+M0110,Member_110,City_110,AZ,34.1689,-110.9737,Pediatrics,Cardiology,47,Other,10109,Low,HMO,6273,24,31,TRUE
+M0111,Member_111,City_111,NV,38.8026,-116.4194,General Practice,Psychiatry,49,Other,10110,High,EPO,7447,8,14,FALSE
+M0112,Member_112,City_112,MA,42.4372,-71.3524,Gastroenterology,Gastroenterology,39,Other,10111,Medium,EPO,7173,21,10,FALSE
+M0113,Member_113,City_113,NC,35.8196,-78.9593,Gastroenterology,Orthopedics,28,Female,10112,Medium,HMO,6791,12,53,FALSE
+M0114,Member_114,City_114,AZ,34.1389,-111.0037,Psychiatry,Ophthalmology,8,Male,10113,Low,HMO,6659,47,17,FALSE
+M0115,Member_115,City_115,NY,43.4194,-74.0979,Psychiatry,Endocrinology,58,Male,10114,Medium,PPO,6919,47,31,FALSE
+M0116,Member_116,City_116,MA,42.4072,-71.3824,ENT,Urology,1,Female,10115,Low,PPO,6574,36,27,FALSE
+M0117,Member_117,City_117,NC,35.7896,-78.9893,Urology,Psychiatry,13,Other,10116,High,HMO,9755,19,23,FALSE
+M0118,Member_118,City_118,MA,42.4672,-71.3224,ENT,General Practice,87,Female,10117,High,HMO,3547,45,38,TRUE
+M0119,Member_119,City_119,CO,39.6401,-105.6921,Ophthalmology,ENT,68,Male,10118,High,EPO,9483,26,59,TRUE
+M0120,Member_120,City_120,NY,43.4194,-74.0979,Urology,Gastroenterology,26,Female,10119,High,HMO,4685,45,8,TRUE
+M0121,Member_121,City_121,NY,43.2994,-74.2179,Orthopedics,Orthopedics,88,Male,10120,Medium,HMO,6062,9,18,FALSE
+M0122,Member_122,City_122,WA,47.7811,-120.7101,General Practice,ENT,2,Other,10121,High,PPO,5578,8,57,FALSE
+M0123,Member_123,City_123,AZ,34.1089,-111.0337,Endocrinology,Gastroenterology,9,Other,10122,Medium,PPO,4443,11,34,TRUE
+M0124,Member_124,City_124,NC,35.8496,-78.9293,ENT,Psychiatry,42,Other,10123,Low,PPO,1873,30,35,FALSE
+M0125,Member_125,City_125,AZ,34.1689,-110.9737,Cardiology,Pediatrics,20,Female,10124,Low,HMO,3888,31,9,FALSE
+M0126,Member_126,City_126,CO,39.5501,-105.7821,ENT,Neurology,49,Female,10125,High,PPO,3175,27,40,TRUE
+M0127,Member_127,City_127,PA,41.2333,-77.1645,Endocrinology,Dermatology,31,Male,10126,Medium,HMO,4093,10,45,FALSE
+M0128,Member_128,City_128,MA,42.4672,-71.3224,Pediatrics,Endocrinology,54,Male,10127,High,HMO,8096,50,37,TRUE
+M0129,Member_129,City_129,TX,32.0586,-99.8118,Pediatrics,General Practice,61,Female,10128,Low,HMO,7483,11,9,TRUE
+M0130,Member_130,City_130,MA,42.5272,-71.2624,Pediatrics,Endocrinology,26,Female,10129,High,HMO,3215,41,35,FALSE
+M0131,Member_131,City_131,IL,40.6331,-89.3985,General Practice,Psychiatry,0,Female,10130,Medium,PPO,3421,14,19,FALSE
+M0132,Member_132,City_132,NV,38.8326,-116.3894,Urology,Cardiology,23,Female,10131,High,HMO,5732,50,7,FALSE
+M0133,Member_133,City_133,IL,40.6931,-89.3385,Neurology,Pediatrics,66,Male,10132,Low,HMO,8211,50,39,TRUE
+M0134,Member_134,City_134,NC,35.8496,-78.9293,Cardiology,Dermatology,89,Female,10133,Medium,PPO,5912,38,50,FALSE
+M0135,Member_135,City_135,WA,47.8711,-120.6201,Psychiatry,General Practice,53,Female,10134,High,PPO,4539,48,14,FALSE
+M0136,Member_136,City_136,IL,40.6331,-89.3985,Urology,General Practice,75,Other,10135,High,PPO,4521,28,33,FALSE
+M0137,Member_137,City_137,GA,32.1956,-82.8701,Pediatrics,General Practice,22,Female,10136,Medium,PPO,4876,38,25,TRUE
+M0138,Member_138,City_138,NC,35.8196,-78.9593,ENT,ENT,68,Female,10137,Medium,PPO,3857,12,23,TRUE
+M0139,Member_139,City_139,CA,36.8683,-119.3279,Ophthalmology,Psychiatry,35,Female,10138,Medium,EPO,1331,35,40,FALSE
+M0140,Member_140,City_140,TX,32.0886,-99.7818,ENT,Urology,42,Other,10139,Medium,PPO,3337,25,12,FALSE
+M0141,Member_141,City_141,MI,44.3148,-85.6024,Orthopedics,Cardiology,72,Other,10140,Low,EPO,1027,37,41,FALSE
+M0142,Member_142,City_142,AZ,34.0789,-111.0637,General Practice,ENT,88,Other,10141,Low,HMO,6513,25,60,FALSE
+M0143,Member_143,City_143,MI,44.3748,-85.5424,Dermatology,General Practice,24,Male,10142,Low,EPO,9148,17,37,TRUE
+M0144,Member_144,City_144,PA,41.2933,-77.1045,Orthopedics,ENT,45,Female,10143,Low,HMO,6992,49,12,TRUE
+M0145,Member_145,City_145,WA,47.8711,-120.6201,Cardiology,Cardiology,36,Other,10144,High,PPO,3957,16,31,FALSE
+M0146,Member_146,City_146,PA,41.2033,-77.1945,Psychiatry,ENT,11,Male,10145,High,PPO,1785,39,47,FALSE
+M0147,Member_147,City_147,FL,28.0244,-81.7303,Psychiatry,Urology,18,Other,10146,Medium,HMO,9236,14,54,FALSE
+M0148,Member_148,City_148,NY,43.3594,-74.1579,Gastroenterology,Dermatology,89,Female,10147,Low,HMO,1971,40,52,FALSE
+M0149,Member_149,City_149,PA,41.2933,-77.1045,Endocrinology,Pediatrics,33,Female,10148,High,EPO,3574,38,12,TRUE
+M0150,Member_150,City_150,OH,40.5373,-82.7871,Cardiology,Dermatology,40,Female,10149,High,EPO,7737,27,51,FALSE
+M0151,Member_151,City_151,AZ,34.0489,-111.0937,Orthopedics,Ophthalmology,5,Other,10150,Medium,EPO,6626,27,12,TRUE
+M0152,Member_152,City_152,CA,36.8083,-119.3879,Endocrinology,Gastroenterology,9,Male,10151,Low,EPO,5139,24,38,FALSE
+M0153,Member_153,City_153,OH,40.4773,-82.8471,Dermatology,Pediatrics,61,Female,10152,Low,PPO,2452,35,40,FALSE
+M0154,Member_154,City_154,FL,28.0844,-81.6703,Cardiology,ENT,54,Other,10153,High,EPO,2551,48,27,TRUE
+M0155,Member_155,City_155,MI,44.4348,-85.4824,General Practice,ENT,46,Female,10154,Medium,HMO,1910,12,10,TRUE
+M0156,Member_156,City_156,NV,38.8026,-116.4194,Ophthalmology,Ophthalmology,74,Male,10155,High,PPO,2879,48,50,TRUE
+M0157,Member_157,City_157,AZ,34.0789,-111.0637,Ophthalmology,Neurology,5,Male,10156,Medium,HMO,4420,11,22,FALSE
+M0158,Member_158,City_158,IL,40.6931,-89.3385,Endocrinology,Orthopedics,82,Other,10157,Low,PPO,1203,34,58,TRUE
+M0159,Member_159,City_159,IL,40.7231,-89.3085,Endocrinology,Urology,69,Other,10158,Medium,HMO,4584,47,20,TRUE
+M0160,Member_160,City_160,NY,43.4194,-74.0979,Gastroenterology,Dermatology,60,Male,10159,High,EPO,8995,11,10,TRUE
+M0161,Member_161,City_161,TX,31.9686,-99.9018,Cardiology,Gastroenterology,40,Male,10160,Low,EPO,3482,5,32,FALSE
+M0162,Member_162,City_162,GA,32.1956,-82.8701,Urology,Urology,82,Female,10161,High,PPO,3835,12,33,TRUE
+M0163,Member_163,City_163,NC,35.8196,-78.9593,Gastroenterology,Pediatrics,7,Male,10162,High,HMO,5326,44,48,FALSE
+M0164,Member_164,City_164,IL,40.7231,-89.3085,Urology,Dermatology,48,Other,10163,High,PPO,5008,29,18,FALSE
+M0165,Member_165,City_165,FL,28.1144,-81.6403,Pediatrics,Cardiology,63,Male,10164,Medium,PPO,8483,46,24,TRUE
+M0166,Member_166,City_166,IL,40.6331,-89.3985,General Practice,Cardiology,35,Female,10165,High,PPO,3605,30,43,TRUE
+M0167,Member_167,City_167,NC,35.7896,-78.9893,Psychiatry,Neurology,90,Female,10166,Low,PPO,5890,15,52,TRUE
+M0168,Member_168,City_168,MA,42.4672,-71.3224,Gastroenterology,Pediatrics,65,Other,10167,High,HMO,7311,20,24,TRUE
+M0169,Member_169,City_169,OH,40.5073,-82.8171,Orthopedics,Orthopedics,70,Male,10168,Low,HMO,1537,13,30,TRUE
+M0170,Member_170,City_170,NC,35.8796,-78.8993,Neurology,Urology,6,Male,10169,Low,HMO,7049,49,21,TRUE
+M0171,Member_171,City_171,NV,38.8026,-116.4194,Orthopedics,Urology,10,Other,10170,Low,PPO,2493,43,42,FALSE
+M0172,Member_172,City_172,MA,42.4372,-71.3524,General Practice,General Practice,60,Male,10171,High,HMO,1609,17,6,TRUE
+M0173,Member_173,City_173,OH,40.4773,-82.8471,Gastroenterology,General Practice,36,Other,10172,Low,HMO,4399,34,36,FALSE
+M0174,Member_174,City_174,GA,32.2556,-82.8101,Psychiatry,Orthopedics,5,Other,10173,Low,PPO,6160,29,28,TRUE
+M0175,Member_175,City_175,CA,36.8983,-119.2979,Cardiology,Pediatrics,27,Male,10174,High,HMO,9505,18,48,FALSE
+M0176,Member_176,City_176,WA,47.7511,-120.7401,Cardiology,Dermatology,60,Male,10175,Medium,HMO,6641,49,51,TRUE
+M0177,Member_177,City_177,CO,39.5801,-105.7521,Psychiatry,Urology,61,Female,10176,Medium,PPO,2090,29,46,FALSE
+M0178,Member_178,City_178,TX,32.0286,-99.8418,Cardiology,Ophthalmology,66,Other,10177,Low,EPO,9899,6,53,FALSE
+M0179,Member_179,City_179,MA,42.4972,-71.2924,Gastroenterology,Pediatrics,50,Other,10178,Medium,HMO,1052,6,13,FALSE
+M0180,Member_180,City_180,CO,39.6701,-105.6621,Dermatology,Neurology,83,Male,10179,High,PPO,4454,9,39,FALSE
+M0181,Member_181,City_181,CA,36.7783,-119.4179,General Practice,Orthopedics,21,Female,10180,High,PPO,7748,46,11,TRUE
+M0182,Member_182,City_182,NY,43.3294,-74.1879,Endocrinology,Dermatology,84,Other,10181,Low,PPO,5192,31,41,FALSE
+M0183,Member_183,City_183,OH,40.4773,-82.8471,Endocrinology,General Practice,33,Other,10182,Low,HMO,3971,34,18,TRUE
+M0184,Member_184,City_184,CA,36.8683,-119.3279,Urology,Dermatology,16,Other,10183,Low,EPO,8274,16,51,TRUE
+M0185,Member_185,City_185,CO,39.6701,-105.6621,Cardiology,Neurology,29,Other,10184,High,EPO,2818,33,25,FALSE
+M0186,Member_186,City_186,IL,40.6331,-89.3985,Gastroenterology,Urology,66,Other,10185,Medium,HMO,2175,22,11,TRUE
+M0187,Member_187,City_187,NV,38.8326,-116.3894,Gastroenterology,Cardiology,9,Female,10186,Medium,HMO,4925,27,35,TRUE
+M0188,Member_188,City_188,GA,32.2256,-82.8401,ENT,Neurology,15,Other,10187,High,HMO,2927,26,59,TRUE
+M0189,Member_189,City_189,AZ,34.1389,-111.0037,Ophthalmology,General Practice,46,Other,10188,Medium,PPO,8125,44,28,TRUE
+M0190,Member_190,City_190,AZ,34.1689,-110.9737,Cardiology,Pediatrics,26,Male,10189,Low,EPO,3472,8,33,FALSE
+M0191,Member_191,City_191,PA,41.2033,-77.1945,ENT,Gastroenterology,72,Other,10190,High,EPO,1836,48,37,FALSE
+M0192,Member_192,City_192,WA,47.7811,-120.7101,Cardiology,Urology,53,Male,10191,Medium,EPO,2364,19,40,TRUE
+M0193,Member_193,City_193,NV,38.8626,-116.3594,Gastroenterology,Gastroenterology,46,Other,10192,Medium,EPO,5778,44,46,TRUE
+M0194,Member_194,City_194,CO,39.6401,-105.6921,General Practice,Ophthalmology,24,Male,10193,Low,PPO,6789,40,10,TRUE
+M0195,Member_195,City_195,WA,47.8711,-120.6201,Dermatology,Ophthalmology,22,Female,10194,High,HMO,2437,26,5,FALSE
+M0196,Member_196,City_196,GA,32.1656,-82.9001,Orthopedics,Pediatrics,2,Other,10195,High,PPO,6772,30,14,FALSE
+M0197,Member_197,City_197,MI,44.3448,-85.5724,Neurology,Ophthalmology,67,Male,10196,Medium,PPO,5871,8,16,FALSE
+M0198,Member_198,City_198,IL,40.6931,-89.3385,Neurology,General Practice,27,Other,10197,High,EPO,2262,13,18,FALSE
+M0199,Member_199,City_199,IL,40.7231,-89.3085,Gastroenterology,Dermatology,54,Male,10198,Low,EPO,7098,29,46,FALSE
+M0200,Member_200,City_200,CO,39.6701,-105.6621,Gastroenterology,Psychiatry,59,Other,10199,Medium,HMO,4048,25,16,TRUE
+M0201,Member_201,City_1,NV,38.8026,-116.4194,Cardiology,General Practice,86,Female,10200,Medium,PPO,2307,47,17,FALSE
+M0202,Member_202,City_2,MA,42.4372,-71.3524,Psychiatry,Pediatrics,49,Other,10201,Low,EPO,5927,45,23,TRUE
+M0203,Member_203,City_3,CA,36.8383,-119.3579,ENT,Pediatrics,3,Female,10202,Medium,EPO,3010,16,28,FALSE
+M0204,Member_204,City_4,MA,42.4972,-71.2924,Ophthalmology,Pediatrics,60,Male,10203,Low,EPO,8886,12,51,FALSE
+M0205,Member_205,City_5,NV,38.9226,-116.2994,Gastroenterology,Pediatrics,89,Female,10204,Low,HMO,9153,10,53,FALSE
+M0206,Member_206,City_6,OH,40.4173,-82.9071,Gastroenterology,Endocrinology,2,Female,10205,High,EPO,5041,13,7,FALSE
+M0207,Member_207,City_7,NY,43.3294,-74.1879,Pediatrics,Cardiology,8,Other,10206,High,PPO,9272,14,6,FALSE
+M0208,Member_208,City_8,IL,40.6931,-89.3385,Gastroenterology,Pediatrics,90,Male,10207,Low,EPO,2699,7,43,FALSE
+M0209,Member_209,City_9,MI,44.4048,-85.5124,Neurology,Cardiology,45,Other,10208,Medium,EPO,4148,13,7,FALSE
+M0210,Member_210,City_10,NV,38.9226,-116.2994,Neurology,Psychiatry,27,Female,10209,Low,EPO,7931,49,32,FALSE
+M0211,Member_211,City_11,NV,38.8026,-116.4194,General Practice,General Practice,68,Female,10210,Low,HMO,4279,5,43,TRUE
+M0212,Member_212,City_12,FL,28.0244,-81.7303,Dermatology,Ophthalmology,36,Male,10211,Low,HMO,2475,41,25,FALSE
+M0213,Member_213,City_13,TX,32.0286,-99.8418,Orthopedics,Neurology,50,Male,10212,High,EPO,7596,7,22,TRUE
+M0214,Member_214,City_14,PA,41.2933,-77.1045,Psychiatry,Pediatrics,45,Female,10213,High,EPO,5264,26,6,FALSE
+M0215,Member_215,City_15,FL,28.1144,-81.6403,Gastroenterology,Endocrinology,30,Male,10214,High,HMO,1980,28,54,TRUE
+M0216,Member_216,City_16,TX,31.9686,-99.9018,Neurology,Ophthalmology,7,Other,10215,Medium,PPO,5908,11,38,FALSE
+M0217,Member_217,City_17,IL,40.6631,-89.3685,Cardiology,Urology,42,Other,10216,Low,PPO,3759,28,38,TRUE
+M0218,Member_218,City_18,CA,36.8383,-119.3579,Orthopedics,Neurology,55,Male,10217,Medium,EPO,3451,28,5,FALSE
+M0219,Member_219,City_19,CA,36.8683,-119.3279,Gastroenterology,ENT,22,Other,10218,Medium,EPO,7081,20,52,FALSE
+M0220,Member_220,City_20,GA,32.2856,-82.7801,General Practice,Pediatrics,10,Male,10219,Medium,PPO,8095,28,55,FALSE
+M0221,Member_221,City_21,GA,32.1656,-82.9001,General Practice,Neurology,32,Female,10220,Low,PPO,5816,23,9,TRUE
+M0222,Member_222,City_22,NV,38.8326,-116.3894,Pediatrics,Orthopedics,0,Male,10221,Low,HMO,2801,20,14,TRUE
+M0223,Member_223,City_23,CA,36.8383,-119.3579,Pediatrics,Endocrinology,45,Male,10222,High,PPO,4160,12,42,FALSE
+M0224,Member_224,City_24,PA,41.2933,-77.1045,Ophthalmology,ENT,10,Male,10223,High,PPO,7509,13,25,FALSE
+M0225,Member_225,City_25,CO,39.6701,-105.6621,Gastroenterology,Cardiology,81,Female,10224,Medium,PPO,5908,22,44,TRUE
+M0226,Member_226,City_26,NC,35.7596,-79.0193,Urology,Cardiology,7,Other,10225,Medium,PPO,2398,33,40,TRUE
+M0227,Member_227,City_27,NC,35.7896,-78.9893,General Practice,ENT,21,Other,10226,Low,PPO,4701,28,26,TRUE
+M0228,Member_228,City_28,MA,42.4672,-71.3224,Pediatrics,Urology,11,Other,10227,Low,EPO,2105,6,25,TRUE
+M0229,Member_229,City_29,MA,42.4972,-71.2924,Endocrinology,Neurology,84,Female,10228,Low,HMO,9939,21,35,TRUE
+M0230,Member_230,City_30,AZ,34.1689,-110.9737,Gastroenterology,Dermatology,4,Male,10229,Low,HMO,4871,18,16,TRUE
+M0231,Member_231,City_31,PA,41.2033,-77.1945,Endocrinology,Neurology,70,Male,10230,Medium,HMO,6373,44,49,FALSE
+M0232,Member_232,City_32,MA,42.4372,-71.3524,Orthopedics,Urology,69,Female,10231,Low,PPO,6739,37,11,TRUE
+M0233,Member_233,City_33,AZ,34.1089,-111.0337,General Practice,Orthopedics,3,Male,10232,Low,EPO,4817,49,46,TRUE
+M0234,Member_234,City_34,AZ,34.1389,-111.0037,Neurology,Gastroenterology,8,Other,10233,Low,EPO,4628,47,56,FALSE
+M0235,Member_235,City_35,WA,47.8711,-120.6201,Ophthalmology,Gastroenterology,40,Male,10234,Low,HMO,4286,46,28,FALSE
+M0236,Member_236,City_36,CA,36.7783,-119.4179,General Practice,ENT,29,Male,10235,High,EPO,8454,38,45,TRUE
+M0237,Member_237,City_37,FL,28.0244,-81.7303,Ophthalmology,Cardiology,86,Male,10236,Medium,HMO,7390,43,22,TRUE
+M0238,Member_238,City_38,CA,36.8383,-119.3579,Cardiology,Cardiology,88,Female,10237,High,HMO,3214,32,29,FALSE
+M0239,Member_239,City_39,CO,39.6401,-105.6921,Dermatology,General Practice,12,Female,10238,High,EPO,2353,7,40,FALSE
+M0240,Member_240,City_40,CO,39.6701,-105.6621,ENT,Gastroenterology,7,Male,10239,High,PPO,5502,22,30,TRUE
+M0241,Member_241,City_41,CA,36.7783,-119.4179,Urology,Ophthalmology,6,Female,10240,High,HMO,4038,47,59,FALSE
+M0242,Member_242,City_42,AZ,34.0789,-111.0637,Endocrinology,Cardiology,70,Other,10241,High,HMO,8833,33,5,TRUE
+M0243,Member_243,City_43,CA,36.8383,-119.3579,Pediatrics,Endocrinology,7,Female,10242,High,EPO,1912,13,36,TRUE
+M0244,Member_244,City_44,CO,39.6401,-105.6921,Orthopedics,Orthopedics,64,Other,10243,Low,HMO,6066,19,47,FALSE
+M0245,Member_245,City_45,MI,44.4348,-85.4824,Dermatology,Urology,16,Female,10244,High,EPO,7860,16,8,FALSE
+M0246,Member_246,City_46,CA,36.7783,-119.4179,Ophthalmology,Dermatology,9,Female,10245,Low,HMO,7617,28,51,TRUE
+M0247,Member_247,City_47,NC,35.7896,-78.9893,Cardiology,Pediatrics,14,Male,10246,High,EPO,7649,50,10,FALSE
+M0248,Member_248,City_48,WA,47.8111,-120.6801,Psychiatry,Endocrinology,1,Other,10247,High,HMO,1459,5,14,TRUE
+M0249,Member_249,City_49,MA,42.4972,-71.2924,Orthopedics,Cardiology,7,Female,10248,High,EPO,5003,49,29,TRUE
+M0250,Member_250,City_50,OH,40.5373,-82.7871,Cardiology,Psychiatry,3,Other,10249,Low,PPO,5362,41,16,FALSE
+M0251,Member_251,City_51,FL,27.9944,-81.7603,Orthopedics,Orthopedics,23,Male,10250,High,EPO,6406,6,33,FALSE
+M0252,Member_252,City_52,PA,41.2333,-77.1645,Orthopedics,Pediatrics,52,Female,10251,High,PPO,7019,38,12,FALSE
+M0253,Member_253,City_53,MI,44.3748,-85.5424,Gastroenterology,Neurology,79,Other,10252,Medium,EPO,7416,27,56,TRUE
+M0254,Member_254,City_54,OH,40.5073,-82.8171,Cardiology,Ophthalmology,30,Female,10253,Medium,PPO,2198,43,51,TRUE
+M0255,Member_255,City_55,NV,38.9226,-116.2994,Dermatology,Neurology,3,Other,10254,Low,HMO,7577,44,19,FALSE
+M0256,Member_256,City_56,NC,35.7596,-79.0193,Cardiology,Pediatrics,90,Male,10255,Low,HMO,7112,45,26,FALSE
+M0257,Member_257,City_57,TX,31.9986,-99.8718,Gastroenterology,Ophthalmology,3,Other,10256,Medium,EPO,8212,6,34,TRUE
+M0258,Member_258,City_58,WA,47.8111,-120.6801,Urology,Ophthalmology,66,Male,10257,Low,PPO,7665,19,18,TRUE
+M0259,Member_259,City_59,GA,32.2556,-82.8101,Urology,Psychiatry,85,Female,10258,Medium,HMO,8618,35,8,TRUE
+M0260,Member_260,City_60,CO,39.6701,-105.6621,Dermatology,Psychiatry,68,Male,10259,Low,EPO,9199,21,53,FALSE
+M0261,Member_261,City_61,OH,40.4173,-82.9071,General Practice,General Practice,48,Other,10260,Medium,EPO,2724,23,29,TRUE
+M0262,Member_262,City_62,MA,42.4372,-71.3524,General Practice,ENT,1,Male,10261,High,PPO,3296,37,47,FALSE
+M0263,Member_263,City_63,FL,28.0544,-81.7003,Gastroenterology,Gastroenterology,44,Female,10262,Low,PPO,2214,39,55,FALSE
+M0264,Member_264,City_64,NY,43.3894,-74.1279,Pediatrics,Pediatrics,45,Other,10263,Low,PPO,1864,29,43,FALSE
+M0265,Member_265,City_65,NV,38.9226,-116.2994,Pediatrics,Orthopedics,20,Female,10264,Low,PPO,4125,12,31,FALSE
+M0266,Member_266,City_66,FL,27.9944,-81.7603,Neurology,Urology,89,Female,10265,Medium,PPO,4679,27,51,TRUE
+M0267,Member_267,City_67,NC,35.7896,-78.9893,Gastroenterology,Pediatrics,90,Other,10266,High,PPO,7159,16,54,FALSE
+M0268,Member_268,City_68,AZ,34.1089,-111.0337,ENT,Endocrinology,61,Female,10267,High,PPO,6667,42,24,TRUE
+M0269,Member_269,City_69,CO,39.6401,-105.6921,Urology,Dermatology,45,Female,10268,Low,PPO,5949,12,55,TRUE
+M0270,Member_270,City_70,OH,40.5373,-82.7871,Urology,Dermatology,72,Other,10269,High,HMO,3993,42,50,FALSE
+M0271,Member_271,City_71,OH,40.4173,-82.9071,Ophthalmology,Dermatology,83,Male,10270,Low,HMO,8946,49,29,FALSE
+M0272,Member_272,City_72,TX,31.9986,-99.8718,Orthopedics,ENT,83,Other,10271,Medium,HMO,3227,36,20,FALSE
+M0273,Member_273,City_73,NC,35.8196,-78.9593,Urology,Gastroenterology,67,Other,10272,Medium,EPO,4747,14,30,TRUE
+M0274,Member_274,City_74,IL,40.7231,-89.3085,General Practice,Dermatology,22,Other,10273,Low,HMO,7839,30,22,FALSE
+M0275,Member_275,City_75,WA,47.8711,-120.6201,Orthopedics,General Practice,6,Other,10274,Low,EPO,8625,44,26,FALSE
+M0276,Member_276,City_76,OH,40.4173,-82.9071,Psychiatry,Ophthalmology,41,Other,10275,Low,HMO,3872,39,20,TRUE
+M0277,Member_277,City_77,NC,35.7896,-78.9893,Endocrinology,Dermatology,1,Other,10276,Low,HMO,3889,29,30,TRUE
+M0278,Member_278,City_78,FL,28.0544,-81.7003,Endocrinology,Neurology,85,Male,10277,Low,HMO,2425,12,56,TRUE
+M0279,Member_279,City_79,OH,40.5073,-82.8171,Urology,Psychiatry,48,Other,10278,Low,EPO,3254,22,6,FALSE
+M0280,Member_280,City_80,PA,41.3233,-77.0745,Urology,Cardiology,73,Female,10279,Low,EPO,4345,40,60,TRUE
+M0281,Member_281,City_81,TX,31.9686,-99.9018,Urology,Cardiology,66,Male,10280,Low,PPO,6577,42,28,TRUE
+M0282,Member_282,City_82,CA,36.8083,-119.3879,Neurology,Neurology,50,Female,10281,Medium,PPO,7740,12,45,TRUE
+M0283,Member_283,City_83,CO,39.6101,-105.7221,ENT,Cardiology,11,Other,10282,Medium,EPO,5051,11,21,TRUE
+M0284,Member_284,City_84,WA,47.8411,-120.6501,Orthopedics,Urology,72,Other,10283,Low,HMO,6449,14,38,FALSE
+M0285,Member_285,City_85,AZ,34.1689,-110.9737,Psychiatry,ENT,30,Female,10284,Medium,HMO,5293,18,44,FALSE
+M0286,Member_286,City_86,CO,39.5501,-105.7821,General Practice,Cardiology,63,Female,10285,Low,HMO,1494,35,10,TRUE
+M0287,Member_287,City_87,TX,31.9986,-99.8718,Dermatology,Cardiology,57,Male,10286,Low,EPO,3505,23,40,FALSE
+M0288,Member_288,City_88,PA,41.2633,-77.1345,Dermatology,Orthopedics,38,Male,10287,Low,PPO,9786,38,50,TRUE
+M0289,Member_289,City_89,TX,32.0586,-99.8118,Orthopedics,General Practice,63,Female,10288,Medium,HMO,8724,31,20,TRUE
+M0290,Member_290,City_90,GA,32.2856,-82.7801,General Practice,Gastroenterology,10,Female,10289,High,PPO,2877,8,36,FALSE
+M0291,Member_291,City_91,IL,40.6331,-89.3985,Dermatology,Pediatrics,25,Other,10290,Medium,EPO,8924,44,60,FALSE
+M0292,Member_292,City_92,CA,36.8083,-119.3879,Cardiology,Psychiatry,53,Male,10291,High,EPO,2543,41,34,FALSE
+M0293,Member_293,City_93,PA,41.2633,-77.1345,Cardiology,Gastroenterology,59,Other,10292,Low,EPO,6525,40,42,FALSE
+M0294,Member_294,City_94,NV,38.8926,-116.3294,Ophthalmology,Ophthalmology,31,Male,10293,High,EPO,7957,47,8,TRUE
+M0295,Member_295,City_95,NC,35.8796,-78.8993,General Practice,Psychiatry,74,Other,10294,High,EPO,5099,48,38,FALSE
+M0296,Member_296,City_96,PA,41.2033,-77.1945,Neurology,Urology,41,Male,10295,Medium,HMO,5023,7,15,TRUE
+M0297,Member_297,City_97,CA,36.8083,-119.3879,Orthopedics,Gastroenterology,13,Male,10296,Medium,PPO,1872,40,39,FALSE
+M0298,Member_298,City_98,CO,39.6101,-105.7221,Cardiology,Pediatrics,83,Other,10297,Low,HMO,4339,8,31,FALSE
+M0299,Member_299,City_99,GA,32.2556,-82.8101,Dermatology,Psychiatry,89,Male,10298,High,PPO,3188,8,34,TRUE
+M0300,Member_300,City_100,CA,36.8983,-119.2979,Neurology,ENT,80,Other,10299,High,HMO,6640,41,5,FALSE
+M0301,Member_301,City_101,MA,42.4072,-71.3824,Urology,ENT,6,Female,10300,Medium,PPO,8902,41,50,FALSE
+M0302,Member_302,City_102,FL,28.0244,-81.7303,Dermatology,Psychiatry,42,Other,10301,High,EPO,2723,30,47,TRUE
+M0303,Member_303,City_103,PA,41.2633,-77.1345,Gastroenterology,Psychiatry,9,Female,10302,Medium,HMO,2000,36,25,FALSE
+M0304,Member_304,City_104,FL,28.0844,-81.6703,Dermatology,Urology,19,Female,10303,Medium,HMO,4746,45,34,TRUE
+M0305,Member_305,City_105,AZ,34.1689,-110.9737,Cardiology,ENT,46,Female,10304,Low,HMO,3994,30,36,TRUE
+M0306,Member_306,City_106,GA,32.1656,-82.9001,Ophthalmology,ENT,41,Male,10305,Low,HMO,8753,6,54,TRUE
+M0307,Member_307,City_107,TX,31.9986,-99.8718,Urology,Pediatrics,36,Other,10306,Medium,HMO,2816,45,37,TRUE
+M0308,Member_308,City_108,OH,40.4773,-82.8471,Psychiatry,Dermatology,18,Female,10307,Low,PPO,1016,17,39,FALSE
+M0309,Member_309,City_109,FL,28.0844,-81.6703,Ophthalmology,Orthopedics,33,Female,10308,Medium,HMO,1009,6,54,TRUE
+M0310,Member_310,City_110,NC,35.8796,-78.8993,Gastroenterology,Pediatrics,43,Other,10309,Low,EPO,9818,50,13,FALSE
+M0311,Member_311,City_111,IL,40.6331,-89.3985,Endocrinology,Psychiatry,81,Other,10310,High,PPO,4109,30,17,FALSE
+M0312,Member_312,City_112,MI,44.3448,-85.5724,Urology,Gastroenterology,82,Male,10311,Low,PPO,9980,45,27,FALSE
+M0313,Member_313,City_113,AZ,34.1089,-111.0337,Neurology,Cardiology,45,Male,10312,High,PPO,5426,21,20,FALSE
+M0314,Member_314,City_114,NV,38.8926,-116.3294,Ophthalmology,Ophthalmology,35,Female,10313,High,HMO,4016,21,57,FALSE
+M0315,Member_315,City_115,PA,41.3233,-77.0745,General Practice,Cardiology,28,Other,10314,Low,PPO,1255,19,36,TRUE
+M0316,Member_316,City_116,TX,31.9686,-99.9018,Dermatology,Pediatrics,55,Other,10315,Low,PPO,8684,27,53,FALSE
+M0317,Member_317,City_117,GA,32.1956,-82.8701,General Practice,Neurology,18,Female,10316,Low,PPO,1558,19,54,TRUE
+M0318,Member_318,City_118,WA,47.8111,-120.6801,Gastroenterology,Pediatrics,74,Male,10317,High,HMO,2574,25,6,TRUE
+M0319,Member_319,City_119,FL,28.0844,-81.6703,Pediatrics,Dermatology,42,Male,10318,High,PPO,3240,9,52,TRUE
+M0320,Member_320,City_120,IL,40.7531,-89.2785,General Practice,Psychiatry,44,Other,10319,Medium,PPO,1492,21,55,TRUE
+M0321,Member_321,City_121,OH,40.4173,-82.9071,Psychiatry,Cardiology,19,Male,10320,High,HMO,3145,37,15,TRUE
+M0322,Member_322,City_122,TX,31.9986,-99.8718,Pediatrics,Psychiatry,75,Female,10321,Low,EPO,5918,43,44,TRUE
+M0323,Member_323,City_123,CO,39.6101,-105.7221,Urology,Psychiatry,89,Female,10322,High,PPO,9976,6,48,FALSE
+M0324,Member_324,City_124,TX,32.0586,-99.8118,Dermatology,Endocrinology,80,Other,10323,High,HMO,7642,20,25,FALSE
+M0325,Member_325,City_125,NY,43.4194,-74.0979,ENT,Gastroenterology,62,Female,10324,Medium,PPO,8967,16,29,FALSE
+M0326,Member_326,City_126,OH,40.4173,-82.9071,Orthopedics,Neurology,24,Other,10325,Medium,HMO,7224,46,30,TRUE
+M0327,Member_327,City_127,MA,42.4372,-71.3524,Dermatology,Neurology,36,Male,10326,High,EPO,1535,28,47,TRUE
+M0328,Member_328,City_128,IL,40.6931,-89.3385,Psychiatry,Endocrinology,45,Other,10327,Low,EPO,9153,43,33,FALSE
+M0329,Member_329,City_129,OH,40.5073,-82.8171,Ophthalmology,Dermatology,2,Other,10328,High,HMO,3639,42,36,TRUE
+M0330,Member_330,City_130,CO,39.6701,-105.6621,Neurology,General Practice,32,Other,10329,Medium,HMO,6522,23,32,FALSE
+M0331,Member_331,City_131,CA,36.7783,-119.4179,Cardiology,ENT,66,Other,10330,Low,PPO,9873,36,52,FALSE
+M0332,Member_332,City_132,CO,39.5801,-105.7521,Pediatrics,Psychiatry,22,Female,10331,Low,EPO,7890,23,43,TRUE
+M0333,Member_333,City_133,FL,28.0544,-81.7003,Ophthalmology,Pediatrics,36,Male,10332,High,PPO,3959,16,14,FALSE
+M0334,Member_334,City_134,FL,28.0844,-81.6703,Neurology,Neurology,77,Other,10333,Low,EPO,3701,46,49,TRUE
+M0335,Member_335,City_135,NC,35.8796,-78.8993,Urology,Orthopedics,63,Female,10334,Medium,EPO,9794,31,14,FALSE
+M0336,Member_336,City_136,MA,42.4072,-71.3824,Pediatrics,Dermatology,89,Male,10335,Medium,HMO,8345,24,51,TRUE
+M0337,Member_337,City_137,IL,40.6631,-89.3685,Gastroenterology,Urology,83,Other,10336,Low,EPO,5917,12,15,FALSE
+M0338,Member_338,City_138,MA,42.4672,-71.3224,Dermatology,Gastroenterology,32,Female,10337,Medium,EPO,3935,43,57,TRUE
+M0339,Member_339,City_139,IL,40.7231,-89.3085,Ophthalmology,Orthopedics,38,Female,10338,Low,EPO,4703,17,49,TRUE
+M0340,Member_340,City_140,FL,28.1144,-81.6403,Endocrinology,Pediatrics,40,Other,10339,High,HMO,5222,35,20,FALSE
+M0341,Member_341,City_141,PA,41.2033,-77.1945,Psychiatry,Orthopedics,90,Other,10340,Medium,EPO,7181,44,48,TRUE
+M0342,Member_342,City_142,CA,36.8083,-119.3879,Orthopedics,Orthopedics,62,Other,10341,Low,PPO,6895,34,9,FALSE
+M0343,Member_343,City_143,MA,42.4672,-71.3224,Urology,Pediatrics,56,Female,10342,Medium,PPO,7647,34,37,TRUE
+M0344,Member_344,City_144,GA,32.2556,-82.8101,Urology,Cardiology,48,Female,10343,Medium,PPO,5428,16,21,TRUE
+M0345,Member_345,City_145,MA,42.5272,-71.2624,Psychiatry,Orthopedics,35,Female,10344,Medium,HMO,2290,13,6,TRUE
+M0346,Member_346,City_146,CA,36.7783,-119.4179,Gastroenterology,ENT,74,Other,10345,High,PPO,5860,17,20,TRUE
+M0347,Member_347,City_147,CA,36.8083,-119.3879,Gastroenterology,General Practice,55,Female,10346,Low,EPO,9645,16,39,TRUE
+M0348,Member_348,City_148,FL,28.0544,-81.7003,Psychiatry,General Practice,61,Other,10347,High,PPO,8274,8,58,FALSE
+M0349,Member_349,City_149,GA,32.2556,-82.8101,Urology,Urology,87,Other,10348,Low,HMO,5139,37,41,TRUE
+M0350,Member_350,City_150,IL,40.7531,-89.2785,ENT,General Practice,63,Female,10349,Medium,EPO,1531,29,29,FALSE
+M0351,Member_351,City_151,FL,27.9944,-81.7603,General Practice,Pediatrics,67,Female,10350,Medium,PPO,8137,7,52,FALSE
+M0352,Member_352,City_152,CA,36.8083,-119.3879,Ophthalmology,Orthopedics,0,Male,10351,Low,HMO,8096,44,42,FALSE
+M0353,Member_353,City_153,TX,32.0286,-99.8418,Cardiology,Urology,31,Other,10352,Medium,HMO,8852,20,49,FALSE
+M0354,Member_354,City_154,IL,40.7231,-89.3085,ENT,Urology,74,Other,10353,High,EPO,9216,26,27,FALSE
+M0355,Member_355,City_155,NY,43.4194,-74.0979,Cardiology,Psychiatry,36,Male,10354,Low,PPO,2625,39,42,TRUE
+M0356,Member_356,City_156,MA,42.4072,-71.3824,General Practice,Urology,81,Female,10355,Medium,PPO,3016,6,27,FALSE
+M0357,Member_357,City_157,AZ,34.0789,-111.0637,Gastroenterology,Urology,48,Female,10356,Low,EPO,1825,44,42,TRUE
+M0358,Member_358,City_158,OH,40.4773,-82.8471,Dermatology,ENT,32,Other,10357,Low,EPO,7332,6,53,FALSE
+M0359,Member_359,City_159,AZ,34.1389,-111.0037,Psychiatry,Cardiology,0,Male,10358,Medium,HMO,5385,32,24,TRUE
+M0360,Member_360,City_160,CO,39.6701,-105.6621,Gastroenterology,Dermatology,46,Male,10359,Low,PPO,4386,42,33,TRUE
+M0361,Member_361,City_161,OH,40.4173,-82.9071,General Practice,Endocrinology,87,Male,10360,Medium,HMO,5863,43,53,TRUE
+M0362,Member_362,City_162,GA,32.1956,-82.8701,Urology,Neurology,68,Male,10361,Low,EPO,9890,21,58,TRUE
+M0363,Member_363,City_163,GA,32.2256,-82.8401,Endocrinology,Ophthalmology,7,Female,10362,Low,EPO,3697,47,52,FALSE
+M0364,Member_364,City_164,MI,44.4048,-85.5124,Gastroenterology,Urology,7,Female,10363,Low,HMO,2085,20,46,FALSE
+M0365,Member_365,City_165,TX,32.0886,-99.7818,Orthopedics,Gastroenterology,43,Female,10364,Medium,PPO,5250,22,43,FALSE
+M0366,Member_366,City_166,OH,40.4173,-82.9071,Cardiology,Orthopedics,33,Male,10365,Low,PPO,8544,29,25,TRUE
+M0367,Member_367,City_167,MA,42.4372,-71.3524,Pediatrics,Ophthalmology,19,Male,10366,Medium,HMO,4423,49,13,FALSE
+M0368,Member_368,City_168,PA,41.2633,-77.1345,Ophthalmology,Orthopedics,60,Other,10367,High,PPO,2705,32,20,TRUE
+M0369,Member_369,City_169,IL,40.7231,-89.3085,ENT,General Practice,82,Other,10368,Medium,HMO,6433,49,29,TRUE
+M0370,Member_370,City_170,NC,35.8796,-78.8993,Orthopedics,Gastroenterology,14,Male,10369,Medium,PPO,5547,42,18,TRUE
+M0371,Member_371,City_171,FL,27.9944,-81.7603,ENT,ENT,71,Other,10370,Medium,HMO,8478,47,7,FALSE
+M0372,Member_372,City_172,CO,39.5801,-105.7521,Pediatrics,Ophthalmology,32,Other,10371,Low,EPO,8710,48,23,TRUE
+M0373,Member_373,City_173,GA,32.2256,-82.8401,Psychiatry,Urology,54,Female,10372,Low,HMO,4636,21,11,TRUE
+M0374,Member_374,City_174,CO,39.6401,-105.6921,Neurology,Psychiatry,55,Other,10373,High,EPO,1828,26,34,TRUE
+M0375,Member_375,City_175,WA,47.8711,-120.6201,Urology,Cardiology,19,Female,10374,Low,HMO,7657,38,33,TRUE
+M0376,Member_376,City_176,WA,47.7511,-120.7401,Psychiatry,Gastroenterology,4,Female,10375,Medium,EPO,6742,47,47,FALSE
+M0377,Member_377,City_177,IL,40.6631,-89.3685,Psychiatry,General Practice,36,Other,10376,Medium,EPO,6538,19,20,TRUE
+M0378,Member_378,City_178,TX,32.0286,-99.8418,Psychiatry,Dermatology,27,Male,10377,Low,EPO,6062,23,5,TRUE
+M0379,Member_379,City_179,CO,39.6401,-105.6921,Cardiology,Cardiology,37,Male,10378,High,EPO,1490,15,14,TRUE
+M0380,Member_380,City_180,PA,41.3233,-77.0745,Neurology,Pediatrics,36,Other,10379,Low,EPO,4994,42,41,TRUE
+M0381,Member_381,City_181,IL,40.6331,-89.3985,Cardiology,Neurology,84,Male,10380,Low,PPO,3160,44,5,TRUE
+M0382,Member_382,City_182,OH,40.4473,-82.8771,General Practice,Orthopedics,21,Male,10381,Low,EPO,7814,11,19,TRUE
+M0383,Member_383,City_183,MA,42.4672,-71.3224,Urology,Urology,47,Other,10382,Low,PPO,2700,22,17,FALSE
+M0384,Member_384,City_184,NY,43.3894,-74.1279,Psychiatry,Ophthalmology,49,Other,10383,Low,EPO,7749,8,30,FALSE
+M0385,Member_385,City_185,NC,35.8796,-78.8993,Neurology,Neurology,1,Male,10384,Medium,PPO,7228,18,56,TRUE
+M0386,Member_386,City_186,TX,31.9686,-99.9018,Cardiology,Gastroenterology,3,Other,10385,Medium,EPO,7217,20,59,FALSE
+M0387,Member_387,City_187,TX,31.9986,-99.8718,Orthopedics,Dermatology,87,Male,10386,Medium,EPO,8143,28,9,FALSE
+M0388,Member_388,City_188,PA,41.2633,-77.1345,General Practice,ENT,44,Female,10387,High,PPO,4885,5,39,TRUE
+M0389,Member_389,City_189,CO,39.6401,-105.6921,Cardiology,Dermatology,52,Female,10388,Medium,PPO,8173,35,60,FALSE
+M0390,Member_390,City_190,NC,35.8796,-78.8993,ENT,Endocrinology,50,Male,10389,Low,EPO,6196,28,26,FALSE
+M0391,Member_391,City_191,NV,38.8026,-116.4194,Endocrinology,Gastroenterology,10,Male,10390,Low,HMO,6175,28,53,TRUE
+M0392,Member_392,City_192,FL,28.0244,-81.7303,Endocrinology,Cardiology,72,Female,10391,Medium,HMO,9975,11,22,FALSE
+M0393,Member_393,City_193,NC,35.8196,-78.9593,Dermatology,Endocrinology,28,Female,10392,High,EPO,4425,49,58,TRUE
+M0394,Member_394,City_194,CA,36.8683,-119.3279,Cardiology,Gastroenterology,11,Male,10393,Medium,HMO,3176,31,55,TRUE
+M0395,Member_395,City_195,WA,47.8711,-120.6201,Psychiatry,ENT,31,Other,10394,Medium,EPO,4581,44,14,TRUE
+M0396,Member_396,City_196,CA,36.7783,-119.4179,Endocrinology,Dermatology,68,Other,10395,Medium,PPO,6568,44,39,TRUE
+M0397,Member_397,City_197,NV,38.8326,-116.3894,Endocrinology,Neurology,9,Other,10396,Low,PPO,2642,40,15,TRUE
+M0398,Member_398,City_198,TX,32.0286,-99.8418,Endocrinology,General Practice,24,Male,10397,Low,HMO,3504,12,40,FALSE
+M0399,Member_399,City_199,MI,44.4048,-85.5124,Orthopedics,Pediatrics,68,Male,10398,Low,PPO,1144,39,20,TRUE
+M0400,Member_400,City_200,NY,43.4194,-74.0979,Neurology,Psychiatry,87,Male,10399,High,EPO,7747,30,54,TRUE
+M0401,Member_401,City_1,OH,40.4173,-82.9071,ENT,Endocrinology,21,Other,10400,High,PPO,9958,32,28,TRUE
+M0402,Member_402,City_2,AZ,34.0789,-111.0637,General Practice,Gastroenterology,41,Female,10401,High,PPO,9149,18,25,TRUE
+M0403,Member_403,City_3,TX,32.0286,-99.8418,Neurology,Ophthalmology,81,Female,10402,Medium,PPO,9465,29,20,TRUE
+M0404,Member_404,City_4,NV,38.8926,-116.3294,Orthopedics,Cardiology,8,Female,10403,Medium,EPO,5097,46,35,TRUE
+M0405,Member_405,City_5,NV,38.9226,-116.2994,Orthopedics,General Practice,27,Male,10404,Medium,EPO,1604,32,42,FALSE
+M0406,Member_406,City_6,NV,38.8026,-116.4194,Dermatology,General Practice,9,Other,10405,Medium,PPO,8971,9,52,TRUE
+M0407,Member_407,City_7,CO,39.5801,-105.7521,ENT,Gastroenterology,77,Other,10406,Low,PPO,8059,50,54,FALSE
+M0408,Member_408,City_8,MA,42.4672,-71.3224,Orthopedics,General Practice,90,Male,10407,Medium,EPO,3293,45,39,TRUE
+M0409,Member_409,City_9,MA,42.4972,-71.2924,Orthopedics,Pediatrics,40,Male,10408,Low,PPO,1479,31,13,TRUE
+M0410,Member_410,City_10,MA,42.5272,-71.2624,Psychiatry,Endocrinology,52,Male,10409,Low,PPO,7159,33,23,TRUE
+M0411,Member_411,City_11,NY,43.2994,-74.2179,Endocrinology,Endocrinology,53,Other,10410,Medium,EPO,5091,14,55,TRUE
+M0412,Member_412,City_12,NY,43.3294,-74.1879,Gastroenterology,Neurology,63,Female,10411,Low,EPO,3097,34,38,TRUE
+M0413,Member_413,City_13,NC,35.8196,-78.9593,Urology,Cardiology,84,Female,10412,Low,PPO,5102,50,40,TRUE
+M0414,Member_414,City_14,NV,38.8926,-116.3294,Ophthalmology,Neurology,11,Female,10413,Medium,HMO,7633,40,13,TRUE
+M0415,Member_415,City_15,MA,42.5272,-71.2624,Psychiatry,Endocrinology,61,Male,10414,Low,EPO,3885,15,31,FALSE
+M0416,Member_416,City_16,NY,43.2994,-74.2179,General Practice,Cardiology,25,Male,10415,Low,HMO,7733,26,58,TRUE
+M0417,Member_417,City_17,TX,31.9986,-99.8718,Orthopedics,Urology,55,Female,10416,Medium,PPO,2478,37,44,TRUE
+M0418,Member_418,City_18,MI,44.3748,-85.5424,Orthopedics,Urology,21,Female,10417,Low,HMO,3919,47,44,FALSE
+M0419,Member_419,City_19,FL,28.0844,-81.6703,Neurology,General Practice,19,Male,10418,High,PPO,1251,7,28,TRUE
+M0420,Member_420,City_20,FL,28.1144,-81.6403,Neurology,Psychiatry,83,Male,10419,High,PPO,9658,40,60,TRUE
+M0421,Member_421,City_21,IL,40.6331,-89.3985,Ophthalmology,Neurology,36,Female,10420,Low,PPO,4035,19,10,TRUE
+M0422,Member_422,City_22,NY,43.3294,-74.1879,Dermatology,Psychiatry,90,Male,10421,Low,HMO,8510,36,30,FALSE
+M0423,Member_423,City_23,IL,40.6931,-89.3385,Psychiatry,Psychiatry,47,Male,10422,Medium,PPO,7636,22,26,FALSE
+M0424,Member_424,City_24,NC,35.8496,-78.9293,General Practice,Orthopedics,40,Male,10423,Medium,PPO,7986,45,6,FALSE
+M0425,Member_425,City_25,CA,36.8983,-119.2979,Endocrinology,Cardiology,84,Male,10424,Low,EPO,6474,24,48,TRUE
+M0426,Member_426,City_26,TX,31.9686,-99.9018,Pediatrics,Pediatrics,26,Other,10425,High,HMO,7115,43,26,TRUE
+M0427,Member_427,City_27,TX,31.9986,-99.8718,Gastroenterology,Psychiatry,12,Female,10426,Medium,PPO,6191,18,47,FALSE
+M0428,Member_428,City_28,TX,32.0286,-99.8418,Urology,Ophthalmology,31,Male,10427,Medium,PPO,8937,39,21,FALSE
+M0429,Member_429,City_29,WA,47.8411,-120.6501,Endocrinology,Psychiatry,1,Other,10428,Medium,HMO,5861,21,58,FALSE
+M0430,Member_430,City_30,GA,32.2856,-82.7801,Gastroenterology,Gastroenterology,1,Female,10429,Low,EPO,7002,46,51,TRUE
+M0431,Member_431,City_31,PA,41.2033,-77.1945,Urology,Neurology,19,Female,10430,Low,PPO,8019,47,57,FALSE
+M0432,Member_432,City_32,AZ,34.0789,-111.0637,Urology,Neurology,43,Female,10431,Medium,EPO,2977,32,32,TRUE
+M0433,Member_433,City_33,CA,36.8383,-119.3579,Pediatrics,Gastroenterology,52,Male,10432,High,EPO,2213,48,55,TRUE
+M0434,Member_434,City_34,CA,36.8683,-119.3279,Orthopedics,Pediatrics,60,Female,10433,High,PPO,2691,22,60,TRUE
+M0435,Member_435,City_35,NV,38.9226,-116.2994,Neurology,Cardiology,37,Male,10434,High,HMO,5402,43,45,FALSE
+M0436,Member_436,City_36,CA,36.7783,-119.4179,ENT,Urology,81,Male,10435,High,PPO,1839,36,16,FALSE
+M0437,Member_437,City_37,NY,43.3294,-74.1879,Ophthalmology,Psychiatry,18,Other,10436,Low,PPO,3029,50,20,TRUE
+M0438,Member_438,City_38,OH,40.4773,-82.8471,Pediatrics,Psychiatry,47,Male,10437,Medium,HMO,9887,35,32,TRUE
+M0439,Member_439,City_39,WA,47.8411,-120.6501,General Practice,General Practice,85,Male,10438,Low,EPO,5201,10,52,FALSE
+M0440,Member_440,City_40,CO,39.6701,-105.6621,Psychiatry,General Practice,23,Male,10439,Low,HMO,1311,22,13,TRUE
+M0441,Member_441,City_41,GA,32.1656,-82.9001,Dermatology,Cardiology,25,Other,10440,High,HMO,8041,22,57,TRUE
+M0442,Member_442,City_42,GA,32.1956,-82.8701,Neurology,General Practice,79,Male,10441,Low,PPO,7753,29,58,TRUE
+M0443,Member_443,City_43,WA,47.8111,-120.6801,Orthopedics,Cardiology,3,Female,10442,High,EPO,3877,31,44,FALSE
+M0444,Member_444,City_44,NY,43.3894,-74.1279,Pediatrics,Urology,7,Female,10443,High,PPO,5596,30,26,FALSE
+M0445,Member_445,City_45,CA,36.8983,-119.2979,Pediatrics,ENT,66,Female,10444,High,EPO,8320,7,6,FALSE
+M0446,Member_446,City_46,MA,42.4072,-71.3824,Gastroenterology,General Practice,58,Other,10445,Low,HMO,1812,27,43,FALSE
+M0447,Member_447,City_47,MA,42.4372,-71.3524,Neurology,Pediatrics,19,Female,10446,High,HMO,3108,17,32,FALSE
+M0448,Member_448,City_48,MI,44.3748,-85.5424,Pediatrics,ENT,37,Female,10447,High,EPO,2855,33,15,FALSE
+M0449,Member_449,City_49,OH,40.5073,-82.8171,Cardiology,Cardiology,29,Other,10448,Medium,EPO,2265,9,33,FALSE
+M0450,Member_450,City_50,AZ,34.1689,-110.9737,Pediatrics,Urology,64,Other,10449,Low,HMO,6201,36,5,FALSE
+M0451,Member_451,City_51,NY,43.2994,-74.2179,Gastroenterology,Orthopedics,70,Male,10450,High,PPO,1445,8,7,TRUE
+M0452,Member_452,City_52,FL,28.0244,-81.7303,Endocrinology,Ophthalmology,0,Other,10451,Low,PPO,2684,50,36,FALSE
+M0453,Member_453,City_53,AZ,34.1089,-111.0337,Ophthalmology,Psychiatry,18,Female,10452,Medium,PPO,4560,18,50,TRUE
+M0454,Member_454,City_54,AZ,34.1389,-111.0037,Ophthalmology,Neurology,38,Female,10453,Low,EPO,5073,43,25,FALSE
+M0455,Member_455,City_55,NY,43.4194,-74.0979,Ophthalmology,Psychiatry,32,Female,10454,Low,EPO,4814,42,41,TRUE
+M0456,Member_456,City_56,MI,44.3148,-85.6024,Urology,Urology,51,Female,10455,Medium,HMO,4405,12,59,TRUE
+M0457,Member_457,City_57,NV,38.8326,-116.3894,Ophthalmology,Orthopedics,90,Female,10456,Low,HMO,8439,10,56,FALSE
+M0458,Member_458,City_58,NV,38.8626,-116.3594,General Practice,Cardiology,5,Other,10457,Medium,PPO,9808,29,57,TRUE
+M0459,Member_459,City_59,FL,28.0844,-81.6703,General Practice,Pediatrics,2,Male,10458,Low,EPO,1192,31,40,FALSE
+M0460,Member_460,City_60,TX,32.0886,-99.7818,General Practice,Pediatrics,39,Other,10459,High,PPO,5485,16,51,TRUE
+M0461,Member_461,City_61,NY,43.2994,-74.2179,Urology,General Practice,83,Female,10460,High,HMO,3614,21,51,FALSE
+M0462,Member_462,City_62,MA,42.4372,-71.3524,Urology,Dermatology,81,Male,10461,Medium,EPO,8371,42,58,FALSE
+M0463,Member_463,City_63,NY,43.3594,-74.1579,Urology,Pediatrics,58,Other,10462,Low,HMO,3659,46,50,FALSE
+M0464,Member_464,City_64,TX,32.0586,-99.8118,Psychiatry,Gastroenterology,75,Other,10463,Low,HMO,2439,44,23,FALSE
+M0465,Member_465,City_65,WA,47.8711,-120.6201,Cardiology,Psychiatry,9,Male,10464,High,EPO,9819,42,37,FALSE
+M0466,Member_466,City_66,CO,39.5501,-105.7821,Psychiatry,Endocrinology,21,Female,10465,Medium,HMO,2147,29,29,FALSE
+M0467,Member_467,City_67,AZ,34.0789,-111.0637,Psychiatry,Dermatology,10,Other,10466,Low,EPO,2405,43,43,FALSE
+M0468,Member_468,City_68,FL,28.0544,-81.7003,Cardiology,Psychiatry,23,Female,10467,Medium,EPO,5694,49,49,FALSE
+M0469,Member_469,City_69,AZ,34.1389,-111.0037,Endocrinology,Endocrinology,81,Other,10468,Medium,HMO,9765,48,52,FALSE
+M0470,Member_470,City_70,MI,44.4348,-85.4824,Endocrinology,Ophthalmology,77,Female,10469,High,EPO,7585,39,15,TRUE
+M0471,Member_471,City_71,MA,42.4072,-71.3824,Psychiatry,Urology,42,Male,10470,Low,PPO,5001,12,44,FALSE
+M0472,Member_472,City_72,NY,43.3294,-74.1879,Psychiatry,Neurology,13,Male,10471,Medium,EPO,8371,37,31,FALSE
+M0473,Member_473,City_73,NY,43.3594,-74.1579,Gastroenterology,Gastroenterology,52,Other,10472,Medium,PPO,8148,38,56,FALSE
+M0474,Member_474,City_74,NY,43.3894,-74.1279,Orthopedics,Gastroenterology,11,Other,10473,Medium,EPO,6090,18,40,FALSE
+M0475,Member_475,City_75,MA,42.5272,-71.2624,Psychiatry,General Practice,57,Other,10474,High,PPO,8288,47,30,FALSE
+M0476,Member_476,City_76,NY,43.2994,-74.2179,ENT,Neurology,6,Other,10475,Medium,HMO,9008,49,14,TRUE
+M0477,Member_477,City_77,NY,43.3294,-74.1879,Ophthalmology,Dermatology,87,Male,10476,High,PPO,7682,14,36,FALSE
+M0478,Member_478,City_78,OH,40.4773,-82.8471,Gastroenterology,Urology,80,Male,10477,Low,PPO,5773,45,53,TRUE
+M0479,Member_479,City_79,IL,40.7231,-89.3085,Orthopedics,Pediatrics,32,Other,10478,Medium,HMO,1308,46,48,TRUE
+M0480,Member_480,City_80,NV,38.9226,-116.2994,Neurology,Dermatology,68,Other,10479,Medium,HMO,6979,13,22,TRUE
+M0481,Member_481,City_81,MA,42.4072,-71.3824,Gastroenterology,Dermatology,24,Male,10480,Low,PPO,7229,25,29,TRUE
+M0482,Member_482,City_82,GA,32.1956,-82.8701,Orthopedics,General Practice,83,Female,10481,Low,HMO,7341,25,38,FALSE
+M0483,Member_483,City_83,WA,47.8111,-120.6801,Psychiatry,Neurology,28,Female,10482,Low,EPO,2707,50,25,FALSE
+M0484,Member_484,City_84,NY,43.3894,-74.1279,Dermatology,Orthopedics,10,Female,10483,Low,PPO,7819,26,18,TRUE
+M0485,Member_485,City_85,MI,44.4348,-85.4824,Dermatology,Pediatrics,42,Female,10484,High,PPO,1250,30,49,FALSE
+M0486,Member_486,City_86,TX,31.9686,-99.9018,Neurology,Gastroenterology,35,Female,10485,Medium,HMO,4491,35,33,TRUE
+M0487,Member_487,City_87,MA,42.4372,-71.3524,Urology,Gastroenterology,54,Female,10486,High,HMO,2521,24,20,FALSE
+M0488,Member_488,City_88,CO,39.6101,-105.7221,Urology,Ophthalmology,13,Other,10487,Low,PPO,4278,8,10,FALSE
+M0489,Member_489,City_89,WA,47.8411,-120.6501,ENT,Neurology,88,Other,10488,Medium,EPO,4828,30,6,FALSE
+M0490,Member_490,City_90,MI,44.4348,-85.4824,Ophthalmology,Neurology,21,Male,10489,Low,HMO,4367,38,43,FALSE
+M0491,Member_491,City_91,OH,40.4173,-82.9071,Neurology,ENT,26,Male,10490,High,HMO,6067,37,55,TRUE
+M0492,Member_492,City_92,AZ,34.0789,-111.0637,Psychiatry,Ophthalmology,41,Female,10491,High,PPO,9943,7,40,FALSE
+M0493,Member_493,City_93,MA,42.4672,-71.3224,Gastroenterology,Gastroenterology,51,Male,10492,Low,EPO,3403,14,7,FALSE
+M0494,Member_494,City_94,FL,28.0844,-81.6703,Psychiatry,Neurology,50,Female,10493,Medium,PPO,5459,29,18,TRUE
+M0495,Member_495,City_95,TX,32.0886,-99.7818,ENT,Orthopedics,74,Female,10494,Medium,EPO,9126,23,30,TRUE
+M0496,Member_496,City_96,NV,38.8026,-116.4194,Dermatology,Endocrinology,2,Male,10495,High,HMO,3746,43,15,FALSE
+M0497,Member_497,City_97,WA,47.7811,-120.7101,Gastroenterology,Pediatrics,66,Male,10496,High,PPO,3861,15,56,FALSE
+M0498,Member_498,City_98,NC,35.8196,-78.9593,Orthopedics,Orthopedics,80,Male,10497,High,EPO,4622,34,46,FALSE
+M0499,Member_499,City_99,FL,28.0844,-81.6703,Gastroenterology,Pediatrics,72,Other,10498,High,EPO,1375,12,48,TRUE
+M0500,Member_500,City_100,MA,42.5272,-71.2624,Pediatrics,Orthopedics,43,Other,10499,High,PPO,4108,38,34,FALSE
+M0501,Member_501,City_101,WA,47.7511,-120.7401,Urology,Urology,28,Male,10500,Low,EPO,8680,20,44,TRUE
+M0502,Member_502,City_102,PA,41.2333,-77.1645,Psychiatry,Psychiatry,88,Other,10501,Medium,EPO,1853,28,47,TRUE
+M0503,Member_503,City_103,IL,40.6931,-89.3385,Urology,General Practice,16,Female,10502,Medium,HMO,4305,43,24,TRUE
+M0504,Member_504,City_104,FL,28.0844,-81.6703,Psychiatry,Endocrinology,80,Male,10503,Medium,EPO,5527,47,22,TRUE
+M0505,Member_505,City_105,OH,40.5373,-82.7871,ENT,Pediatrics,52,Other,10504,Medium,PPO,1761,24,35,TRUE
+M0506,Member_506,City_106,GA,32.1656,-82.9001,Cardiology,Cardiology,55,Female,10505,High,PPO,2363,44,12,FALSE
+M0507,Member_507,City_107,NC,35.7896,-78.9893,General Practice,Psychiatry,33,Male,10506,High,EPO,1142,27,10,FALSE
+M0508,Member_508,City_108,OH,40.4773,-82.8471,Cardiology,Neurology,33,Female,10507,Medium,EPO,4952,41,15,FALSE
+M0509,Member_509,City_109,GA,32.2556,-82.8101,Endocrinology,Gastroenterology,30,Male,10508,Low,EPO,1387,50,9,FALSE
+M0510,Member_510,City_110,WA,47.8711,-120.6201,ENT,Urology,89,Other,10509,Medium,PPO,6334,46,38,FALSE
+M0511,Member_511,City_111,CO,39.5501,-105.7821,Urology,Ophthalmology,46,Female,10510,Low,EPO,3176,50,40,FALSE
+M0512,Member_512,City_112,NC,35.7896,-78.9893,Psychiatry,Dermatology,27,Other,10511,Low,EPO,9056,43,12,TRUE
+M0513,Member_513,City_113,NV,38.8626,-116.3594,General Practice,Ophthalmology,4,Male,10512,Low,PPO,5558,8,23,TRUE
+M0514,Member_514,City_114,MA,42.4972,-71.2924,Endocrinology,Gastroenterology,42,Female,10513,High,PPO,3830,37,18,FALSE
+M0515,Member_515,City_115,WA,47.8711,-120.6201,Cardiology,Psychiatry,56,Female,10514,Low,EPO,4841,33,54,FALSE
+M0516,Member_516,City_116,PA,41.2033,-77.1945,Cardiology,Gastroenterology,57,Male,10515,Low,PPO,8562,12,7,TRUE
+M0517,Member_517,City_117,OH,40.4473,-82.8771,Urology,Pediatrics,13,Male,10516,Low,PPO,3051,9,53,FALSE
+M0518,Member_518,City_118,OH,40.4773,-82.8471,Urology,Neurology,62,Male,10517,High,HMO,1461,26,10,FALSE
+M0519,Member_519,City_119,CA,36.8683,-119.3279,Cardiology,Psychiatry,52,Female,10518,Low,HMO,6235,36,60,TRUE
+M0520,Member_520,City_120,IL,40.7531,-89.2785,Psychiatry,Psychiatry,16,Female,10519,High,PPO,9175,33,58,TRUE
+M0521,Member_521,City_121,NV,38.8026,-116.4194,Urology,Orthopedics,89,Female,10520,High,PPO,5509,23,51,FALSE
+M0522,Member_522,City_122,AZ,34.0789,-111.0637,Neurology,Gastroenterology,8,Other,10521,Low,EPO,3584,13,41,FALSE
+M0523,Member_523,City_123,PA,41.2633,-77.1345,Dermatology,Pediatrics,54,Female,10522,Medium,PPO,6445,38,30,FALSE
+M0524,Member_524,City_124,TX,32.0586,-99.8118,Endocrinology,Ophthalmology,15,Other,10523,Low,EPO,9456,13,30,TRUE
+M0525,Member_525,City_125,NY,43.4194,-74.0979,Cardiology,Orthopedics,0,Other,10524,Low,PPO,7017,42,42,TRUE
+M0526,Member_526,City_126,TX,31.9686,-99.9018,Cardiology,Urology,76,Female,10525,Low,EPO,3144,8,57,TRUE
+M0527,Member_527,City_127,AZ,34.0789,-111.0637,Endocrinology,Ophthalmology,57,Other,10526,Medium,HMO,7713,8,52,FALSE
+M0528,Member_528,City_128,CA,36.8383,-119.3579,Urology,Pediatrics,13,Female,10527,Low,EPO,5303,35,14,FALSE
+M0529,Member_529,City_129,FL,28.0844,-81.6703,Endocrinology,Urology,72,Female,10528,Low,HMO,6552,12,24,TRUE
+M0530,Member_530,City_130,GA,32.2856,-82.7801,Pediatrics,Endocrinology,10,Other,10529,Low,PPO,4203,45,9,FALSE
+M0531,Member_531,City_131,MI,44.3148,-85.6024,Psychiatry,Dermatology,24,Male,10530,Low,PPO,5102,36,60,FALSE
+M0532,Member_532,City_132,IL,40.6631,-89.3685,Psychiatry,Gastroenterology,49,Female,10531,Low,EPO,9408,22,24,FALSE
+M0533,Member_533,City_133,MA,42.4672,-71.3224,Ophthalmology,Endocrinology,68,Male,10532,Medium,HMO,9474,8,31,TRUE
+M0534,Member_534,City_134,MA,42.4972,-71.2924,Psychiatry,Endocrinology,21,Other,10533,High,HMO,7563,27,45,TRUE
+M0535,Member_535,City_135,IL,40.7531,-89.2785,Dermatology,Orthopedics,86,Female,10534,Medium,PPO,7562,47,51,TRUE
+M0536,Member_536,City_136,NC,35.7596,-79.0193,ENT,Dermatology,40,Female,10535,Low,PPO,4782,31,58,FALSE
+M0537,Member_537,City_137,NC,35.7896,-78.9893,Dermatology,ENT,60,Other,10536,Low,EPO,8951,28,57,FALSE
+M0538,Member_538,City_138,OH,40.4773,-82.8471,Dermatology,Ophthalmology,67,Male,10537,High,EPO,1419,34,45,TRUE
+M0539,Member_539,City_139,MA,42.4972,-71.2924,Psychiatry,Psychiatry,25,Female,10538,Low,EPO,1191,35,25,FALSE
+M0540,Member_540,City_140,PA,41.3233,-77.0745,Dermatology,Psychiatry,90,Female,10539,Medium,EPO,9366,21,57,TRUE
+M0541,Member_541,City_141,TX,31.9686,-99.9018,Ophthalmology,ENT,55,Female,10540,Low,EPO,6548,50,26,TRUE
+M0542,Member_542,City_142,AZ,34.0789,-111.0637,Neurology,Endocrinology,64,Male,10541,Medium,HMO,8092,37,60,FALSE
+M0543,Member_543,City_143,NY,43.3594,-74.1579,Gastroenterology,Gastroenterology,70,Other,10542,Low,PPO,4073,20,10,FALSE
+M0544,Member_544,City_144,TX,32.0586,-99.8118,Psychiatry,Gastroenterology,46,Other,10543,Medium,EPO,3390,14,47,TRUE
+M0545,Member_545,City_145,CA,36.8983,-119.2979,Pediatrics,Ophthalmology,68,Male,10544,Medium,PPO,7746,11,25,FALSE
+M0546,Member_546,City_146,MI,44.3148,-85.6024,Orthopedics,Pediatrics,90,Male,10545,High,PPO,1659,48,53,TRUE
+M0547,Member_547,City_147,NV,38.8326,-116.3894,Gastroenterology,Cardiology,9,Other,10546,Low,EPO,8858,27,26,FALSE
+M0548,Member_548,City_148,NV,38.8626,-116.3594,ENT,Orthopedics,82,Other,10547,High,HMO,7328,26,24,TRUE
+M0549,Member_549,City_149,AZ,34.1389,-111.0037,Psychiatry,Urology,87,Other,10548,Low,EPO,2280,20,13,TRUE
+M0550,Member_550,City_150,CO,39.6701,-105.6621,Orthopedics,Urology,71,Other,10549,High,HMO,8006,7,13,TRUE
+M0551,Member_551,City_151,IL,40.6331,-89.3985,Cardiology,General Practice,65,Female,10550,High,HMO,9065,28,11,TRUE
+M0552,Member_552,City_152,FL,28.0244,-81.7303,Pediatrics,Urology,59,Other,10551,Medium,HMO,6335,34,53,TRUE
+M0553,Member_553,City_153,NY,43.3594,-74.1579,Endocrinology,General Practice,71,Other,10552,Medium,EPO,5199,16,21,TRUE
+M0554,Member_554,City_154,WA,47.8411,-120.6501,Psychiatry,Neurology,54,Other,10553,High,EPO,5579,42,24,FALSE
+M0555,Member_555,City_155,GA,32.2856,-82.7801,Neurology,Dermatology,71,Other,10554,High,HMO,5888,37,38,TRUE
+M0556,Member_556,City_156,WA,47.7511,-120.7401,Psychiatry,Neurology,51,Other,10555,High,PPO,1591,14,12,TRUE
+M0557,Member_557,City_157,PA,41.2333,-77.1645,Urology,Neurology,51,Other,10556,Medium,EPO,9734,37,51,TRUE
+M0558,Member_558,City_158,GA,32.2256,-82.8401,Neurology,Orthopedics,54,Other,10557,Low,HMO,4609,5,55,FALSE
+M0559,Member_559,City_159,NV,38.8926,-116.3294,Dermatology,Endocrinology,80,Other,10558,Medium,EPO,2894,40,33,TRUE
+M0560,Member_560,City_160,GA,32.2856,-82.7801,Cardiology,Dermatology,82,Other,10559,Low,HMO,1117,21,53,TRUE
+M0561,Member_561,City_161,MI,44.3148,-85.6024,Urology,General Practice,59,Male,10560,Medium,HMO,3239,47,33,TRUE
+M0562,Member_562,City_162,GA,32.1956,-82.8701,Cardiology,Dermatology,19,Male,10561,Medium,HMO,3586,44,6,TRUE
+M0563,Member_563,City_163,NY,43.3594,-74.1579,Dermatology,ENT,10,Male,10562,High,EPO,1156,25,44,FALSE
+M0564,Member_564,City_164,GA,32.2556,-82.8101,Urology,Gastroenterology,57,Female,10563,Low,EPO,3921,44,23,TRUE
+M0565,Member_565,City_165,MI,44.4348,-85.4824,Pediatrics,Orthopedics,63,Female,10564,High,HMO,1030,33,39,FALSE
+M0566,Member_566,City_166,TX,31.9686,-99.9018,Cardiology,ENT,79,Female,10565,High,PPO,6413,22,35,TRUE
+M0567,Member_567,City_167,MA,42.4372,-71.3524,Urology,ENT,79,Male,10566,Low,HMO,2542,41,31,TRUE
+M0568,Member_568,City_168,NC,35.8196,-78.9593,Psychiatry,Orthopedics,12,Male,10567,High,EPO,6964,31,5,TRUE
+M0569,Member_569,City_169,CO,39.6401,-105.6921,Psychiatry,General Practice,1,Other,10568,Medium,HMO,1052,22,48,FALSE
+M0570,Member_570,City_170,AZ,34.1689,-110.9737,Endocrinology,Neurology,35,Female,10569,Medium,PPO,5211,29,16,TRUE
+M0571,Member_571,City_171,TX,31.9686,-99.9018,Gastroenterology,Neurology,50,Other,10570,Low,PPO,3670,26,36,FALSE
+M0572,Member_572,City_172,NC,35.7896,-78.9893,Cardiology,Pediatrics,38,Male,10571,Low,HMO,1990,18,44,FALSE
+M0573,Member_573,City_173,MI,44.3748,-85.5424,General Practice,ENT,5,Male,10572,Medium,HMO,3277,50,35,FALSE
+M0574,Member_574,City_174,FL,28.0844,-81.6703,Dermatology,Dermatology,64,Female,10573,Medium,EPO,2283,31,30,FALSE
+M0575,Member_575,City_175,WA,47.8711,-120.6201,General Practice,Cardiology,0,Other,10574,Low,PPO,5356,19,20,TRUE
+M0576,Member_576,City_176,MA,42.4072,-71.3824,Cardiology,Pediatrics,69,Other,10575,High,PPO,6331,41,59,FALSE
+M0577,Member_577,City_177,CO,39.5801,-105.7521,Neurology,Neurology,24,Male,10576,Medium,HMO,3147,8,30,TRUE
+M0578,Member_578,City_178,AZ,34.1089,-111.0337,Cardiology,Urology,18,Female,10577,Medium,HMO,6006,5,26,TRUE
+M0579,Member_579,City_179,AZ,34.1389,-111.0037,Orthopedics,Gastroenterology,88,Male,10578,High,EPO,9736,16,16,TRUE
+M0580,Member_580,City_180,MA,42.5272,-71.2624,General Practice,Cardiology,30,Other,10579,High,EPO,4792,6,39,FALSE
+M0581,Member_581,City_181,CO,39.5501,-105.7821,Ophthalmology,Pediatrics,32,Other,10580,Medium,HMO,1020,23,31,TRUE
+M0582,Member_582,City_182,GA,32.1956,-82.8701,Pediatrics,Orthopedics,11,Female,10581,High,HMO,5054,23,55,FALSE
+M0583,Member_583,City_183,NV,38.8626,-116.3594,Pediatrics,Orthopedics,49,Male,10582,Low,PPO,1670,45,51,TRUE
+M0584,Member_584,City_184,NV,38.8926,-116.3294,Ophthalmology,Ophthalmology,90,Female,10583,Low,EPO,3350,33,10,TRUE
+M0585,Member_585,City_185,FL,28.1144,-81.6403,Neurology,ENT,40,Female,10584,High,HMO,6599,16,54,TRUE
+M0586,Member_586,City_186,OH,40.4173,-82.9071,Cardiology,General Practice,15,Female,10585,Low,HMO,9073,45,16,FALSE
+M0587,Member_587,City_187,IL,40.6631,-89.3685,Gastroenterology,Endocrinology,65,Female,10586,Low,EPO,4351,46,19,FALSE
+M0588,Member_588,City_188,NC,35.8196,-78.9593,Gastroenterology,Gastroenterology,9,Other,10587,Medium,HMO,6557,34,10,TRUE
+M0589,Member_589,City_189,WA,47.8411,-120.6501,Ophthalmology,Cardiology,82,Other,10588,Medium,EPO,9767,36,17,FALSE
+M0590,Member_590,City_190,AZ,34.1689,-110.9737,ENT,Pediatrics,55,Other,10589,High,EPO,2812,43,59,FALSE
+M0591,Member_591,City_191,NC,35.7596,-79.0193,Psychiatry,Urology,65,Female,10590,High,HMO,1052,24,21,TRUE
+M0592,Member_592,City_192,NC,35.7896,-78.9893,Pediatrics,Dermatology,6,Male,10591,Medium,HMO,9193,12,18,FALSE
+M0593,Member_593,City_193,OH,40.4773,-82.8471,Ophthalmology,General Practice,65,Female,10592,Medium,EPO,2971,30,32,FALSE
+M0594,Member_594,City_194,CO,39.6401,-105.6921,Orthopedics,Gastroenterology,19,Other,10593,Low,HMO,6930,19,10,FALSE
+M0595,Member_595,City_195,GA,32.2856,-82.7801,Pediatrics,General Practice,53,Other,10594,High,HMO,8881,33,48,FALSE
+M0596,Member_596,City_196,PA,41.2033,-77.1945,Gastroenterology,Dermatology,8,Other,10595,High,PPO,8573,16,39,TRUE
+M0597,Member_597,City_197,GA,32.1956,-82.8701,Psychiatry,Gastroenterology,31,Other,10596,Low,EPO,5788,9,40,TRUE
+M0598,Member_598,City_198,CA,36.8383,-119.3579,Endocrinology,Urology,9,Female,10597,Low,HMO,5922,46,57,TRUE
+M0599,Member_599,City_199,GA,32.2556,-82.8101,Ophthalmology,General Practice,14,Female,10598,Low,HMO,1574,10,59,FALSE
+M0600,Member_600,City_200,NV,38.9226,-116.2994,ENT,Pediatrics,90,Male,10599,Medium,HMO,1706,34,42,TRUE
+M0601,Member_601,City_1,FL,27.9944,-81.7603,Orthopedics,Dermatology,43,Male,10600,Low,PPO,5188,31,49,FALSE
+M0602,Member_602,City_2,OH,40.4473,-82.8771,Psychiatry,Endocrinology,47,Male,10601,Medium,PPO,5483,34,32,TRUE
+M0603,Member_603,City_3,MA,42.4672,-71.3224,Dermatology,Gastroenterology,12,Male,10602,Low,PPO,7827,32,19,TRUE
+M0604,Member_604,City_4,IL,40.7231,-89.3085,ENT,Dermatology,5,Other,10603,Medium,EPO,1391,45,21,TRUE
+M0605,Member_605,City_5,AZ,34.1689,-110.9737,Pediatrics,Urology,6,Other,10604,Low,EPO,9543,11,60,FALSE
+M0606,Member_606,City_6,AZ,34.0489,-111.0937,Pediatrics,Urology,88,Other,10605,Low,PPO,3087,25,24,FALSE
+M0607,Member_607,City_7,CO,39.5801,-105.7521,Neurology,Cardiology,3,Female,10606,Low,EPO,9785,44,57,TRUE
+M0608,Member_608,City_8,MA,42.4672,-71.3224,Endocrinology,Ophthalmology,78,Female,10607,Medium,HMO,5559,47,50,TRUE
+M0609,Member_609,City_9,IL,40.7231,-89.3085,Psychiatry,Ophthalmology,77,Other,10608,Low,EPO,6663,8,20,FALSE
+M0610,Member_610,City_10,MI,44.4348,-85.4824,ENT,Gastroenterology,60,Female,10609,Low,PPO,7080,28,31,FALSE
+M0611,Member_611,City_11,CO,39.5501,-105.7821,Dermatology,Pediatrics,68,Female,10610,Medium,EPO,1540,36,59,FALSE
+M0612,Member_612,City_12,CA,36.8083,-119.3879,Psychiatry,Orthopedics,13,Other,10611,Medium,PPO,1780,24,39,FALSE
+M0613,Member_613,City_13,AZ,34.1089,-111.0337,Cardiology,Urology,10,Other,10612,Medium,HMO,5522,15,28,FALSE
+M0614,Member_614,City_14,CA,36.8683,-119.3279,Gastroenterology,Neurology,35,Male,10613,High,PPO,8487,41,8,TRUE
+M0615,Member_615,City_15,CO,39.6701,-105.6621,Neurology,Psychiatry,85,Female,10614,Low,HMO,8409,31,55,TRUE
+M0616,Member_616,City_16,FL,27.9944,-81.7603,Orthopedics,Gastroenterology,51,Female,10615,High,EPO,5415,15,35,TRUE
+M0617,Member_617,City_17,MA,42.4372,-71.3524,Dermatology,Neurology,9,Male,10616,Medium,HMO,2456,37,30,TRUE
+M0618,Member_618,City_18,MI,44.3748,-85.5424,Dermatology,Urology,68,Other,10617,High,EPO,8959,48,5,TRUE
+M0619,Member_619,City_19,NC,35.8496,-78.9293,Pediatrics,Ophthalmology,68,Male,10618,High,PPO,2426,38,16,TRUE
+M0620,Member_620,City_20,NV,38.9226,-116.2994,Orthopedics,Endocrinology,53,Male,10619,Low,PPO,9892,34,12,TRUE
+M0621,Member_621,City_21,MA,42.4072,-71.3824,Endocrinology,Neurology,62,Male,10620,High,EPO,8479,50,47,TRUE
+M0622,Member_622,City_22,PA,41.2333,-77.1645,Cardiology,Dermatology,39,Male,10621,Medium,PPO,2890,29,52,TRUE
+M0623,Member_623,City_23,GA,32.2256,-82.8401,Cardiology,Orthopedics,81,Female,10622,Low,PPO,8002,46,57,FALSE
+M0624,Member_624,City_24,GA,32.2556,-82.8101,Endocrinology,Ophthalmology,63,Other,10623,High,PPO,4616,38,38,TRUE
+M0625,Member_625,City_25,FL,28.1144,-81.6403,ENT,Urology,82,Female,10624,Medium,PPO,7954,22,55,TRUE
+M0626,Member_626,City_26,FL,27.9944,-81.7603,Endocrinology,Orthopedics,36,Male,10625,Medium,HMO,3972,34,5,TRUE
+M0627,Member_627,City_27,AZ,34.0789,-111.0637,Neurology,ENT,3,Other,10626,Medium,EPO,1979,48,46,FALSE
+M0628,Member_628,City_28,NC,35.8196,-78.9593,General Practice,Endocrinology,38,Male,10627,Low,PPO,1304,31,54,FALSE
+M0629,Member_629,City_29,AZ,34.1389,-111.0037,ENT,General Practice,54,Male,10628,Low,EPO,9707,20,43,FALSE
+M0630,Member_630,City_30,WA,47.8711,-120.6201,Psychiatry,Endocrinology,71,Other,10629,Low,EPO,4206,24,35,TRUE
+M0631,Member_631,City_31,IL,40.6331,-89.3985,Psychiatry,Urology,82,Other,10630,High,PPO,9698,28,58,FALSE
+M0632,Member_632,City_32,OH,40.4473,-82.8771,Dermatology,Neurology,1,Male,10631,Low,HMO,1218,47,22,FALSE
+M0633,Member_633,City_33,WA,47.8111,-120.6801,Ophthalmology,Psychiatry,86,Other,10632,Low,EPO,2246,27,8,TRUE
+M0634,Member_634,City_34,AZ,34.1389,-111.0037,Gastroenterology,Endocrinology,0,Male,10633,High,EPO,2045,8,36,TRUE
+M0635,Member_635,City_35,FL,28.1144,-81.6403,Dermatology,Pediatrics,49,Male,10634,Low,PPO,2523,42,34,TRUE
+M0636,Member_636,City_36,FL,27.9944,-81.7603,Cardiology,ENT,69,Female,10635,High,HMO,9207,6,44,TRUE
+M0637,Member_637,City_37,AZ,34.0789,-111.0637,Neurology,Gastroenterology,16,Other,10636,High,EPO,1086,28,50,FALSE
+M0638,Member_638,City_38,NC,35.8196,-78.9593,Neurology,General Practice,4,Other,10637,High,PPO,4087,28,37,TRUE
+M0639,Member_639,City_39,MI,44.4048,-85.5124,Pediatrics,General Practice,6,Other,10638,High,PPO,7789,50,38,FALSE
+M0640,Member_640,City_40,CA,36.8983,-119.2979,Ophthalmology,Pediatrics,17,Other,10639,High,PPO,1478,37,26,TRUE
+M0641,Member_641,City_41,MA,42.4072,-71.3824,General Practice,Cardiology,2,Other,10640,Low,HMO,1872,48,20,FALSE
+M0642,Member_642,City_42,NY,43.3294,-74.1879,Orthopedics,Pediatrics,16,Female,10641,Medium,EPO,2406,29,15,FALSE
+M0643,Member_643,City_43,WA,47.8111,-120.6801,Ophthalmology,Endocrinology,12,Other,10642,Medium,PPO,6644,11,42,TRUE
+M0644,Member_644,City_44,AZ,34.1389,-111.0037,Orthopedics,Gastroenterology,59,Male,10643,High,HMO,6154,32,12,FALSE
+M0645,Member_645,City_45,PA,41.3233,-77.0745,Gastroenterology,General Practice,53,Female,10644,High,HMO,1473,44,49,TRUE
+M0646,Member_646,City_46,OH,40.4173,-82.9071,Endocrinology,Orthopedics,5,Female,10645,High,HMO,7922,23,34,FALSE
+M0647,Member_647,City_47,FL,28.0244,-81.7303,Urology,Orthopedics,22,Other,10646,Low,PPO,6369,50,31,FALSE
+M0648,Member_648,City_48,IL,40.6931,-89.3385,Psychiatry,General Practice,6,Other,10647,Medium,PPO,4726,31,38,FALSE
+M0649,Member_649,City_49,TX,32.0586,-99.8118,Cardiology,Pediatrics,80,Female,10648,Medium,EPO,9978,41,50,FALSE
+M0650,Member_650,City_50,WA,47.8711,-120.6201,Ophthalmology,Psychiatry,85,Female,10649,Low,EPO,2377,31,31,FALSE
+M0651,Member_651,City_51,FL,27.9944,-81.7603,ENT,Pediatrics,0,Other,10650,Medium,HMO,2809,34,56,TRUE
+M0652,Member_652,City_52,IL,40.6631,-89.3685,Cardiology,Psychiatry,64,Male,10651,High,HMO,2010,9,29,TRUE
+M0653,Member_653,City_53,WA,47.8111,-120.6801,Cardiology,Ophthalmology,55,Other,10652,High,HMO,6656,18,55,FALSE
+M0654,Member_654,City_54,OH,40.5073,-82.8171,ENT,Endocrinology,90,Female,10653,High,PPO,2777,38,26,TRUE
+M0655,Member_655,City_55,MA,42.5272,-71.2624,General Practice,Dermatology,10,Female,10654,Medium,PPO,5459,8,11,TRUE
+M0656,Member_656,City_56,CO,39.5501,-105.7821,Cardiology,Dermatology,53,Other,10655,Low,EPO,5272,7,58,FALSE
+M0657,Member_657,City_57,TX,31.9986,-99.8718,Dermatology,General Practice,89,Female,10656,High,HMO,8082,40,13,FALSE
+M0658,Member_658,City_58,PA,41.2633,-77.1345,ENT,Neurology,39,Female,10657,Medium,HMO,6075,46,23,FALSE
+M0659,Member_659,City_59,TX,32.0586,-99.8118,Endocrinology,Neurology,45,Female,10658,Low,PPO,7588,26,40,FALSE
+M0660,Member_660,City_60,NC,35.8796,-78.8993,Pediatrics,Pediatrics,10,Other,10659,High,PPO,7654,28,36,TRUE
+M0661,Member_661,City_61,CO,39.5501,-105.7821,Orthopedics,Urology,26,Other,10660,Low,PPO,8662,18,58,FALSE
+M0662,Member_662,City_62,NV,38.8326,-116.3894,Dermatology,ENT,17,Other,10661,High,PPO,1954,38,23,FALSE
+M0663,Member_663,City_63,OH,40.4773,-82.8471,Endocrinology,Psychiatry,89,Male,10662,High,EPO,3976,45,55,TRUE
+M0664,Member_664,City_64,WA,47.8411,-120.6501,Cardiology,General Practice,7,Male,10663,Medium,EPO,5819,38,45,FALSE
+M0665,Member_665,City_65,CO,39.6701,-105.6621,Ophthalmology,Gastroenterology,6,Male,10664,High,EPO,3921,7,16,TRUE
+M0666,Member_666,City_66,IL,40.6331,-89.3985,Cardiology,Urology,84,Female,10665,Medium,PPO,3804,44,60,TRUE
+M0667,Member_667,City_67,OH,40.4473,-82.8771,ENT,Neurology,13,Other,10666,Low,PPO,4633,15,37,TRUE
+M0668,Member_668,City_68,CA,36.8383,-119.3579,Gastroenterology,Orthopedics,70,Male,10667,Low,HMO,1120,20,19,TRUE
+M0669,Member_669,City_69,GA,32.2556,-82.8101,Cardiology,Endocrinology,85,Other,10668,Low,PPO,9091,9,42,FALSE
+M0670,Member_670,City_70,WA,47.8711,-120.6201,Urology,Endocrinology,68,Male,10669,High,PPO,5683,27,14,FALSE
+M0671,Member_671,City_71,CO,39.5501,-105.7821,Psychiatry,Dermatology,34,Other,10670,Low,PPO,8903,39,29,TRUE
+M0672,Member_672,City_72,IL,40.6631,-89.3685,Ophthalmology,Urology,40,Female,10671,Medium,EPO,1576,49,18,TRUE
+M0673,Member_673,City_73,CO,39.6101,-105.7221,Pediatrics,Ophthalmology,73,Male,10672,Medium,HMO,5441,23,42,TRUE
+M0674,Member_674,City_74,TX,32.0586,-99.8118,Endocrinology,Pediatrics,74,Female,10673,Low,EPO,9859,38,14,FALSE
+M0675,Member_675,City_75,OH,40.5373,-82.7871,Neurology,Orthopedics,65,Other,10674,High,EPO,2759,7,17,TRUE
+M0676,Member_676,City_76,NC,35.7596,-79.0193,Ophthalmology,Endocrinology,25,Other,10675,Low,HMO,5831,46,10,FALSE
+M0677,Member_677,City_77,CA,36.8083,-119.3879,Neurology,Pediatrics,31,Other,10676,Low,HMO,7124,11,15,TRUE
+M0678,Member_678,City_78,MA,42.4672,-71.3224,Dermatology,Pediatrics,88,Male,10677,Medium,EPO,9056,45,14,TRUE
+M0679,Member_679,City_79,NV,38.8926,-116.3294,Gastroenterology,Dermatology,63,Female,10678,Low,HMO,2101,49,54,TRUE
+M0680,Member_680,City_80,MA,42.5272,-71.2624,Psychiatry,Neurology,53,Female,10679,High,PPO,7497,38,5,TRUE
+M0681,Member_681,City_81,OH,40.4173,-82.9071,Endocrinology,General Practice,53,Other,10680,Medium,EPO,6020,26,56,FALSE
+M0682,Member_682,City_82,IL,40.6631,-89.3685,Orthopedics,Cardiology,85,Female,10681,Medium,HMO,6404,9,34,FALSE
+M0683,Member_683,City_83,MI,44.3748,-85.5424,Gastroenterology,Gastroenterology,77,Other,10682,High,PPO,4130,43,34,FALSE
+M0684,Member_684,City_84,WA,47.8411,-120.6501,Cardiology,Cardiology,2,Male,10683,High,EPO,3866,7,8,FALSE
+M0685,Member_685,City_85,CO,39.6701,-105.6621,Orthopedics,Gastroenterology,54,Female,10684,Low,EPO,7373,24,50,TRUE
+M0686,Member_686,City_86,WA,47.7511,-120.7401,Dermatology,Pediatrics,42,Other,10685,Low,PPO,3305,6,31,TRUE
+M0687,Member_687,City_87,TX,31.9986,-99.8718,ENT,Gastroenterology,43,Other,10686,Medium,HMO,7903,17,14,TRUE
+M0688,Member_688,City_88,WA,47.8111,-120.6801,Psychiatry,Pediatrics,49,Other,10687,High,PPO,4264,15,28,FALSE
+M0689,Member_689,City_89,NC,35.8496,-78.9293,Neurology,Gastroenterology,38,Other,10688,Low,HMO,9962,31,49,FALSE
+M0690,Member_690,City_90,AZ,34.1689,-110.9737,General Practice,General Practice,58,Other,10689,Low,EPO,5611,29,50,TRUE
+M0691,Member_691,City_91,MA,42.4072,-71.3824,Endocrinology,Endocrinology,16,Female,10690,Medium,EPO,7994,21,32,FALSE
+M0692,Member_692,City_92,IL,40.6631,-89.3685,Dermatology,Psychiatry,7,Female,10691,Medium,HMO,7534,34,28,FALSE
+M0693,Member_693,City_93,NC,35.8196,-78.9593,Gastroenterology,Endocrinology,53,Male,10692,High,PPO,7159,30,43,TRUE
+M0694,Member_694,City_94,NC,35.8496,-78.9293,Psychiatry,General Practice,40,Female,10693,Medium,PPO,5344,24,48,FALSE
+M0695,Member_695,City_95,FL,28.1144,-81.6403,Pediatrics,Dermatology,26,Other,10694,High,EPO,9873,39,25,TRUE
+M0696,Member_696,City_96,WA,47.7511,-120.7401,ENT,Neurology,82,Other,10695,High,HMO,7933,19,6,FALSE
+M0697,Member_697,City_97,GA,32.1956,-82.8701,General Practice,Dermatology,69,Other,10696,Medium,EPO,7736,21,20,TRUE
+M0698,Member_698,City_98,PA,41.2633,-77.1345,Gastroenterology,Psychiatry,84,Other,10697,Low,PPO,5892,35,43,FALSE
+M0699,Member_699,City_99,PA,41.2933,-77.1045,Orthopedics,Ophthalmology,77,Other,10698,Medium,PPO,5038,8,57,FALSE
+M0700,Member_700,City_100,IL,40.7531,-89.2785,Gastroenterology,ENT,27,Male,10699,Low,PPO,3532,48,25,TRUE
+M0701,Member_701,City_101,GA,32.1656,-82.9001,Gastroenterology,Gastroenterology,42,Other,10700,High,PPO,6285,12,48,TRUE
+M0702,Member_702,City_102,PA,41.2333,-77.1645,Orthopedics,Ophthalmology,34,Other,10701,High,EPO,4430,48,27,FALSE
+M0703,Member_703,City_103,NY,43.3594,-74.1579,Pediatrics,Cardiology,48,Other,10702,Low,EPO,6791,18,30,FALSE
+M0704,Member_704,City_104,NC,35.8496,-78.9293,ENT,Orthopedics,24,Other,10703,High,EPO,9625,15,16,TRUE
+M0705,Member_705,City_105,IL,40.7531,-89.2785,Orthopedics,General Practice,21,Other,10704,High,PPO,3665,18,7,TRUE
+M0706,Member_706,City_106,WA,47.7511,-120.7401,Gastroenterology,Orthopedics,11,Other,10705,Medium,HMO,7218,29,48,TRUE
+M0707,Member_707,City_107,OH,40.4473,-82.8771,Gastroenterology,Cardiology,27,Other,10706,High,HMO,2763,7,20,TRUE
+M0708,Member_708,City_108,TX,32.0286,-99.8418,General Practice,Urology,6,Female,10707,Medium,HMO,6562,36,31,TRUE
+M0709,Member_709,City_109,PA,41.2933,-77.1045,Cardiology,Neurology,18,Female,10708,Medium,HMO,7281,36,38,FALSE
+M0710,Member_710,City_110,NC,35.8796,-78.8993,Psychiatry,Cardiology,57,Other,10709,Low,HMO,7844,32,56,TRUE
+M0711,Member_711,City_111,IL,40.6331,-89.3985,Psychiatry,Gastroenterology,8,Other,10710,Low,PPO,9481,32,42,FALSE
+M0712,Member_712,City_112,GA,32.1956,-82.8701,Dermatology,Orthopedics,43,Male,10711,Medium,EPO,1083,47,30,FALSE
+M0713,Member_713,City_113,TX,32.0286,-99.8418,Pediatrics,Ophthalmology,63,Female,10712,Medium,PPO,4693,49,44,TRUE
+M0714,Member_714,City_114,OH,40.5073,-82.8171,Endocrinology,Endocrinology,24,Male,10713,Medium,EPO,6930,29,37,TRUE
+M0715,Member_715,City_115,NV,38.9226,-116.2994,Cardiology,Endocrinology,32,Other,10714,Low,PPO,6979,18,24,FALSE
+M0716,Member_716,City_116,NY,43.2994,-74.2179,Orthopedics,Cardiology,19,Other,10715,High,EPO,3978,11,7,FALSE
+M0717,Member_717,City_117,NC,35.7896,-78.9893,General Practice,Neurology,21,Male,10716,Low,HMO,5899,29,21,TRUE
+M0718,Member_718,City_118,MA,42.4672,-71.3224,General Practice,Cardiology,50,Male,10717,Medium,EPO,3995,30,5,FALSE
+M0719,Member_719,City_119,CA,36.8683,-119.3279,ENT,Pediatrics,70,Other,10718,High,PPO,7008,8,13,FALSE
+M0720,Member_720,City_120,PA,41.3233,-77.0745,Ophthalmology,Gastroenterology,71,Male,10719,High,HMO,3147,46,9,TRUE
+M0721,Member_721,City_121,FL,27.9944,-81.7603,Pediatrics,Ophthalmology,48,Male,10720,Medium,HMO,3027,29,33,FALSE
+M0722,Member_722,City_122,TX,31.9986,-99.8718,Pediatrics,General Practice,90,Other,10721,Low,HMO,4172,36,19,TRUE
+M0723,Member_723,City_123,OH,40.4773,-82.8471,Pediatrics,ENT,81,Female,10722,Medium,PPO,9885,14,14,TRUE
+M0724,Member_724,City_124,MA,42.4972,-71.2924,ENT,Cardiology,7,Male,10723,Medium,PPO,1867,36,37,FALSE
+M0725,Member_725,City_125,CA,36.8983,-119.2979,Gastroenterology,Cardiology,1,Other,10724,Low,EPO,1471,27,33,TRUE
+M0726,Member_726,City_126,WA,47.7511,-120.7401,Urology,ENT,36,Male,10725,Low,HMO,9024,49,18,TRUE
+M0727,Member_727,City_127,MI,44.3448,-85.5724,ENT,ENT,45,Female,10726,Medium,PPO,7933,46,54,FALSE
+M0728,Member_728,City_128,PA,41.2633,-77.1345,Gastroenterology,Psychiatry,90,Female,10727,Low,HMO,4222,32,47,FALSE
+M0729,Member_729,City_129,GA,32.2556,-82.8101,Dermatology,Neurology,77,Male,10728,High,PPO,6475,13,39,FALSE
+M0730,Member_730,City_130,OH,40.5373,-82.7871,Urology,Endocrinology,73,Female,10729,High,EPO,4748,39,38,TRUE
+M0731,Member_731,City_131,CA,36.7783,-119.4179,Psychiatry,General Practice,42,Other,10730,Medium,HMO,6428,39,22,FALSE
+M0732,Member_732,City_132,CA,36.8083,-119.3879,Endocrinology,Cardiology,62,Female,10731,Low,EPO,8320,30,55,TRUE
+M0733,Member_733,City_133,TX,32.0286,-99.8418,ENT,Pediatrics,66,Other,10732,Medium,HMO,5956,5,59,FALSE
+M0734,Member_734,City_134,FL,28.0844,-81.6703,Pediatrics,Ophthalmology,81,Male,10733,High,PPO,4684,36,51,FALSE
+M0735,Member_735,City_135,MI,44.4348,-85.4824,Ophthalmology,Cardiology,5,Male,10734,High,HMO,3423,20,36,FALSE
+M0736,Member_736,City_136,TX,31.9686,-99.9018,Endocrinology,Pediatrics,43,Female,10735,Medium,EPO,8436,38,31,TRUE
+M0737,Member_737,City_137,CA,36.8083,-119.3879,Psychiatry,Cardiology,53,Female,10736,Medium,EPO,8942,9,33,FALSE
+M0738,Member_738,City_138,MA,42.4672,-71.3224,Pediatrics,Urology,0,Female,10737,Low,EPO,5722,24,16,TRUE
+M0739,Member_739,City_139,TX,32.0586,-99.8118,Dermatology,ENT,50,Other,10738,High,EPO,1019,8,18,FALSE
+M0740,Member_740,City_140,NV,38.9226,-116.2994,Cardiology,Dermatology,54,Female,10739,High,HMO,8800,9,37,FALSE
+M0741,Member_741,City_141,PA,41.2033,-77.1945,Pediatrics,Urology,52,Other,10740,High,HMO,6196,32,32,FALSE
+M0742,Member_742,City_142,PA,41.2333,-77.1645,General Practice,Neurology,63,Female,10741,High,EPO,4122,17,49,TRUE
+M0743,Member_743,City_143,AZ,34.1089,-111.0337,Dermatology,General Practice,76,Other,10742,Low,PPO,9287,40,42,FALSE
+M0744,Member_744,City_144,OH,40.5073,-82.8171,ENT,Ophthalmology,65,Male,10743,Low,HMO,2583,18,23,TRUE
+M0745,Member_745,City_145,WA,47.8711,-120.6201,Dermatology,Endocrinology,28,Male,10744,Low,HMO,3462,17,60,FALSE
+M0746,Member_746,City_146,IL,40.6331,-89.3985,ENT,Gastroenterology,6,Female,10745,Medium,PPO,8336,26,29,FALSE
+M0747,Member_747,City_147,MI,44.3448,-85.5724,Cardiology,Orthopedics,16,Female,10746,Low,EPO,1883,41,15,TRUE
+M0748,Member_748,City_148,PA,41.2633,-77.1345,Ophthalmology,ENT,64,Male,10747,High,PPO,1941,39,24,TRUE
+M0749,Member_749,City_149,GA,32.2556,-82.8101,General Practice,Ophthalmology,67,Male,10748,Low,HMO,6166,15,42,TRUE
+M0750,Member_750,City_150,TX,32.0886,-99.7818,ENT,Neurology,77,Other,10749,Low,HMO,1454,25,44,FALSE
+M0751,Member_751,City_151,NY,43.2994,-74.2179,Psychiatry,Psychiatry,54,Other,10750,Low,EPO,5033,24,53,TRUE
+M0752,Member_752,City_152,NY,43.3294,-74.1879,Dermatology,Ophthalmology,36,Female,10751,Low,HMO,8186,37,24,TRUE
+M0753,Member_753,City_153,MA,42.4672,-71.3224,Gastroenterology,Endocrinology,13,Female,10752,High,HMO,9143,22,9,FALSE
+M0754,Member_754,City_154,PA,41.2933,-77.1045,Neurology,General Practice,57,Male,10753,Low,HMO,9813,7,48,TRUE
+M0755,Member_755,City_155,MI,44.4348,-85.4824,Urology,Urology,32,Other,10754,Medium,HMO,1801,21,16,TRUE
+M0756,Member_756,City_156,AZ,34.0489,-111.0937,Dermatology,Gastroenterology,81,Other,10755,Low,EPO,5536,41,12,FALSE
+M0757,Member_757,City_157,NV,38.8326,-116.3894,Orthopedics,Cardiology,38,Female,10756,Medium,EPO,5676,36,54,TRUE
+M0758,Member_758,City_158,TX,32.0286,-99.8418,Dermatology,Pediatrics,49,Other,10757,Medium,HMO,6278,15,16,FALSE
+M0759,Member_759,City_159,PA,41.2933,-77.1045,Pediatrics,Orthopedics,46,Male,10758,Low,EPO,3771,28,31,FALSE
+M0760,Member_760,City_160,NY,43.4194,-74.0979,Endocrinology,Neurology,6,Female,10759,Medium,EPO,9370,44,48,FALSE
+M0761,Member_761,City_161,WA,47.7511,-120.7401,General Practice,Psychiatry,39,Female,10760,Low,EPO,8914,6,60,FALSE
+M0762,Member_762,City_162,MI,44.3448,-85.5724,Urology,Ophthalmology,48,Other,10761,Medium,EPO,2692,17,33,FALSE
+M0763,Member_763,City_163,CO,39.6101,-105.7221,Ophthalmology,ENT,74,Female,10762,Low,EPO,4072,20,26,FALSE
+M0764,Member_764,City_164,NY,43.3894,-74.1279,Cardiology,General Practice,78,Female,10763,High,EPO,6261,15,56,TRUE
+M0765,Member_765,City_165,FL,28.1144,-81.6403,Dermatology,ENT,10,Other,10764,Low,EPO,1713,40,7,FALSE
+M0766,Member_766,City_166,NC,35.7596,-79.0193,General Practice,Ophthalmology,12,Other,10765,Low,EPO,3927,9,53,FALSE
+M0767,Member_767,City_167,NV,38.8326,-116.3894,Urology,Neurology,1,Other,10766,Medium,PPO,4806,44,28,FALSE
+M0768,Member_768,City_168,PA,41.2633,-77.1345,Gastroenterology,Psychiatry,8,Male,10767,High,HMO,3354,17,57,FALSE
+M0769,Member_769,City_169,CO,39.6401,-105.6921,Cardiology,ENT,56,Other,10768,High,PPO,8060,47,33,FALSE
+M0770,Member_770,City_170,NC,35.8796,-78.8993,General Practice,General Practice,66,Female,10769,Medium,HMO,1685,38,54,FALSE
+M0771,Member_771,City_171,NV,38.8026,-116.4194,Ophthalmology,ENT,52,Other,10770,Medium,PPO,3724,31,50,TRUE
+M0772,Member_772,City_172,MI,44.3448,-85.5724,ENT,Ophthalmology,54,Other,10771,High,EPO,8912,18,57,TRUE
+M0773,Member_773,City_173,NY,43.3594,-74.1579,General Practice,Gastroenterology,88,Male,10772,Medium,EPO,5059,24,39,TRUE
+M0774,Member_774,City_174,TX,32.0586,-99.8118,Cardiology,Psychiatry,73,Female,10773,High,PPO,4075,21,10,FALSE
+M0775,Member_775,City_175,WA,47.8711,-120.6201,Dermatology,Pediatrics,30,Male,10774,Low,PPO,9025,37,35,FALSE
+M0776,Member_776,City_176,NC,35.7596,-79.0193,Neurology,Dermatology,87,Male,10775,Low,EPO,4037,39,55,TRUE
+M0777,Member_777,City_177,NC,35.7896,-78.9893,ENT,Orthopedics,17,Other,10776,Medium,EPO,9179,28,32,TRUE
+M0778,Member_778,City_178,NV,38.8626,-116.3594,Orthopedics,Psychiatry,3,Female,10777,High,HMO,7975,24,25,TRUE
+M0779,Member_779,City_179,NY,43.3894,-74.1279,Orthopedics,Ophthalmology,27,Other,10778,Medium,PPO,7311,17,25,FALSE
+M0780,Member_780,City_180,FL,28.1144,-81.6403,Dermatology,General Practice,77,Male,10779,High,HMO,9376,11,8,FALSE
+M0781,Member_781,City_181,PA,41.2033,-77.1945,Ophthalmology,Endocrinology,82,Other,10780,High,PPO,3356,35,16,TRUE
+M0782,Member_782,City_182,OH,40.4473,-82.8771,Urology,Pediatrics,78,Other,10781,Low,PPO,6908,29,34,TRUE
+M0783,Member_783,City_183,NY,43.3594,-74.1579,Urology,Urology,22,Male,10782,Low,HMO,1593,7,9,TRUE
+M0784,Member_784,City_184,NV,38.8926,-116.3294,Gastroenterology,Endocrinology,64,Male,10783,Medium,PPO,9213,35,18,TRUE
+M0785,Member_785,City_185,WA,47.8711,-120.6201,General Practice,Urology,78,Female,10784,Medium,PPO,5023,30,9,TRUE
+M0786,Member_786,City_186,CA,36.7783,-119.4179,Endocrinology,ENT,7,Female,10785,High,EPO,8357,31,33,TRUE
+M0787,Member_787,City_187,IL,40.6631,-89.3685,Dermatology,Urology,23,Other,10786,Low,PPO,6012,20,20,FALSE
+M0788,Member_788,City_188,GA,32.2256,-82.8401,Ophthalmology,ENT,36,Female,10787,Medium,PPO,5449,25,51,TRUE
+M0789,Member_789,City_189,NY,43.3894,-74.1279,Neurology,Ophthalmology,56,Male,10788,Medium,HMO,1880,35,46,FALSE
+M0790,Member_790,City_190,NC,35.8796,-78.8993,ENT,General Practice,28,Female,10789,Low,EPO,3924,45,39,TRUE
+M0791,Member_791,City_191,CO,39.5501,-105.7821,Psychiatry,Urology,81,Female,10790,Medium,PPO,6308,25,46,FALSE
+M0792,Member_792,City_192,CO,39.5801,-105.7521,Endocrinology,General Practice,73,Other,10791,Medium,EPO,3575,29,31,TRUE
+M0793,Member_793,City_193,CA,36.8383,-119.3579,Orthopedics,Psychiatry,7,Female,10792,Medium,HMO,1942,36,16,FALSE
+M0794,Member_794,City_194,NV,38.8926,-116.3294,Cardiology,Pediatrics,47,Male,10793,Medium,HMO,7834,11,60,TRUE
+M0795,Member_795,City_195,CA,36.8983,-119.2979,Gastroenterology,Ophthalmology,35,Male,10794,High,EPO,4154,12,22,FALSE
+M0796,Member_796,City_196,IL,40.6331,-89.3985,Neurology,Psychiatry,25,Other,10795,Low,HMO,2789,23,46,TRUE
+M0797,Member_797,City_197,GA,32.1956,-82.8701,Endocrinology,Pediatrics,90,Male,10796,Medium,HMO,8241,10,39,FALSE
+M0798,Member_798,City_198,NV,38.8626,-116.3594,Psychiatry,Urology,63,Male,10797,Low,PPO,4850,5,34,FALSE
+M0799,Member_799,City_199,OH,40.5073,-82.8171,Cardiology,Endocrinology,71,Other,10798,Medium,EPO,3777,42,31,TRUE
+M0800,Member_800,City_200,NV,38.9226,-116.2994,ENT,Endocrinology,88,Male,10799,High,HMO,3437,37,34,TRUE
+M0801,Member_801,City_1,CA,36.7783,-119.4179,Neurology,Orthopedics,69,Female,10800,Medium,EPO,7976,20,52,TRUE
+M0802,Member_802,City_2,PA,41.2333,-77.1645,Endocrinology,Cardiology,14,Other,10801,High,HMO,2853,50,41,FALSE
+M0803,Member_803,City_3,WA,47.8111,-120.6801,Dermatology,Cardiology,75,Male,10802,Low,HMO,9147,42,5,FALSE
+M0804,Member_804,City_4,FL,28.0844,-81.6703,Pediatrics,Orthopedics,20,Other,10803,Medium,HMO,1672,32,34,TRUE
+M0805,Member_805,City_5,CA,36.8983,-119.2979,Urology,Gastroenterology,47,Other,10804,Low,HMO,8728,26,60,FALSE
+M0806,Member_806,City_6,CA,36.7783,-119.4179,Psychiatry,General Practice,28,Other,10805,Medium,PPO,4910,23,16,TRUE
+M0807,Member_807,City_7,IL,40.6631,-89.3685,General Practice,Orthopedics,74,Female,10806,Low,PPO,9795,17,24,FALSE
+M0808,Member_808,City_8,PA,41.2633,-77.1345,Dermatology,Ophthalmology,13,Male,10807,Low,EPO,7743,17,52,FALSE
+M0809,Member_809,City_9,AZ,34.1389,-111.0037,Ophthalmology,Cardiology,76,Male,10808,Medium,PPO,5766,33,36,TRUE
+M0810,Member_810,City_10,WA,47.8711,-120.6201,Psychiatry,Gastroenterology,75,Other,10809,Medium,PPO,8484,7,49,TRUE
+M0811,Member_811,City_11,NC,35.7596,-79.0193,General Practice,Dermatology,63,Female,10810,Medium,HMO,8949,31,14,TRUE
+M0812,Member_812,City_12,OH,40.4473,-82.8771,ENT,Psychiatry,54,Male,10811,Low,EPO,3167,50,18,FALSE
+M0813,Member_813,City_13,TX,32.0286,-99.8418,Psychiatry,Dermatology,44,Other,10812,Low,HMO,1242,30,57,FALSE
+M0814,Member_814,City_14,NY,43.3894,-74.1279,Endocrinology,Endocrinology,77,Female,10813,Low,PPO,2344,37,38,TRUE
+M0815,Member_815,City_15,WA,47.8711,-120.6201,Urology,Orthopedics,24,Other,10814,Low,PPO,1162,31,9,FALSE
+M0816,Member_816,City_16,GA,32.1656,-82.9001,Psychiatry,Ophthalmology,84,Male,10815,High,HMO,5134,43,56,TRUE
+M0817,Member_817,City_17,NC,35.7896,-78.9893,Ophthalmology,Urology,35,Female,10816,High,HMO,5197,16,34,TRUE
+M0818,Member_818,City_18,GA,32.2256,-82.8401,Gastroenterology,Ophthalmology,3,Other,10817,Medium,PPO,5840,48,16,TRUE
+M0819,Member_819,City_19,AZ,34.1389,-111.0037,Gastroenterology,General Practice,26,Female,10818,Medium,HMO,2991,40,51,FALSE
+M0820,Member_820,City_20,NV,38.9226,-116.2994,Neurology,ENT,6,Other,10819,Medium,HMO,6746,35,22,FALSE
+M0821,Member_821,City_21,CO,39.5501,-105.7821,Gastroenterology,Dermatology,19,Male,10820,High,EPO,8254,35,45,FALSE
+M0822,Member_822,City_22,PA,41.2333,-77.1645,ENT,Neurology,54,Other,10821,Low,HMO,5980,13,33,TRUE
+M0823,Member_823,City_23,NV,38.8626,-116.3594,Urology,General Practice,72,Female,10822,Low,HMO,1208,8,26,TRUE
+M0824,Member_824,City_24,MI,44.4048,-85.5124,Urology,Cardiology,14,Other,10823,High,HMO,9599,37,13,TRUE
+M0825,Member_825,City_25,NY,43.4194,-74.0979,Dermatology,Pediatrics,34,Other,10824,High,EPO,6152,10,25,TRUE
+M0826,Member_826,City_26,MI,44.3148,-85.6024,Dermatology,Dermatology,80,Male,10825,Medium,EPO,2215,36,49,FALSE
+M0827,Member_827,City_27,CO,39.5801,-105.7521,Urology,Dermatology,27,Other,10826,Low,HMO,3662,43,46,TRUE
+M0828,Member_828,City_28,CA,36.8383,-119.3579,Cardiology,Gastroenterology,73,Other,10827,Medium,EPO,3199,14,54,FALSE
+M0829,Member_829,City_29,WA,47.8411,-120.6501,Dermatology,Dermatology,19,Male,10828,High,HMO,4697,36,40,FALSE
+M0830,Member_830,City_30,FL,28.1144,-81.6403,Orthopedics,General Practice,67,Male,10829,Low,EPO,9231,12,9,TRUE
+M0831,Member_831,City_31,CA,36.7783,-119.4179,Neurology,Pediatrics,62,Female,10830,Low,PPO,3254,16,28,TRUE
+M0832,Member_832,City_32,NY,43.3294,-74.1879,Orthopedics,Endocrinology,38,Female,10831,Medium,PPO,8205,31,60,TRUE
+M0833,Member_833,City_33,CA,36.8383,-119.3579,Gastroenterology,Cardiology,88,Male,10832,High,PPO,2038,31,34,TRUE
+M0834,Member_834,City_34,CA,36.8683,-119.3279,Gastroenterology,Ophthalmology,34,Male,10833,High,EPO,9816,17,59,TRUE
+M0835,Member_835,City_35,MI,44.4348,-85.4824,Psychiatry,Pediatrics,86,Female,10834,High,EPO,5335,47,45,FALSE
+M0836,Member_836,City_36,IL,40.6331,-89.3985,Orthopedics,Psychiatry,62,Other,10835,Medium,EPO,8853,37,58,FALSE
+M0837,Member_837,City_37,TX,31.9986,-99.8718,Ophthalmology,Pediatrics,63,Male,10836,High,HMO,7110,14,55,FALSE
+M0838,Member_838,City_38,FL,28.0544,-81.7003,Cardiology,ENT,16,Female,10837,High,EPO,7245,33,48,FALSE
+M0839,Member_839,City_39,CO,39.6401,-105.6921,Urology,Psychiatry,29,Female,10838,Low,PPO,6619,29,56,FALSE
+M0840,Member_840,City_40,WA,47.8711,-120.6201,Urology,Dermatology,57,Other,10839,Medium,HMO,4871,33,24,TRUE
+M0841,Member_841,City_41,CO,39.5501,-105.7821,Neurology,Endocrinology,78,Other,10840,Medium,PPO,6014,47,19,FALSE
+M0842,Member_842,City_42,AZ,34.0789,-111.0637,Urology,Endocrinology,53,Female,10841,High,EPO,4222,25,15,FALSE
+M0843,Member_843,City_43,IL,40.6931,-89.3385,Neurology,Orthopedics,8,Other,10842,High,EPO,6581,47,59,FALSE
+M0844,Member_844,City_44,GA,32.2556,-82.8101,Urology,Cardiology,90,Female,10843,High,EPO,6252,9,33,TRUE
+M0845,Member_845,City_45,FL,28.1144,-81.6403,Gastroenterology,Psychiatry,56,Male,10844,Medium,PPO,1309,21,14,TRUE
+M0846,Member_846,City_46,WA,47.7511,-120.7401,Dermatology,Psychiatry,3,Female,10845,Medium,HMO,2556,24,44,TRUE
+M0847,Member_847,City_47,MA,42.4372,-71.3524,Orthopedics,Orthopedics,53,Female,10846,Medium,EPO,1901,48,59,FALSE
+M0848,Member_848,City_48,GA,32.2256,-82.8401,Psychiatry,Gastroenterology,49,Other,10847,High,PPO,3989,13,29,TRUE
+M0849,Member_849,City_49,NC,35.8496,-78.9293,Neurology,ENT,2,Female,10848,High,PPO,8357,13,45,FALSE
+M0850,Member_850,City_50,WA,47.8711,-120.6201,Endocrinology,Urology,33,Female,10849,Low,HMO,2182,8,8,TRUE
+M0851,Member_851,City_51,GA,32.1656,-82.9001,Cardiology,Cardiology,47,Female,10850,Medium,PPO,9557,50,59,TRUE
+M0852,Member_852,City_52,CO,39.5801,-105.7521,Ophthalmology,Cardiology,83,Female,10851,Medium,EPO,1784,22,45,TRUE
+M0853,Member_853,City_53,MI,44.3748,-85.5424,Cardiology,Pediatrics,63,Female,10852,Medium,EPO,4687,30,58,FALSE
+M0854,Member_854,City_54,FL,28.0844,-81.6703,Dermatology,Endocrinology,78,Male,10853,High,PPO,4801,27,20,TRUE
+M0855,Member_855,City_55,TX,32.0886,-99.7818,Cardiology,General Practice,23,Other,10854,Medium,EPO,2336,49,33,FALSE
+M0856,Member_856,City_56,NY,43.2994,-74.2179,Neurology,ENT,72,Female,10855,Low,PPO,6831,40,52,TRUE
+M0857,Member_857,City_57,GA,32.1956,-82.8701,Psychiatry,Orthopedics,2,Male,10856,High,HMO,4781,14,38,FALSE
+M0858,Member_858,City_58,AZ,34.1089,-111.0337,General Practice,General Practice,28,Male,10857,Low,PPO,5203,45,53,TRUE
+M0859,Member_859,City_59,WA,47.8411,-120.6501,Cardiology,Dermatology,45,Other,10858,Medium,HMO,5649,46,35,FALSE
+M0860,Member_860,City_60,CO,39.6701,-105.6621,Pediatrics,Cardiology,69,Other,10859,Medium,PPO,5512,48,34,TRUE
+M0861,Member_861,City_61,NV,38.8026,-116.4194,Urology,Neurology,6,Other,10860,Low,EPO,5037,27,36,TRUE
+M0862,Member_862,City_62,GA,32.1956,-82.8701,Gastroenterology,Endocrinology,32,Female,10861,Low,PPO,3187,44,26,FALSE
+M0863,Member_863,City_63,WA,47.8111,-120.6801,Dermatology,Orthopedics,24,Other,10862,High,PPO,4593,48,54,FALSE
+M0864,Member_864,City_64,TX,32.0586,-99.8118,Endocrinology,Urology,79,Male,10863,Low,EPO,7838,10,29,FALSE
+M0865,Member_865,City_65,MI,44.4348,-85.4824,Dermatology,Endocrinology,33,Other,10864,High,EPO,7496,20,7,TRUE
+M0866,Member_866,City_66,TX,31.9686,-99.9018,Urology,Dermatology,71,Other,10865,Medium,PPO,7525,38,34,FALSE
+M0867,Member_867,City_67,WA,47.7811,-120.7101,ENT,ENT,10,Male,10866,Low,EPO,4816,36,25,FALSE
+M0868,Member_868,City_68,MI,44.3748,-85.5424,Ophthalmology,Orthopedics,40,Female,10867,Medium,PPO,2826,27,6,FALSE
+M0869,Member_869,City_69,PA,41.2933,-77.1045,Orthopedics,Gastroenterology,11,Other,10868,High,PPO,6557,14,40,FALSE
+M0870,Member_870,City_70,NC,35.8796,-78.8993,Psychiatry,Cardiology,7,Male,10869,High,PPO,9530,50,57,FALSE
+M0871,Member_871,City_71,OH,40.4173,-82.9071,Ophthalmology,Psychiatry,28,Male,10870,High,PPO,1583,39,44,TRUE
+M0872,Member_872,City_72,OH,40.4473,-82.8771,ENT,Ophthalmology,85,Female,10871,Medium,PPO,1535,32,34,TRUE
+M0873,Member_873,City_73,GA,32.2256,-82.8401,Orthopedics,Endocrinology,59,Female,10872,High,HMO,1822,20,34,TRUE
+M0874,Member_874,City_74,CA,36.8683,-119.3279,Urology,Neurology,41,Male,10873,Medium,PPO,5485,28,54,FALSE
+M0875,Member_875,City_75,TX,32.0886,-99.7818,General Practice,Endocrinology,55,Male,10874,High,EPO,9142,8,34,FALSE
+M0876,Member_876,City_76,AZ,34.0489,-111.0937,General Practice,Cardiology,25,Other,10875,Low,PPO,7069,9,19,TRUE
+M0877,Member_877,City_77,MI,44.3448,-85.5724,Psychiatry,Urology,45,Female,10876,High,PPO,2916,46,39,FALSE
+M0878,Member_878,City_78,WA,47.8111,-120.6801,Urology,Urology,73,Other,10877,High,PPO,6457,28,11,TRUE
+M0879,Member_879,City_79,AZ,34.1389,-111.0037,General Practice,Urology,5,Other,10878,Medium,HMO,4434,10,43,TRUE
+M0880,Member_880,City_80,MA,42.5272,-71.2624,Neurology,Neurology,90,Female,10879,Low,PPO,6591,47,44,TRUE
+M0881,Member_881,City_81,NC,35.7596,-79.0193,General Practice,Orthopedics,63,Female,10880,Medium,PPO,2240,20,46,FALSE
+M0882,Member_882,City_82,TX,31.9986,-99.8718,Dermatology,Pediatrics,11,Female,10881,Medium,PPO,5379,36,38,FALSE
+M0883,Member_883,City_83,NY,43.3594,-74.1579,Dermatology,Neurology,53,Male,10882,Low,HMO,2671,24,58,TRUE
+M0884,Member_884,City_84,TX,32.0586,-99.8118,General Practice,ENT,61,Female,10883,High,PPO,7242,23,28,FALSE
+M0885,Member_885,City_85,CA,36.8983,-119.2979,Cardiology,Psychiatry,14,Male,10884,Medium,HMO,8192,17,19,FALSE
+M0886,Member_886,City_86,PA,41.2033,-77.1945,Endocrinology,Urology,46,Male,10885,Low,HMO,2524,20,27,FALSE
+M0887,Member_887,City_87,OH,40.4473,-82.8771,ENT,Psychiatry,63,Male,10886,High,HMO,3693,26,19,TRUE
+M0888,Member_888,City_88,OH,40.4773,-82.8471,Psychiatry,Psychiatry,80,Female,10887,Low,PPO,1564,43,17,FALSE
+M0889,Member_889,City_89,OH,40.5073,-82.8171,Cardiology,Gastroenterology,66,Other,10888,Low,PPO,5334,39,45,TRUE
+M0890,Member_890,City_90,CO,39.6701,-105.6621,Endocrinology,General Practice,70,Female,10889,High,EPO,9299,23,52,TRUE
+M0891,Member_891,City_91,AZ,34.0489,-111.0937,Ophthalmology,Cardiology,47,Male,10890,Medium,HMO,7801,10,33,TRUE
+M0892,Member_892,City_92,CA,36.8083,-119.3879,General Practice,Orthopedics,57,Other,10891,High,EPO,4362,25,48,FALSE
+M0893,Member_893,City_93,OH,40.4773,-82.8471,Orthopedics,Dermatology,28,Female,10892,Low,EPO,4321,40,56,FALSE
+M0894,Member_894,City_94,WA,47.8411,-120.6501,ENT,ENT,26,Male,10893,Low,HMO,9983,35,7,TRUE
+M0895,Member_895,City_95,WA,47.8711,-120.6201,ENT,ENT,27,Other,10894,Low,HMO,4866,48,19,FALSE
+M0896,Member_896,City_96,CA,36.7783,-119.4179,Psychiatry,ENT,20,Other,10895,Low,PPO,7967,44,13,FALSE
+M0897,Member_897,City_97,FL,28.0244,-81.7303,Urology,Neurology,69,Other,10896,High,EPO,6750,24,46,FALSE
+M0898,Member_898,City_98,FL,28.0544,-81.7003,Neurology,Pediatrics,56,Female,10897,Low,EPO,3628,42,24,FALSE
+M0899,Member_899,City_99,AZ,34.1389,-111.0037,Cardiology,Psychiatry,33,Male,10898,Low,PPO,8765,23,25,FALSE
+M0900,Member_900,City_100,PA,41.3233,-77.0745,Orthopedics,Endocrinology,18,Other,10899,Low,EPO,8316,49,47,TRUE
+M0901,Member_901,City_101,AZ,34.0489,-111.0937,Endocrinology,Orthopedics,8,Other,10900,High,PPO,3514,47,51,TRUE
+M0902,Member_902,City_102,WA,47.7811,-120.7101,Orthopedics,Psychiatry,60,Other,10901,Low,EPO,2276,24,9,TRUE
+M0903,Member_903,City_103,PA,41.2633,-77.1345,Cardiology,Pediatrics,19,Male,10902,Medium,HMO,4110,28,48,FALSE
+M0904,Member_904,City_104,FL,28.0844,-81.6703,Dermatology,Gastroenterology,10,Male,10903,Low,EPO,7449,48,26,FALSE
+M0905,Member_905,City_105,NC,35.8796,-78.8993,Orthopedics,Endocrinology,6,Male,10904,Low,HMO,6830,45,7,TRUE
+M0906,Member_906,City_106,NV,38.8026,-116.4194,Ophthalmology,Orthopedics,41,Male,10905,Medium,EPO,9575,9,39,FALSE
+M0907,Member_907,City_107,IL,40.6631,-89.3685,Neurology,Orthopedics,67,Other,10906,High,EPO,8086,43,55,TRUE
+M0908,Member_908,City_108,WA,47.8111,-120.6801,Psychiatry,Dermatology,70,Other,10907,Low,PPO,2463,48,60,FALSE
+M0909,Member_909,City_109,CO,39.6401,-105.6921,Urology,Gastroenterology,26,Other,10908,Low,EPO,6964,47,36,TRUE
+M0910,Member_910,City_110,CA,36.8983,-119.2979,Orthopedics,General Practice,17,Male,10909,High,EPO,4398,21,58,FALSE
+M0911,Member_911,City_111,NY,43.2994,-74.2179,Endocrinology,Endocrinology,25,Male,10910,Low,HMO,8573,14,16,FALSE
+M0912,Member_912,City_112,CA,36.8083,-119.3879,Pediatrics,Endocrinology,43,Other,10911,Low,PPO,7588,31,6,TRUE
+M0913,Member_913,City_113,MA,42.4672,-71.3224,Dermatology,Gastroenterology,45,Female,10912,High,PPO,6872,32,53,TRUE
+M0914,Member_914,City_114,TX,32.0586,-99.8118,General Practice,Cardiology,27,Other,10913,Low,HMO,5659,39,14,TRUE
+M0915,Member_915,City_115,TX,32.0886,-99.7818,Neurology,Orthopedics,20,Other,10914,Low,PPO,8559,28,36,FALSE
+M0916,Member_916,City_116,WA,47.7511,-120.7401,Neurology,Cardiology,38,Male,10915,Low,PPO,8945,33,8,TRUE
+M0917,Member_917,City_117,NY,43.3294,-74.1879,Gastroenterology,Gastroenterology,63,Other,10916,Medium,PPO,7276,47,15,FALSE
+M0918,Member_918,City_118,WA,47.8111,-120.6801,Orthopedics,Endocrinology,70,Male,10917,High,HMO,1238,23,33,FALSE
+M0919,Member_919,City_119,NC,35.8496,-78.9293,Pediatrics,Ophthalmology,82,Other,10918,High,HMO,8279,40,59,TRUE
+M0920,Member_920,City_120,CO,39.6701,-105.6621,Dermatology,Psychiatry,11,Male,10919,Medium,EPO,6327,25,9,TRUE
+M0921,Member_921,City_121,NV,38.8026,-116.4194,Urology,Endocrinology,38,Female,10920,High,HMO,1181,34,24,TRUE
+M0922,Member_922,City_122,MA,42.4372,-71.3524,Gastroenterology,ENT,37,Other,10921,High,PPO,8252,15,7,TRUE
+M0923,Member_923,City_123,FL,28.0544,-81.7003,Gastroenterology,Dermatology,10,Male,10922,Low,EPO,3187,16,6,FALSE
+M0924,Member_924,City_124,TX,32.0586,-99.8118,Pediatrics,ENT,54,Male,10923,High,PPO,7561,12,23,TRUE
+M0925,Member_925,City_125,GA,32.2856,-82.7801,Urology,Urology,2,Male,10924,High,PPO,3229,17,52,TRUE
+M0926,Member_926,City_126,GA,32.1656,-82.9001,Orthopedics,Dermatology,65,Female,10925,Low,HMO,1479,26,51,TRUE
+M0927,Member_927,City_127,IL,40.6631,-89.3685,Gastroenterology,Pediatrics,88,Female,10926,Low,PPO,9614,7,9,FALSE
+M0928,Member_928,City_128,MA,42.4672,-71.3224,Dermatology,Ophthalmology,39,Other,10927,High,PPO,1291,15,43,TRUE
+M0929,Member_929,City_129,AZ,34.1389,-111.0037,Psychiatry,Urology,35,Male,10928,Medium,HMO,8006,16,51,TRUE
+M0930,Member_930,City_130,AZ,34.1689,-110.9737,Psychiatry,Endocrinology,56,Other,10929,Low,PPO,2416,32,5,TRUE
+M0931,Member_931,City_131,FL,27.9944,-81.7603,Ophthalmology,Ophthalmology,20,Other,10930,High,HMO,4789,23,44,FALSE
+M0932,Member_932,City_132,PA,41.2333,-77.1645,Endocrinology,Urology,39,Male,10931,Low,HMO,1353,12,42,TRUE
+M0933,Member_933,City_133,CA,36.8383,-119.3579,ENT,Gastroenterology,61,Male,10932,Low,HMO,7599,12,59,FALSE
+M0934,Member_934,City_134,FL,28.0844,-81.6703,Psychiatry,Dermatology,85,Female,10933,Low,PPO,6933,20,33,TRUE
+M0935,Member_935,City_135,NC,35.8796,-78.8993,Pediatrics,Orthopedics,84,Female,10934,Medium,HMO,5403,8,55,TRUE
+M0936,Member_936,City_136,CA,36.7783,-119.4179,Cardiology,Neurology,73,Female,10935,Medium,EPO,8280,19,36,FALSE
+M0937,Member_937,City_137,NY,43.3294,-74.1879,Pediatrics,Pediatrics,64,Male,10936,High,HMO,6856,11,28,TRUE
+M0938,Member_938,City_138,FL,28.0544,-81.7003,Gastroenterology,Dermatology,81,Other,10937,High,PPO,1226,15,44,FALSE
+M0939,Member_939,City_139,IL,40.7231,-89.3085,Urology,Orthopedics,48,Female,10938,Low,HMO,8083,42,8,TRUE
+M0940,Member_940,City_140,MA,42.5272,-71.2624,Pediatrics,ENT,78,Other,10939,Low,HMO,7300,36,54,FALSE
+M0941,Member_941,City_141,WA,47.7511,-120.7401,Ophthalmology,Pediatrics,29,Male,10940,High,EPO,5825,48,43,TRUE
+M0942,Member_942,City_142,OH,40.4473,-82.8771,Gastroenterology,Gastroenterology,51,Other,10941,Medium,EPO,8009,28,32,TRUE
+M0943,Member_943,City_143,NY,43.3594,-74.1579,Pediatrics,Dermatology,23,Male,10942,High,EPO,2802,36,22,TRUE
+M0944,Member_944,City_144,CO,39.6401,-105.6921,Urology,Pediatrics,28,Female,10943,Medium,EPO,8140,17,59,TRUE
+M0945,Member_945,City_145,MA,42.5272,-71.2624,Cardiology,Endocrinology,66,Male,10944,Low,PPO,9434,39,12,TRUE
+M0946,Member_946,City_146,NC,35.7596,-79.0193,Orthopedics,Neurology,6,Male,10945,High,HMO,5043,9,45,TRUE
+M0947,Member_947,City_147,TX,31.9986,-99.8718,Urology,Gastroenterology,77,Female,10946,High,HMO,5103,47,31,TRUE
+M0948,Member_948,City_148,CO,39.6101,-105.7221,ENT,Pediatrics,24,Female,10947,Medium,PPO,9214,24,43,FALSE
+M0949,Member_949,City_149,AZ,34.1389,-111.0037,General Practice,Gastroenterology,43,Male,10948,High,PPO,6172,20,9,FALSE
+M0950,Member_950,City_150,WA,47.8711,-120.6201,Dermatology,Dermatology,73,Other,10949,Low,PPO,9406,50,18,FALSE
+M0951,Member_951,City_151,CA,36.7783,-119.4179,Neurology,Dermatology,28,Male,10950,Low,EPO,6921,37,28,FALSE
+M0952,Member_952,City_152,MA,42.4372,-71.3524,Cardiology,Ophthalmology,76,Other,10951,Medium,PPO,6493,33,35,FALSE
+M0953,Member_953,City_153,CO,39.6101,-105.7221,Urology,Orthopedics,46,Female,10952,Low,HMO,2351,9,41,TRUE
+M0954,Member_954,City_154,WA,47.8411,-120.6501,Pediatrics,Endocrinology,14,Male,10953,Medium,EPO,4793,30,56,FALSE
+M0955,Member_955,City_155,WA,47.8711,-120.6201,Orthopedics,Orthopedics,81,Female,10954,Low,PPO,3025,27,5,TRUE
+M0956,Member_956,City_156,MI,44.3148,-85.6024,Gastroenterology,Gastroenterology,44,Other,10955,Low,PPO,7193,12,34,FALSE
+M0957,Member_957,City_157,NC,35.7896,-78.9893,ENT,Cardiology,30,Male,10956,High,EPO,6066,21,10,FALSE
+M0958,Member_958,City_158,CO,39.6101,-105.7221,Cardiology,Gastroenterology,11,Male,10957,Medium,EPO,4635,42,58,TRUE
+M0959,Member_959,City_159,NV,38.8926,-116.3294,Neurology,Gastroenterology,46,Other,10958,Medium,EPO,5359,39,8,FALSE
+M0960,Member_960,City_160,IL,40.7531,-89.2785,Pediatrics,Pediatrics,79,Female,10959,Medium,EPO,2630,37,40,TRUE
+M0961,Member_961,City_161,FL,27.9944,-81.7603,Orthopedics,Pediatrics,33,Female,10960,Medium,PPO,8283,10,48,FALSE
+M0962,Member_962,City_162,TX,31.9986,-99.8718,Ophthalmology,Endocrinology,90,Other,10961,Low,HMO,8980,34,51,TRUE
+M0963,Member_963,City_163,WA,47.8111,-120.6801,Pediatrics,Psychiatry,21,Other,10962,Low,PPO,7315,39,55,TRUE
+M0964,Member_964,City_164,GA,32.2556,-82.8101,Cardiology,Gastroenterology,6,Other,10963,Medium,PPO,4871,45,18,TRUE
+M0965,Member_965,City_165,FL,28.1144,-81.6403,Endocrinology,Ophthalmology,6,Male,10964,High,HMO,7968,21,59,FALSE
+M0966,Member_966,City_166,OH,40.4173,-82.9071,ENT,Cardiology,84,Male,10965,Medium,EPO,8040,9,31,FALSE
+M0967,Member_967,City_167,NY,43.3294,-74.1879,Cardiology,ENT,3,Other,10966,High,HMO,8672,43,10,FALSE
+M0968,Member_968,City_168,NC,35.8196,-78.9593,Neurology,ENT,85,Other,10967,Low,HMO,8346,7,25,TRUE
+M0969,Member_969,City_169,TX,32.0586,-99.8118,Gastroenterology,Orthopedics,7,Male,10968,Medium,HMO,4779,33,54,FALSE
+M0970,Member_970,City_170,IL,40.7531,-89.2785,Urology,Dermatology,44,Female,10969,High,PPO,6563,10,13,TRUE
+M0971,Member_971,City_171,PA,41.2033,-77.1945,Urology,Psychiatry,63,Other,10970,Low,PPO,3493,37,45,TRUE
+M0972,Member_972,City_172,OH,40.4473,-82.8771,Ophthalmology,ENT,50,Male,10971,Medium,EPO,3325,45,21,TRUE
+M0973,Member_973,City_173,IL,40.6931,-89.3385,Orthopedics,Psychiatry,66,Female,10972,High,PPO,7362,24,58,FALSE
+M0974,Member_974,City_174,AZ,34.1389,-111.0037,Ophthalmology,ENT,48,Male,10973,High,EPO,6977,21,7,FALSE
+M0975,Member_975,City_175,NV,38.9226,-116.2994,Psychiatry,Gastroenterology,52,Male,10974,High,PPO,7989,15,18,TRUE
+M0976,Member_976,City_176,FL,27.9944,-81.7603,Pediatrics,Orthopedics,22,Female,10975,High,EPO,6181,6,23,TRUE
+M0977,Member_977,City_177,MA,42.4372,-71.3524,Urology,Dermatology,11,Other,10976,Medium,PPO,4893,15,15,TRUE
+M0978,Member_978,City_178,PA,41.2633,-77.1345,Cardiology,Gastroenterology,82,Other,10977,Medium,HMO,6854,29,27,TRUE
+M0979,Member_979,City_179,AZ,34.1389,-111.0037,Orthopedics,Urology,13,Male,10978,Medium,PPO,6244,11,42,FALSE
+M0980,Member_980,City_180,NY,43.4194,-74.0979,General Practice,Urology,33,Male,10979,High,PPO,5597,50,9,TRUE
+M0981,Member_981,City_181,NY,43.2994,-74.2179,Neurology,Cardiology,67,Male,10980,Low,PPO,7606,36,37,FALSE
+M0982,Member_982,City_182,MA,42.4372,-71.3524,Dermatology,Pediatrics,12,Female,10981,High,PPO,4709,26,60,FALSE
+M0983,Member_983,City_183,NC,35.8196,-78.9593,Cardiology,Ophthalmology,81,Male,10982,Medium,HMO,1962,40,52,TRUE
+M0984,Member_984,City_184,NY,43.3894,-74.1279,Neurology,Urology,53,Other,10983,High,HMO,5532,44,58,FALSE
+M0985,Member_985,City_185,NV,38.9226,-116.2994,ENT,Cardiology,84,Male,10984,Medium,PPO,3243,21,49,TRUE
+M0986,Member_986,City_186,GA,32.1656,-82.9001,Orthopedics,Psychiatry,64,Male,10985,High,HMO,6637,16,50,FALSE
+M0987,Member_987,City_187,WA,47.7811,-120.7101,Dermatology,Gastroenterology,69,Other,10986,High,HMO,8130,49,12,TRUE
+M0988,Member_988,City_188,CA,36.8383,-119.3579,Gastroenterology,Orthopedics,9,Other,10987,Low,HMO,8004,50,16,FALSE
+M0989,Member_989,City_189,FL,28.0844,-81.6703,Endocrinology,Cardiology,68,Other,10988,High,PPO,7924,14,16,FALSE
+M0990,Member_990,City_190,MA,42.5272,-71.2624,Cardiology,Endocrinology,67,Male,10989,High,PPO,8653,5,45,FALSE
+M0991,Member_991,City_191,IL,40.6331,-89.3985,Cardiology,ENT,54,Other,10990,High,HMO,1586,34,23,FALSE
+M0992,Member_992,City_192,GA,32.1956,-82.8701,ENT,Psychiatry,6,Female,10991,Medium,EPO,4241,18,51,FALSE
+M0993,Member_993,City_193,MI,44.3748,-85.5424,General Practice,Cardiology,81,Female,10992,High,HMO,2621,8,6,TRUE
+M0994,Member_994,City_194,AZ,34.1389,-111.0037,Neurology,Gastroenterology,3,Other,10993,High,PPO,7521,34,43,FALSE
+M0995,Member_995,City_195,WA,47.8711,-120.6201,Orthopedics,ENT,4,Male,10994,High,PPO,2539,5,17,TRUE
+M0996,Member_996,City_196,PA,41.2033,-77.1945,Urology,Neurology,61,Male,10995,Low,PPO,3726,26,19,TRUE
+M0997,Member_997,City_197,NY,43.3294,-74.1879,Endocrinology,Endocrinology,79,Female,10996,Medium,PPO,7876,9,35,TRUE
+M0998,Member_998,City_198,OH,40.4773,-82.8471,Pediatrics,Urology,59,Other,10997,Medium,HMO,6827,42,53,FALSE
+M0999,Member_999,City_199,CA,36.8683,-119.3279,ENT,Urology,14,Female,10998,Medium,EPO,8783,39,30,FALSE
+M1000,Member_1000,City_200,IL,40.7531,-89.2785,Urology,Urology,45,Male,10999,High,EPO,2409,48,8,TRUE
