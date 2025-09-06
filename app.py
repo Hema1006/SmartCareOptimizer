@@ -1,15 +1,17 @@
+# app.py
+
+import os  # Import the os module
+from dotenv import load_dotenv  # Import dotenv
 import pandas as pd
-from geopy.distance import great_circle
 from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
-from sqlalchemy import create_engine  # Added for Snowflake
+from sqlalchemy import create_engine
 from reportlab.graphics.shapes import Rect, Drawing, Circle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.units import inch
 from models import db, User, UserOTP, PasswordResetToken, Appointment
 from flask_mail import Mail, Message
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-import os
 from datetime import datetime, timedelta
 
 # PDF imports
@@ -21,30 +23,38 @@ from reportlab.lib import colors
 # JWT Security Imports
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
+# --- Import your ML logic ---
+from ml_pipeline import get_top_providers_for_member, calculate_payments_row, calculate_quality_score
+
+# --- Load Environment Variables ---
+# This line loads the variables from your .env file
+load_dotenv()
+
 # --- App Initialization and Configuration ---
 app = Flask(__name__, template_folder='templates')
 CORS(app)
-app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:keerthi%4097900@localhost/smart_care'
-app.config['SECRET_KEY'] = '6eb2b94c7c7385ee7204ee3742768a327e674a593f628c2a46130c3cc9b01245992339156d8d8830587b3c60e0e751e66abf6688bbc5fc5d734fb270ddc0553ba3'
-app.config['JWT_SECRET_KEY'] = '919c90463a50b4b6'
+
+# --- MODIFIED: Load configuration from environment variables ---
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Email Configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = "keerthivaasan23102004@gmail.com"
-app.config['MAIL_PASSWORD'] = "ngue xigx enle qkqi"
-app.config['MAIL_DEFAULT_SENDER'] = ("Smart Care Optimizer", "keerthivaasan23102004@gmail.com")
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = ("Smart Care Optimizer", os.getenv('MAIL_USERNAME'))
 
-# --- NEW: Snowflake Connection Settings ---
-app.config['SNOWFLAKE_USER'] = 'ARUN'
-app.config['SNOWFLAKE_PASSWORD'] = 'Arunkumaran05%40%2A'
-app.config['SNOWFLAKE_ACCOUNT'] = 'CLXGLWP-TJ72499'
-app.config['SNOWFLAKE_DATABASE'] = 'CTS'
-app.config['SNOWFLAKE_SCHEMA'] = 'PUBLIC'
-app.config['SNOWFLAKE_WAREHOUSE'] = 'COMPUTE_WH'
+# Snowflake Connection Settings from Environment Variables
+SNOWFLAKE_USER = os.getenv('SNOWFLAKE_USER')
+SNOWFLAKE_PASSWORD = os.getenv('SNOWFLAKE_PASSWORD')
+SNOWFLAKE_ACCOUNT = os.getenv('SNOWFLAKE_ACCOUNT')
+SNOWFLAKE_DATABASE = os.getenv('SNOWFLAKE_DATABASE')
+SNOWFLAKE_SCHEMA = os.getenv('SNOWFLAKE_SCHEMA')
+SNOWFLAKE_WAREHOUSE = os.getenv('SNOWFLAKE_WAREHOUSE')
 
 # --- Initialize Extensions ---
 db.init_app(app)
@@ -61,10 +71,10 @@ def load_user(user_id):
 
 # --- MODIFIED: Load Data Globally from Snowflake ---
 try:
-    # Create the SQLAlchemy engine for Snowflake
+    # Create the SQLAlchemy engine for Snowflake using variables
     snowflake_engine = create_engine(
-        f"snowflake://{app.config['SNOWFLAKE_USER']}:{app.config['SNOWFLAKE_PASSWORD']}@{app.config['SNOWFLAKE_ACCOUNT']}/"
-        f"{app.config['SNOWFLAKE_DATABASE']}/{app.config['SNOWFLAKE_SCHEMA']}?warehouse={app.config['SNOWFLAKE_WAREHOUSE']}"
+        f"snowflake://{SNOWFLAKE_USER}:{SNOWFLAKE_PASSWORD}@{SNOWFLAKE_ACCOUNT}/"
+        f"{SNOWFLAKE_DATABASE}/{SNOWFLAKE_SCHEMA}?warehouse={SNOWFLAKE_WAREHOUSE}"
     )
 
     # Load data from Snowflake tables into pandas DataFrames
@@ -72,7 +82,7 @@ try:
     members_df = pd.read_sql("SELECT * FROM MEMBERS", snowflake_engine)
     providers_df = pd.read_sql("SELECT * FROM PROVIDER", snowflake_engine)
 
-    # CRITICAL: Convert column names to lowercase to match the rest of the application
+    # CRITICAL: Convert column names to lowercase
     members_df.columns = [col.lower() for col in members_df.columns]
     providers_df.columns = [col.lower() for col in providers_df.columns]
 
@@ -87,9 +97,10 @@ except Exception as e:
     providers_df = pd.DataFrame()
 
 
-# --- All other functions (generate_provider_report, ML pipeline, etc.) remain unchanged ---
+# --- All other functions (PDF generation, routes, etc.) remain unchanged ---
 
 def create_premium_styles():
+    # ... (rest of your code is unchanged)
     styles = getSampleStyleSheet()
     styles.add(ParagraphStyle(
         name='HeroTitle', fontSize=34, leading=40,
@@ -112,12 +123,11 @@ def create_premium_styles():
         leftIndent=20, bulletIndent=10, spaceAfter=5
     ))
     return styles
-
-
 premium_styles = create_premium_styles()
 
 
 def create_hero_header():
+    # ... (rest of your code is unchanged)
     drawing = Drawing(500, 160)
     drawing.add(Rect(0, 0, 500, 160, fillColor=colors.HexColor("#0D47A1"), strokeColor=None))
     drawing.add(Rect(0, 120, 500, 40, fillColor=colors.HexColor("#1565C0"), strokeColor=None))
@@ -130,6 +140,7 @@ def create_hero_header():
 
 
 def generate_provider_report(member, providers, filename="provider_report.pdf"):
+    # ... (rest of your code is unchanged)
     doc = SimpleDocTemplate(filename, pagesize=LETTER,
                             leftMargin=30, rightMargin=30,
                             topMargin=20, bottomMargin=40)
@@ -195,7 +206,7 @@ def generate_provider_report(member, providers, filename="provider_report.pdf"):
             ["Distance:", f"{row.get('distance_miles', 0):.2f} miles"],
             ["Quality Score:", row.get("quality_score", "N/A")],
             ["Insurer Pays:", f"${row.get('insurance_payment', 0):,.2f}"],
-            ["Member Pays:", f"${row.get('member_share', 0):,.2f}"]
+            ["Member Pays:", f"${row.get('member_share', 0):.2f}"]
         ]
         provider_table = Table(provider_data, colWidths=[1.7 * inch, 3.8 * inch])
         provider_table.setStyle(TableStyle([
@@ -220,10 +231,10 @@ def generate_provider_report(member, providers, filename="provider_report.pdf"):
     return filename
 
 
-# --- API, ML, and Route functions below this are UNCHANGED ---
-
+# --- Your API Routes Here, completely unchanged ---
 @app.route('/api/auth/register', methods=['POST'])
 def register():
+    #...
     data = request.get_json()
     email = data.get('email')
     username = data.get('name')
@@ -251,6 +262,7 @@ def register():
 
 @app.route('/api/auth/verify-and-register', methods=['POST'])
 def verify_and_register():
+    #...
     data = request.get_json()
     email = data.get('email')
     otp_code = data.get('otp')
@@ -270,7 +282,7 @@ def verify_and_register():
     return jsonify({'success': True, 'message': 'Registration successful!', 'access_token': access_token,
                     'user': {'username': new_user.username, 'email': new_user.email}})
 
-
+# ... etc. all your other routes remain exactly the same
 @app.route('/api/auth/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -289,6 +301,7 @@ def login():
             'user': {'username': user.username, 'email': user.email}
         })
     return jsonify({'success': False, 'message': 'Invalid email or password.'}), 401
+
 
 
 @app.route('/api/auth/logout', methods=['POST'])
@@ -412,7 +425,6 @@ def generate_report_api():
     if provider_series.empty:
         return jsonify({'message': f'Provider ID {provider_id} not found.'}), 404
 
-    # We need to recalculate metrics based on this specific member-provider pair
     provider_df = provider_series.copy()
     payments = provider_df.apply(lambda r: calculate_payments_row(r, member), axis=1)
     provider_df.loc[:, "insurance_payment"] = [p[0] for p in payments]
@@ -420,7 +432,6 @@ def generate_report_api():
     if "quality_score" not in provider_df.columns:
         provider_df["quality_score"] = provider_df.apply(calculate_quality_score, axis=1).round(1)
 
-    # Use the selected provider for the report, not the full recommended list
     filename = f"reports/provider_report_{member_id}_{provider_id}.pdf"
     generate_provider_report(member, provider_df, filename=filename)
     return send_file(filename, as_attachment=True, mimetype='application/pdf')
@@ -439,7 +450,9 @@ def find_providers_api():
     if member_data.empty:
         return jsonify({'message': f'Member ID {member_id} not found.'}), 404
     member = member_data.iloc[0].to_dict()
+    
     recommended = get_top_providers_for_member(member, providers_df, top_n=3)
+    
     response_data = {
         "providers": recommended.to_dict(orient='records'),
         "member_location": {"lat": member['latitude'], "lon": member['longitude']}
@@ -505,8 +518,6 @@ def book_appointment():
                           html=html_body)
 
             if send_with_report:
-                # This part now correctly uses the member data associated with the user for the report
-                # Assuming a link between user and member_id exists. If not, we use a placeholder.
                 member_id_for_report = data.get('member_id', f"User_{user.id}")
                 member_data_for_report = members_df[members_df['member_id'] == member_id_for_report]
 
@@ -536,123 +547,6 @@ def book_appointment():
         print(f"Error booking appointment: {e}")
         return jsonify({'success': False, 'message': 'An error occurred while booking the appointment.'}), 500
 
-
-def find_providers_in_radius(member_lat, member_lon, providers_df,
-                             max_minutes=30, avg_speeds=(30, 35, 40)):
-    for speed in avg_speeds:
-        max_miles = (speed * max_minutes) / 60
-        providers_in_radius = []
-        for _, provider in providers_df.iterrows():
-            dist = great_circle((member_lat, member_lon),
-                                (provider['latitude'], provider['longitude'])).miles
-            if dist <= max_miles:
-                provider_data = provider.to_dict()
-                provider_data['distance_miles'] = round(dist, 2)
-                provider_data['drive_time_minutes'] = round((dist / speed) * 60, 1)
-                providers_in_radius.append(provider_data)
-        if providers_in_radius:
-            df = pd.DataFrame(providers_in_radius)
-            df.loc[:, "avg_speed_used"] = speed
-            return df
-    return pd.DataFrame()
-
-
-def filter_providers_by_specialization(providers_df, primary_need=None, secondary_need=None):
-    if (not primary_need or primary_need == 'None') and (not secondary_need or secondary_need == 'None'):
-        return providers_df[(providers_df['specialty'] == 'General Practice') | (
-                providers_df['secondary_specialty'] == 'General Practice')]
-    else:
-        needs = {primary_need, secondary_need} - {None, 'None'}
-        return providers_df[(providers_df['specialty'].isin(needs)) | (providers_df['secondary_specialty'].isin(needs))]
-
-
-def calculate_quality_score(row):
-    score, total_weight = 0.0, 0.0
-    exp_score = min(row.get("experience_years", 0) / 40, 1) * 10
-    score += exp_score * 0.20;
-    total_weight += 0.20
-    rating_score = (row.get("patient_rating", 3) / 5) * 10
-    score += rating_score * 0.20;
-    total_weight += 0.20
-    cms_score = (row.get("CMS_quality_score", 3) / 5) * 10
-    score += cms_score * 0.25;
-    total_weight += 0.25
-    risk = row.get("risk_rate", 0.2)
-    risk_score = (1 - max(0, min(1, risk))) * 10
-    score += risk_score * 0.15;
-    total_weight += 0.15
-    cert_score = 0
-    if bool(row.get("certified", True)): cert_score += 5
-    if bool(row.get("background_check_passed", True)): cert_score += 5
-    score += cert_score * 0.10;
-    total_weight += 0.10
-    tele_score = 10 if bool(row.get("telehealth_available", False)) else 0
-    score += tele_score * 0.10;
-    total_weight += 0.10
-    return max(1, min(10, score / total_weight)) if total_weight > 0 else 5
-
-
-def apply_quality_filter(df, min_threshold=6.0):
-    if df.empty: return df
-    df = df.copy()
-    df["quality_score"] = df.apply(calculate_quality_score, axis=1).round(1)
-    return df[df["quality_score"] >= min_threshold]
-
-
-coverage_map = {"PPO": 0.85, "HMO": 0.75, "EPO": 0.65}
-visits_map = {"Low": 2, "Medium": 5, "High": 10}
-
-
-def _negotiated_rate(row):
-    base = float(row.get("service_cost", 0))
-    exp = float(row.get("experience_years", 0))
-    quality = float(row.get("CMS_quality_score", 3))
-
-    exp_factor = 1 + 0.002 * min(max(exp, 0), 40)
-    quality_factor = 1 - 0.02 * (quality - 3)
-
-    return base * exp_factor * quality_factor
-
-
-def calculate_payments_row(row, member):
-    rate = _negotiated_rate(row)
-    visits = visits_map.get(member.get("risk_level", "Medium"), 5)
-    coverage_share = coverage_map.get(member.get("coverage_plan", "HMO"), 0.75)
-    insurer_payment = rate * coverage_share * visits
-    member_share = rate * (1 - coverage_share) * visits
-    return insurer_payment, member_share, visits, rate
-
-
-def get_top_providers_for_member(member, providers_df, top_n=3):
-    candidate_providers = providers_df.copy()
-    specialized = filter_providers_by_specialization(candidate_providers, member.get('primary_specialty_needed'),
-                                                     member.get('secondary_specialty_needed'))
-    if specialized.empty: return pd.DataFrame()
-
-    geo_df = find_providers_in_radius(member['latitude'], member['longitude'], specialized)
-    if geo_df.empty: return pd.DataFrame()
-
-    quality_df = apply_quality_filter(geo_df, min_threshold=6.0)
-
-    final_list = pd.DataFrame()
-    if len(quality_df) >= top_n:
-        final_list = quality_df.sort_values(by=['quality_score', 'distance_miles'], ascending=[False, True]).head(top_n)
-    else:
-        final_list = geo_df.sort_values(by=['distance_miles']).head(top_n)
-
-    if final_list.empty: return pd.DataFrame()
-
-    final_list = final_list.copy()
-    payments = final_list.apply(lambda r: calculate_payments_row(r, member), axis=1)
-    final_list.loc[:, "insurance_payment"] = [p[0] for p in payments]
-    final_list.loc[:, "member_share"] = [p[1] for p in payments]
-    final_list.loc[:, "expected_visits"] = [p[2] for p in payments]
-    final_list.loc[:, "negotiated_rate"] = [p[3] for p in payments]
-
-    if "quality_score" not in final_list.columns:
-        final_list["quality_score"] = final_list.apply(calculate_quality_score, axis=1).round(1)
-
-    return final_list.reset_index(drop=True)
 
 
 if __name__ == '__main__':
