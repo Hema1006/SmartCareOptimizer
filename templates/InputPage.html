@@ -233,6 +233,8 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcN4HTut5WWjRN0oWH7cL-Nxeyko9WJzg"></script>
 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcN4HTut5WWjRN0oWH7cL-Nxeyko9WJzg"></script>
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // --- DOM Elements ---
@@ -343,18 +345,33 @@
             const headers = getAuthHeaders();
             if (!headers || !selectedProvider) return;
 
+            // ### BUG FIX START ###
+            // 1. Get the member ID from the main input field.
+            const memberId = memberIdInput.value.trim();
+            if (!memberId) {
+                alert("Critical Error: Member ID is missing. Please find the provider again before booking.");
+                return;
+            }
+            // ### BUG FIX END ###
+
             const appointmentData = {
                 provider_id: selectedProvider.provider_id,
                 provider_name: selectedProvider.name,
                 patient_name: document.getElementById('appt-name').value,
                 contact_no: document.getElementById('appt-contact').value,
                 appointment_date: document.getElementById('appt-date').value,
-                appointment_time: document.getElementById('appt-time').value
+                appointment_time: document.getElementById('appt-time').value,
+                // ### BUG FIX START ###
+                // 2. Add the member_id to the data object being sent.
+                member_id: memberId
+                // ### BUG FIX END ###
             };
+
             if (Object.values(appointmentData).some(val => !val)) {
                 alert("Please fill out all appointment fields.");
                 return;
             }
+
             try {
                 const response = await fetch('/api/book-appointment', {
                     method: 'POST',
@@ -366,7 +383,6 @@
 
                 detailsModal.classList.remove('show');
                 confirmationModal.classList.add('show');
-                // Show the notification on successful booking
                 showNotification("An email with your appointment details has been sent.");
 
             } catch (err) {

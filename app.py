@@ -64,6 +64,23 @@ login_manager.login_view = 'home'
 jwt = JWTManager(app)
 
 
+from math import radians, sin, cos, sqrt, atan2 # <-- ADD THIS IMPORT
+
+# --- ADD THIS HELPER FUNCTION ---
+def haversine_distance(lat1, lon1, lat2, lon2):
+    """Calculates the distance between two points in miles."""
+    R = 3958.8  # Radius of Earth in miles
+    lat1_rad, lon1_rad = radians(lat1), radians(lon1)
+    lat2_rad, lon2_rad = radians(lat2), radians(lon2)
+    
+    dlon = lon2_rad - lon1_rad
+    dlat = lat2_rad - lat1_rad
+    
+    a = sin(dlat / 2)**2 + cos(lat1_rad) * cos(lat2_rad) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    
+    return R * c
+
 @login_manager.user_loader
 def load_user(user_id):
     return db.session.get(User, int(user_id))
@@ -206,7 +223,7 @@ def generate_provider_report(member, providers, filename="provider_report.pdf"):
             ["Distance:", f"{row.get('distance_miles', 0):.2f} miles"],
             ["Quality Score:", row.get("quality_score", "N/A")],
             ["Insurer Pays:", f"${row.get('insurance_payment', 0):,.2f}"],
-            ["Member Pays:", f"${row.get('member_share', 0):.2f}"]
+            ["Member Pays:", f"${row.get('member_share', 0):,.2f}"]
         ]
         provider_table = Table(provider_data, colWidths=[1.7 * inch, 3.8 * inch])
         provider_table.setStyle(TableStyle([
@@ -426,6 +443,13 @@ def generate_report_api():
         return jsonify({'message': f'Provider ID {provider_id} not found.'}), 404
 
     provider_df = provider_series.copy()
+     # --- ADD THIS BLOCK TO CALCULATE DISTANCE ---
+    provider_lat = provider_df.iloc[0]['latitude']
+    provider_lon = provider_df.iloc[0]['longitude']
+    distance = haversine_distance(member['latitude'], member['longitude'], provider_lat, provider_lon)
+    provider_df['distance_miles'] = distance
+    # --- END OF BLOCK ---
+
     payments = provider_df.apply(lambda r: calculate_payments_row(r, member), axis=1)
     provider_df.loc[:, "insurance_payment"] = [p[0] for p in payments]
     provider_df.loc[:, "member_share"] = [p[1] for p in payments]
@@ -518,13 +542,32 @@ def book_appointment():
                           html=html_body)
 
             if send_with_report:
-                member_id_for_report = data.get('member_id', f"User_{user.id}")
-                member_data_for_report = members_df[members_df['member_id'] == member_id_for_report]
+                member_id_for_report = data.get('member_id')
+                member_data_for_report = members_df[members_df['member_id'] == member_id_for_report] if member_id_for_report else pd.DataFrame()
 
-                member_for_pdf = member_data_for_report.iloc[0].to_dict() if not member_data_for_report.empty else {
-                    "member_id": f"User: {user.username}", "risk_level": "Medium", "coverage_plan": "HMO"}
+                # --- MODIFICATION START ---
+                if not member_data_for_report.empty:
+                    member_for_pdf = member_data_for_report.iloc[0].to_dict()
+                else:
+                    # Create a more complete default dictionary to prevent "N/A" in the PDF
+                    member_for_pdf = {
+                        "member_id": f"User Account: {user.username}",
+                        "age": "Not Provided",
+                        "gender": "Not Provided",
+                        "primary_specialty_needed": "Not Specified",
+                        "secondary_specialty_needed": "Not Specified",
+                        "coverage_plan": "Default Plan"
+                    }
+                # --- MODIFICATION END ---
 
                 provider_df_single = provider_series.copy()
+
+                # --- ADD THIS BLOCK TO CALCULATE DISTANCE ---
+                provider_lat = provider_df_single.iloc[0]['latitude']
+                provider_lon = provider_df_single.iloc[0]['longitude']
+                distance = haversine_distance(member_for_pdf['latitude'], member_for_pdf['longitude'], provider_lat, provider_lon)
+                provider_df_single['distance_miles'] = distance
+                
                 payments = provider_df_single.apply(lambda r: calculate_payments_row(r, member_for_pdf), axis=1)
                 provider_df_single.loc[:, "insurance_payment"] = [p[0] for p in payments]
                 provider_df_single.loc[:, "member_share"] = [p[1] for p in payments]
