@@ -53,7 +53,7 @@ def calculate_quality_score(row):
     cms_score = (row.get("CMS_quality_score") / 5) * 10
     score += cms_score * 0.25;
     total_weight += 0.25
-    risk = row.get("risk_rate", 0.2)
+    risk = row.get("risk_rate")
     risk_score = (1 - max(0, min(1, risk))) * 10
     score += risk_score * 0.15;
     total_weight += 0.15
