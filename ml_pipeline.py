@@ -47,10 +47,10 @@ def calculate_quality_score(row):
     exp_score = min(row.get("experience_years", 0) / 40, 1) * 10
     score += exp_score * 0.20;
     total_weight += 0.20
-    rating_score = (row.get("patient_rating", 3) / 5) * 10
+    rating_score = (row.get("patient_rating") / 5) * 10
     score += rating_score * 0.20;
     total_weight += 0.20
-    cms_score = (row.get("CMS_quality_score", 3) / 5) * 10
+    cms_score = (row.get("CMS_quality_score") / 5) * 10
     score += cms_score * 0.25;
     total_weight += 0.25
     risk = row.get("risk_rate", 0.2)
